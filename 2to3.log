@@ -1,0 +1,4047 @@
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+RefactoringTool: Skipping implicit fixer: buffer
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+RefactoringTool: Skipping implicit fixer: idioms
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+RefactoringTool: Skipping implicit fixer: set_literal
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+RefactoringTool: Skipping implicit fixer: ws_comma
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+RefactoringTool: Refactored ./setup.py
+RefactoringTool: Refactored ./DistUtilsExtra/pygettext.py
+--- ./setup.py	(original)
++++ ./setup.py	(refactored)
+@@ -24,15 +24,15 @@
+     basedir = os.path.dirname(os.path.abspath(__file__))
+     up_basedir = os.path.dirname(basedir)
+     if os.path.basename(basedir) == 'hotwire-shell':
+-        print "Running uninstalled, extending path"
++        print("Running uninstalled, extending path")
+         sys.path.insert(0, basedir)
+         os.environ['PYTHONPATH'] = os.pathsep.join(sys.path)
+ from hotwire.version import __version__
+ 
+ def svn_info(wd):
+-    import subprocess,StringIO
++    import subprocess,io
+     tip = {}
+-    for line in StringIO.StringIO(subprocess.Popen(['svn', 'info', wd], stdout=subprocess.PIPE).communicate()[0]):
++    for line in io.StringIO(subprocess.Popen(['svn', 'info', wd], stdout=subprocess.PIPE).communicate()[0]):
+         line = line.strip()
+         if not line:
+             continue
+@@ -47,7 +47,7 @@
+     dt = os.path.join('dist', 'test')
+     try:
+         os.mkdir('dist')
+-    except OSError, e:
++    except OSError as e:
+         pass
+     if os.path.exists(dt):
+         shutil.rmtree(dt)
+@@ -102,7 +102,7 @@
+         install.run(self)
+         if os.name == 'posix':                       
+             if self.root is None:
+-                print "Running gtk-update-icon-cache"
++                print("Running gtk-update-icon-cache")
+                 subprocess.call(['gtk-update-icon-cache', os.path.join(self.install_data, 'share', 'icons', 'hicolor')])
+ kwargs['cmdclass']['install'] = HotInstall                    
+ 
+--- ./DistUtilsExtra/pygettext.py	(original)
++++ ./DistUtilsExtra/pygettext.py	(refactored)
+@@ -164,6 +164,7 @@
+ import token
+ import tokenize
+ import operator
++from functools import reduce
+ 
+ __version__ = '1.5'
+ 
+@@ -199,9 +200,9 @@
+ 
+ 
+ def usage(code, msg=''):
+-    print >> sys.stderr, __doc__ % globals()
++    print(__doc__ % globals(), file=sys.stderr)
+     if msg:
+-        print >> sys.stderr, msg
++        print(msg, file=sys.stderr)
+     sys.exit(code)
+ 
+ 
+@@ -269,7 +270,7 @@
+ def _visit_pyfiles(list, dirname, names):
+     """Helper for getFilesForName()."""
+     # get extension for python source files
+-    if not globals().has_key('_py_ext'):
++    if '_py_ext' not in globals():
+         global _py_ext
+         _py_ext = [triple[0] for triple in imp.get_suffixes()
+                    if triple[2] == imp.PY_SOURCE][0]
+@@ -428,13 +429,13 @@
+         elif ttype not in [tokenize.COMMENT, token.INDENT, token.DEDENT,
+                            token.NEWLINE, tokenize.NL]:
+             # warn if we see anything else than STRING or whitespace
+-            print >> sys.stderr, _(
++            print(_(
+                 '*** %(file)s:%(lineno)s: Seen unexpected token "%(token)s"'
+                 ) % {
+                 'token': tstring,
+                 'file': self.__curfile,
+                 'lineno': self.__lineno
+-                }
++                }, file=sys.stderr)
+             self.__state = self.__waiting
+ 
+     def __addentry(self, msg, lineno=None, isdocstring=0):
+@@ -453,15 +454,15 @@
+         timestamp = time.strftime('%Y-%m-%d %H:%M+%Z')
+         # The time stamp in the header doesn't have the same format as that
+         # generated by xgettext...
+-        print >> fp, pot_header % {'time': timestamp, 'version': __version__}
++        print(pot_header % {'time': timestamp, 'version': __version__}, file=fp)
+         # Sort the entries.  First sort each particular entry's keys, then
+         # sort all the entries by their first item.
+         reverse = {}
+-        for k, v in self.__messages.items():
+-            keys = v.keys()
++        for k, v in list(self.__messages.items()):
++            keys = list(v.keys())
+             keys.sort()
+             reverse.setdefault(tuple(keys), []).append((k, v))
+-        rkeys = reverse.keys()
++        rkeys = list(reverse.keys())
+         rkeys.sort()
+         for rkey in rkeys:
+             rentries = reverse[rkey]
+@@ -471,12 +472,12 @@
+                 # If the entry was gleaned out of a docstring, then add a
+                 # comment stating so.  This is to aid translators who may wish
+                 # to skip translating some unimportant docstrings.
+-                if reduce(operator.__add__, v.values()):
++                if reduce(operator.__add__, list(v.values())):
+                     isdocstring = 1
+                 # k is the message string, v is a dictionary-set of (filename,
+                 # lineno) tuples.  We want to sort the entries in v first by
+                 # file name and then by line number.
+-                v = v.keys()
++                v = list(v.keys())
+                 v.sort()
+                 if not options.writelocations:
+                     pass
+@@ -484,8 +485,8 @@
+                 elif options.locationstyle == options.SOLARIS:
+                     for filename, lineno in v:
+                         d = {'filename': filename, 'lineno': lineno}
+-                        print >>fp, _(
+-                            '# File: %(filename)s, line: %(lineno)d') % d
++                        print(_(
++                            '# File: %(filename)s, line: %(lineno)d') % d, file=fp)
+                 elif options.locationstyle == options.GNU:
+                     # fit as many locations on one line, as long as the
+                     # resulting line length doesn't exceeds 'options.width'
+@@ -496,14 +497,14 @@
+                         if len(locline) + len(s) <= options.width:
+                             locline = locline + s
+                         else:
+-                            print >> fp, locline
++                            print(locline, file=fp)
+                             locline = "#:" + s
+                     if len(locline) > 2:
+-                        print >> fp, locline
++                        print(locline, file=fp)
+                 if isdocstring:
+-                    print >> fp, '#, docstring'
+-                print >> fp, 'msgid', normalize(k)
+-                print >> fp, 'msgstr ""\n'
++                    print('#, docstring', file=fp)
++                print('msgid', normalize(k), file=fp)
++                print('msgstr ""\n', file=fp)
+ 
+ 
+ 
+@@ -520,7 +521,7 @@
+              'style=', 'verbose', 'version', 'width=', 'exclude-file=',
+              'docstrings', 'no-docstrings',
+              ])
+-    except getopt.error, msg:
++    except getopt.error as msg:
+         usage(1, msg)
+ 
+     # for holding option values
+@@ -578,7 +579,7 @@
+         elif opt in ('-v', '--verbose'):
+             options.verbose = 1
+         elif opt in ('-V', '--version'):
+-            print _('pygettext.py (xgettext for Python) %s') % __version__
++            print(_('pygettext.py (xgettext for Python) %s') % __version__)
+             sys.exit(0)
+         elif opt in ('-w', '--width'):
+             try:
+@@ -611,8 +612,8 @@
+             options.toexclude = fp.readlines()
+             fp.close()
+         except IOError:
+-            print >> sys.stderr, _(
+-                "Can't read --exclude-file: %s") % options.excludefilename
++            print(_(
++                "Can't read --exclude-file: %s") % options.excludefilename, file=sys.stderr)
+             sys.exit(1)
+     else:
+         options.toexclude = []
+@@ -631,21 +632,21 @@
+     for filename in args:
+         if filename == '-':
+             if options.verbose:
+-                print _('Reading standard input')
++                print(_('Reading standard input'))
+             fp = sys.stdin
+             closep = 0
+         else:
+             if options.verbose:
+-                print _('Working on %s') % filename
++                print(_('Working on %s') % filename)
+             fp = open(filename)
+             closep = 1
+         try:
+             eater.set_filename(filename)
+             try:
+                 tokenize.tokenize(fp.readline, eater)
+-            except tokenize.TokenError, e:
+-                print >> sys.stderr, '%s: %s, line %d, column %d' % (
+-                    e[0], filename, e[1][0], e[1][1])
++            except tokenize.TokenError as e:
++                print('%s: %s, line %d, column %d' % (
++                    e[0], filename, e[1][0], e[1][1]), file=sys.stderr)
+         finally:
+             if closep:RefactoringTool: No changes to ./DistUtilsExtra/command/__init__.py
+RefactoringTool: Refactored ./DistUtilsExtra/command/build_extra.py
+RefactoringTool: No changes to ./DistUtilsExtra/command/build_help.py
+RefactoringTool: No changes to ./DistUtilsExtra/command/build_i18n.py
+RefactoringTool: No changes to ./DistUtilsExtra/command/build_icons.py
+RefactoringTool: No changes to ./hotapps/hotsudo/sudowindow.py
+RefactoringTool: Refactored ./hotvte/vteterm.py
+RefactoringTool: Refactored ./hotvte/vtewindow.py
+RefactoringTool: Refactored ./hotwire/async.py
+RefactoringTool: Refactored ./hotwire/builtin.py
+RefactoringTool: Refactored ./hotwire/cmdalias.py
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+root: Generating grammar tables from /usr/lib/python3.4/lib2to3/PatternGrammar.txt
+RefactoringTool: Refactored ./hotwire/command.py
+
+                 fp.close()
+@@ -670,7 +671,7 @@
+ if __name__ == '__main__':
+     main()
+     # some more test strings
+-    _(u'a unicode string')
++    _('a unicode string')
+     # this one creates a warning
+     _('*** Seen unexpected token "%(token)s"') % {'token': 'test'}
+     _('more' 'than' 'one' 'string')
+--- ./DistUtilsExtra/command/build_extra.py	(original)
++++ ./DistUtilsExtra/command/build_extra.py	(refactored)
+@@ -26,15 +26,15 @@
+     def finalize_options(self):
+         def has_help(command):
+             return self.help == "True" or \
+-                   (self.distribution.cmdclass.has_key("build_help") and not \
++                   ("build_help" in self.distribution.cmdclass and not \
+                     self.help == "False")
+         def has_icons(command):
+             return self.icons == "True" or \
+-                   (self.distribution.cmdclass.has_key("build_icons") and not \
++                   ("build_icons" in self.distribution.cmdclass and not \
+                     self.help == "False")
+         def has_i18n(command):
+             return self.i18n == "True" or \
+-                   (self.distribution.cmdclass.has_key("build_i18n") and not \
++                   ("build_i18n" in self.distribution.cmdclass and not \
+                     self.i18n == "False")
+         distutils.command.build.build.finalize_options(self)
+         self.sub_commands.append(("build_i18n", has_i18n))
+--- ./hotvte/vteterm.py	(original)
++++ ./hotvte/vteterm.py	(refactored)
+@@ -198,7 +198,7 @@
+         if sys.version_info[0] == 2 and sys.version_info[1] < 6 and (not is_windows()):
+             try:
+                 import hotwire.externals.webbrowser as webbrowser
+-            except ImportError, e:
++            except ImportError as e:
+                 _logger.warn("Couldn't import hotwire.externals.webbrowser", exc_info=True)
+                 import webbrowser
+         else:
+--- ./hotvte/vtewindow.py	(original)
++++ ./hotvte/vtewindow.py	(refactored)
+@@ -52,7 +52,7 @@
+         return self.__title
+ 
+ class VteWindow(gtk.Window):
+-    ascii_nums = [long(x+ord('0')) for x in xrange(10)]    
++    ascii_nums = [int(x+ord('0')) for x in range(10)]    
+     def __init__(self, factory=None, title=None, icon_name=None, **kwargs):
+         super(VteWindow, self).__init__()
+         
+@@ -339,11 +339,11 @@
+     def create_window(self, is_initial=False, *args, **kwargs):
+         _logger.debug("creating window")
+         if is_initial:
+-            for k,v in kwargs.iteritems():
+-                if self.__sticky_keywords.has_key(k):
++            for k,v in kwargs.items():
++                if k in self.__sticky_keywords:
+                     self.__sticky_keywords[k] = v
+-        for k,v in self.__sticky_keywords.iteritems():
+-            if not kwargs.has_key(k):
++        for k,v in self.__sticky_keywords.items():
++            if k not in kwargs:
+                 kwargs[k] = v
+         win = self.__klass(factory=self, is_initial=is_initial, **kwargs)
+         win.connect('notify::is-active', self.__on_window_active)
+@@ -379,7 +379,7 @@
+                 curwin = self.__winfactory.remote_new_tab(cmd, cwd)
+             else:
+                 raise NotImplementedError('can only create new tabs')
+-            timestamp = long(timestamp)+1
++            timestamp = int(timestamp)+1
+             if timestamp > 0:
+                 _logger.debug("presenting with timestamp %r", timestamp)
+                 curwin.present_with_time(timestamp)
+@@ -398,7 +398,7 @@
+         startup_time = None
+         try:
+             startup_id_env = os.environ['DESKTOP_STARTUP_ID']
+-        except KeyError, e:
++        except KeyError as e:
+             startup_id_env = None
+         if startup_id_env:
+             idx = startup_id_env.find('_TIME')
+--- ./hotwire/async.py	(original)
++++ ./hotwire/async.py	(refactored)
+@@ -19,7 +19,7 @@
+ # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+-import threading, Queue, logging
++import threading, queue, logging
+ 
+ from hotwire.gutil import call_timeout,remove_idle
+ from hotwire.externals.singletonmixin import Singleton
+@@ -72,9 +72,9 @@
+             except:
+                 logging.exception("Exception in thread pool worker")
+ 
+-class IterableQueue(Queue.Queue):
++class IterableQueue(queue.Queue):
+     def __init__(self):
+-        Queue.Queue.__init__(self)
++        queue.Queue.__init__(self)
+         self.__lock = threading.Lock()
+         self.__handler_idle_id = 0
+         self.__handler = None
+@@ -115,7 +115,7 @@
+         self.__lock.release()
+ 
+     def put(self, *args):
+-        Queue.Queue.put(self, *args)
++        queue.Queue.put(self, *args)
+         self.__add_idle()
+         
+     def iter_avail(self):
+@@ -123,7 +123,7 @@
+             while True:
+                 val = self.get(False)
+                 yield val
+-        except Queue.Empty, e:
++        except queue.Empty as e:
+             pass
+ 
+     def __iter__(self):
+--- ./hotwire/builtin.py	(original)
++++ ./hotwire/builtin.py	(refactored)
+@@ -206,14 +206,14 @@
+ 
+ class PyFuncBuiltin(Builtin):
+     def __init__(self, func, name=None, **kwargs):
+-        name = func.func_name
++        name = func.__name__
+         if not name:
+             raise ValueError("Couldn't determine name of function: %s" % (f,))
+         name = _default_funcname_transform(name)
+         self.__func = func
+         self.__func_args = inspect.getargspec(func)
+         # 0x20 appears to signify the function is a generator according to the CPython sources
+-        self.__func_is_generator = func.func_code.co_flags & 0x20
++        self.__func_is_generator = func.__code__.co_flags & 0x20
+         if not self.__func_is_generator:
+             kwargs['singlevalue'] = True
+         kwargs['output'] = 'any'
+@@ -253,7 +253,7 @@
+     try:
+         import simplejson
+         have_simplejson = True
+-    except ImportError, e:
++    except ImportError as e:
+         have_simplejson = False
+     if have_simplejson:
+         import hotwire.builtins.json
+--- ./hotwire/cmdalias.py	(original)
++++ ./hotwire/cmdalias.py	(refactored)
+@@ -46,6 +46,6 @@
+         return self.__aliases[item]
+ 
+     def __iter__(self):
+-        for x in self.__aliases.itervalues():
++        for x in self.__aliases.values():
+             yield x
+  
+--- ./hotwire/command.py	(original)
++++ ./hotwire/command.py	(refactored)
+@@ -19,9 +19,9 @@
+ # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+-import os, sys, threading, Queue, logging, string, re, time, traceback
++import os, sys, threading, queue, logging, string, re, time, traceback
+ import posixpath, locale
+-from StringIO import StringIO
++from io import StringIO
+ 
+ import hotwire.fs
+ from hotwire.fs import path_normalize, unix_basename, FilePath, open_text_file
+@@ -60,8 +60,8 @@
+         _logger.debug("Context created, dir=%s" % (self.get_cwd(),))
+ 
+     def chdir(self, dpath):
+-        if not isinstance(dpath, unicode):
+-            dpath = unicode(dpath, 'utf-8')
++        if not isinstance(dpath, str):
++            dpath = str(dpath, 'utf-8')
+         dpath = os.path.expanduser(dpath)
+         newcwd = os.path.isabs(dpath) and dpath or posixpath.join(self.__cwd, dpath)
+         newcwd = path_normalize(newcwd)
+@@ -108,7 +108,7 @@
+             self.current_output_ref = hotwire.get_current_output_ref()
+             _logger.debug("got current metadata %r, ref: %r", self.current_output_metadata,
+                           self.current_output_ref)
+-        except NotImplementedError, e:
++        except NotImplementedError as e:
+             _logger.debug("no current output!")
+             self.current_output_metadata = None
+             self.current_output_ref = None
+@@ -141,7 +141,7 @@
+         self.auxstream_append(name, None)
+ 
+     def get_auxstreams(self):
+-        for obj in self.__auxstreams.itervalues():
++        for obj in self.__auxstreams.values():
+             yield obj
+ 
+     def push_undo(self, fn):
+@@ -203,7 +203,7 @@
+ class CommandException(Exception):
+     pass
+ 
+-class CommandArgument(unicode):
++class CommandArgument(str):
+     """An argument for a command, with the additional metadata of quotation status."""RefactoringTool: Refactored ./hotwire/completion.py
+RefactoringTool: Refactored ./hotwire/fs.py
+
+     def __new__(cls, value, quoted=False):
+         inst = super(CommandArgument, cls).__new__(cls, value)
+@@ -337,7 +337,7 @@
+                 execresult = exectarget(self.context, *target_args, **kwargs)                
+                 if self.builtin.singlevalue:
+                     if outfile:
+-                        outfile.write(unicode(execresult))
++                        outfile.write(str(execresult))
+                     else:
+                         self.output.put(execresult)
+                 else:
+@@ -349,7 +349,7 @@
+                             dispatcher.send('complete', self)
+                             return
+                         if outfile and (result is not None):
+-                            result = unicode(result)
++                            result = str(result)
+                             outfile.write(result)
+                         else:                        
+                             self.output.put(self.map_fn(result))
+@@ -357,7 +357,7 @@
+                 if outfile:
+                     outfile.close()
+                 self.builtin.cleanup(self.context)
+-        except Exception, e:
++        except Exception as e:
+             _logger.debug("Caught exception from command: %s", e, exc_info=True)
+             if self.__executing_sync:
+                 raise
+@@ -371,7 +371,7 @@
+ 
+     def __str__(self):
+         def unijoin(args):
+-            return ' '.join(map(unicode, args))
++            return ' '.join(map(str, args))
+         args = [self.builtin.name]
+         args.extend(self.context.options)
+         for cmdarg in self.args:
+@@ -610,7 +610,7 @@
+         meta_ref = self.__cmd_metadata
+         self.__cmd_metadata = {}
+         self.__cmd_metadata_lock.release()
+-        for (cmd,cmdidx,key),(flags,meta) in meta_ref.iteritems():
++        for (cmd,cmdidx,key),(flags,meta) in meta_ref.items():
+             dispatcher.send('metadata', self, cmdidx, cmd, key, flags, meta)
+ 
+     def __on_cmd_complete(self, sender=None):
+@@ -721,10 +721,10 @@
+ 
+     @staticmethod
+     def mkparser(text):
+-        if isinstance(text, unicode):
++        if isinstance(text, str):
+             utext = text
+         else:
+-            utext = unicode(text, 'utf-8')
++            utext = str(text, 'utf-8')
+         countstream = CountingStream(StringIO(utext))
+         parser = shlex.shlex(countstream, posix=True)
+         parser.wordchars += ',./[]{}~!@$%^&*()-_=+:;'
+@@ -748,7 +748,7 @@
+         while True:
+             try:
+                 (token, quoted) = parser.get_token_info()
+-            except ValueError, e:
++            except ValueError as e:
+                 # FIXME gross, but...any way to fix?
+                 msg = hasattr(e, 'message') and e.message or (e.args[0])
+                 was_quotation_error = (e.message == 'No closing quotation' and parser.token[0:1] == "'")
+@@ -814,7 +814,7 @@
+             def forcetoken(t):
+                 # Allow passing plain strings for convenience from Python.
+                 # Treat them as quoted.
+-                if isinstance(t, basestring):
++                if isinstance(t, str):
+                     return ParsedToken(t, -1, quoted=True)
+                 return t
+             
+@@ -829,7 +829,7 @@
+                 try:
+                     b = BuiltinRegistry.getInstance()[builtin_token.text]
+                     cmdargs = []
+-                except KeyError, e:
++                except KeyError as e:
+                     if resolver:
+                         (b, cmdargs) = resolver.resolve(builtin_token.text, context)
+                         _logger.debug("resolved: %r to %r %r", builtin_token.text, b, cmdargs)
+@@ -848,7 +848,7 @@
+                 
+             # We maintain the set of all tokens we processed in the command so that the completion system can use them.
+             alltokens = [builtin_token]
+-            cmdargs = map(forcetoken, cmdargs)
++            cmdargs = list(map(forcetoken, cmdargs))
+             alltokens.extend(cmdargs)
+                 
+             in_redir = None
+@@ -885,7 +885,7 @@
+                           builtin_opts, cmdargs)
+             for token in cmdargs:
+                 arg = CommandArgument(token.text, quoted=token.quoted)
+-                if token.text == u'--':
++                if token.text == '--':
+                     options_ended = True
+                 elif options_ended:
+                     expanded_cmdargs.append(arg)
+@@ -1012,7 +1012,7 @@
+         return self.__components[i]
+ 
+     def __str__(self):
+-        return string.join(map(lambda x: x.__str__(), self.__components), ' | ')        
++        return string.join([x.__str__() for x in self.__components], ' | ')        
+ 
+ class PipelineLanguage(object):
+     """Abstract class representing a supported input language."""
+@@ -1060,7 +1060,7 @@
+                 return lang
+         
+     def __iter__(self):
+-        for x in self.__langs.itervalues():
++        for x in self.__langs.values():
+             yield x
+             
+     def iter_sorted(self):
+--- ./hotwire/completion.py	(original)
++++ ./hotwire/completion.py	(refactored)
+@@ -65,10 +65,10 @@
+         return None
+ 
+ def _mkfile_completion(text, fpath, fileobj=None):
+-    if not isinstance(text, unicode):
+-        text = unicode(text, 'utf-8')
+-    if not isinstance(fpath, unicode):
+-        fpath = unicode(fpath, 'utf-8')             
++    if not isinstance(text, str):
++        text = str(text, 'utf-8')
++    if not isinstance(fpath, str):
++        fpath = str(fpath, 'utf-8')             
+     fs = Filesystem.getInstance()
+     fname = unix_basename(fpath)
+     if text.endswith('/'):
+@@ -91,7 +91,7 @@
+         fullpath = FilePath(expanded, cwd)
+         try:
+             isdir = stat.S_ISDIR(os.stat(fullpath).st_mode)
+-        except OSError, e:
++        except OSError as e:
+             isdir = False
+         fs = Filesystem.getInstance()
+         if isdir and fullpath.endswith('/'):
+@@ -105,9 +105,9 @@
+                 if fname.startswith(src_prefix):
+                     try:
+                         yield _mkfile_completion(text, fpath)
+-                    except OSError, e:
++                    except OSError as e:
+                         pass
+-        except OSError, e:
++        except OSError as e:
+             pass
+ 
+ class BuiltinCompleter(Completer):
+@@ -184,7 +184,7 @@
+         min_item = completions[0]
+         max_item = completions[-1]
+         n = min(len(min_item.suffix), len(max_item.suffix))
+-        for i in xrange(n):
++        for i in range(n):
+             if min_item.suffix[i] != max_item.suffix[i]:
+                 return min_item.suffix[:i]
+         return min_item.suffix[:n]       
+--- ./hotwire/fs.py	(original)
++++ ./hotwire/fs.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os, sys, fnmatch, stat, shutil
+-import posixpath, locale, urllib, codecs
++import posixpath, locale, urllib.request, urllib.parse, urllib.error, codecs
+ 
+ import hotwire
+ from hotwire.async import MiniThreadPool
+@@ -49,11 +49,11 @@
+     """Return a local pathname from a file:// URL."""
+     if url.startswith('file://'):
+         url = url[7:]
+-    return urllib.unquote(url)
++    return urllib.parse.unquote(url)
+ 
+ def path_tourl(path):
+     """Return a file:// URL for a pathname."""
+-    return 'file://' + urllib.quote(path)
++    return 'file://' + urllib.parse.quote(path)
+ 
+ path_fastnormalize = lambda x: x
+ path_normalize = os.path.normpath
+@@ -117,19 +117,19 @@
+     buf = f.read(8192)
+     # is there a faster way
+     try:
+-        unicode(buf, 'utf-8').encode('utf-8')
+-    except UnicodeDecodeError, e:
++        str(buf, 'utf-8').encode('utf-8')
++    except UnicodeDecodeError as e:
+         f.close()
+         return False
+     f.close()
+     return True
+ 
+-class FilePath(unicode):
++class FilePath(str):
+     """Represents a path to a file; can be treated as a string.
+        This class should have been built into Python."""
+     def __new__(cls, value, dir=None):
+-        if not isinstance(value, unicode):
+-            value = unicode(value, 'utf-8')
++        if not isinstance(value, str):
++            value = str(value, 'utf-8')
+         if not os.path.isabs(value) and dir:RefactoringTool: Refactored ./hotwire/gutil.py
+RefactoringTool: Refactored ./hotwire/logutil.py
+RefactoringTool: No changes to ./hotwire/mainloop_g.py
+RefactoringTool: Refactored ./hotwire/mainloop_null.py
+RefactoringTool: No changes to ./hotwire/pluginsystem.py
+RefactoringTool: Refactored ./hotwire/script.py
+RefactoringTool: No changes to ./hotwire/sshutil.py
+RefactoringTool: Refactored ./hotwire/state.py
+RefactoringTool: Refactored ./hotwire/test_command.py
+
+             value = path_fastnormalize(posixpath.join(dir, value))
+         inst = super(FilePath, cls).__new__(cls, value)
+@@ -140,7 +140,7 @@
+     
+ def iterd(dpath, fpath=False):
+     """Generate full path names of files in directory named by dpath."""
+-    dpath = unicode(dpath)
++    dpath = str(dpath)
+     entries = os.listdir(dpath)
+     if fpath:
+         for fname in entries:
+--- ./hotwire/gutil.py	(original)
++++ ./hotwire/gutil.py	(refactored)
+@@ -22,9 +22,9 @@
+ from hotwire.sysdep import is_jython
+ 
+ if is_jython():
+-    from mainloop_null import *
++    from .mainloop_null import *
+ else:
+-    from mainloop_g import *
++    from .mainloop_g import *
+ 
+ def call_idle_once(func, *args, **kwargs):
+     def func_false():
+--- ./hotwire/logutil.py	(original)
++++ ./hotwire/logutil.py	(refactored)
+@@ -19,7 +19,7 @@
+ # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+-import sys, logging, logging.config, StringIO
++import sys, logging, logging.config, io
+ 
+ def log_except(logger=None, text=''):
+     def annotate(func):
+--- ./hotwire/mainloop_null.py	(original)
++++ ./hotwire/mainloop_null.py	(refactored)
+@@ -21,7 +21,7 @@
+ 
+ import os, sys, logging, weakref
+ 
+-print >>sys.stderr, "** Warning: Running under null mainloop"
++print("** Warning: Running under null mainloop", file=sys.stderr)
+ 
+ def _run_logging(f, logger, *args):
+     try:    
+--- ./hotwire/script.py	(original)
++++ ./hotwire/script.py	(refactored)
+@@ -26,7 +26,7 @@
+ 
+ _logger = logging.getLogger("hotwire.Script")
+ 
+-(PIPE, REDIR_IN, REDIR_OUT, REDIR_OUT_APPEND) = xrange(4)
++(PIPE, REDIR_IN, REDIR_OUT, REDIR_OUT_APPEND) = range(4)
+  
+ def script(*args, **kwargs):
+     from hotwire.command import Pipeline,HotwireContext
+--- ./hotwire/state.py	(original)
++++ ./hotwire/state.py	(refactored)
+@@ -60,7 +60,7 @@
+             # Transition from pre-0.700
+             cursor.execute('''ALTER TABLE Commands ADD lang_uuid TEXT''')
+             cursor.execute('''UPDATE Commands SET lang_uuid = ? WHERE lang_uuid IS NULL''', ('62270c40-a94a-44dd-aaa0-689f882acf34',))
+-        except sqlite3.OperationalError, e:
++        except sqlite3.OperationalError as e:
+             pass
+         # This was a pre-0.700 index.
+         cursor.execute('''DROP INDEX IF EXISTS CommandsIndex''')
+@@ -137,8 +137,8 @@
+             args.append('%' + searchterm.replace('%', '%%') + '%')            
+         if countmin > 0:
+             queryclauses.append("count > %d " % (countmin,))
+-        queryclauses.extend(map(lambda x: x[0], filters))
+-        args.extend(map(lambda x: x[1], filters))
++        queryclauses.extend([x[0] for x in filters])
++        args.extend([x[1] for x in filters])
+         if queryclauses:
+             queryclause = ' WHERE ' + ' AND '.join(queryclauses)
+         else:
+--- ./hotwire/test_command.py	(original)
++++ ./hotwire/test_command.py	(refactored)
+@@ -37,104 +37,104 @@
+         self._context = None
+     
+     def testEmacs(self):
+-        pt = list(Pipeline.tokenize('emacs', self._context, assertfn=self.assertEquals))
+-        self.assertEquals(len(pt), 1)
+-        self.assertEquals(pt[0].text, 'emacs')
++        pt = list(Pipeline.tokenize('emacs', self._context, assertfn=self.assertEqual))
++        self.assertEqual(len(pt), 1)
++        self.assertEqual(pt[0].text, 'emacs')
+ 
+     def testEmacsFile(self):
+-        pt = list(Pipeline.tokenize('emacs /tmp/foo.txt', self._context, assertfn=self.assertEquals))
+-        self.assertEquals(len(pt), 2)
+-        self.assertEquals(pt[0].text, 'emacs')
+-        self.assertEquals(pt[1].text, '/tmp/foo.txt')
+-        self.assertEquals(pt[1].quoted, False) 
++        pt = list(Pipeline.tokenize('emacs /tmp/foo.txt', self._context, assertfn=self.assertEqual))
++        self.assertEqual(len(pt), 2)
++        self.assertEqual(pt[0].text, 'emacs')
++        self.assertEqual(pt[1].text, '/tmp/foo.txt')
++        self.assertEqual(pt[1].quoted, False) 
+ 
+     def testEmacsFileSpace(self):
+-        pt = list(Pipeline.tokenize("emacs 'foo bar'", self._context, assertfn=self.assertEquals))
+-        self.assertEquals(len(pt), 2)
+-        self.assertEquals(pt[0].text, 'emacs')
+-        self.assertEquals(pt[1].text, "foo bar")
+-        self.assertEquals(pt[1].quoted, True)        
++        pt = list(Pipeline.tokenize("emacs 'foo bar'", self._context, assertfn=self.assertEqual))
++        self.assertEqual(len(pt), 2)
++        self.assertEqual(pt[0].text, 'emacs')
++        self.assertEqual(pt[1].text, "foo bar")
++        self.assertEqual(pt[1].quoted, True)        
+ 
+     def testEmacsFileSpaces(self):
+-        pt = list(Pipeline.tokenize("emacs 'foo bar' baz 'whee cow crack'", self._context, assertfn=self.assertEquals))
+-        self.assertEquals(len(pt), 4)
+-        self.assertEquals(pt[0].text, 'emacs')
+-        self.assertEquals(pt[1].text, "foo bar")
+-        self.assertEquals(pt[2].text, "baz")
+-        self.assertEquals(pt[3].text, "whee cow crack")
+-        self.assertEquals(pt[3].quoted, True)
++        pt = list(Pipeline.tokenize("emacs 'foo bar' baz 'whee cow crack'", self._context, assertfn=self.assertEqual))
++        self.assertEqual(len(pt), 4)
++        self.assertEqual(pt[0].text, 'emacs')
++        self.assertEqual(pt[1].text, "foo bar")
++        self.assertEqual(pt[2].text, "baz")
++        self.assertEqual(pt[3].text, "whee cow crack")
++        self.assertEqual(pt[3].quoted, True)
+ 
+     def testLsMulti(self):
+-        pt = list(Pipeline.tokenize('ls foo.py bar.py baz.py', self._context, assertfn=self.assertEquals))
+-        self.assertEquals(len(pt), 4)
++        pt = list(Pipeline.tokenize('ls foo.py bar.py baz.py', self._context, assertfn=self.assertEqual))
++        self.assertEqual(len(pt), 4)
+ 
+     def testMulti(self):
+         pt = list(Pipeline.tokenize('sys echo true | sys cat /tmp/foo.txt', self._context))
+-        self.assertEquals(len(pt), 7)
+-        self.assertEquals(pt[3], hotwire.script.PIPE)
++        self.assertEqual(len(pt), 7)
++        self.assertEqual(pt[3], hotwire.script.PIPE)
+ 
+     def testMulti4(self):
+         pt = list(Pipeline.tokenize('sys echo true | sys cat /tmp/foo.txt | sys echo moo  cow | sys cat cat cat /tmp/foo.txt', self._context))
+-        self.assertEquals(len(pt), 18)
++        self.assertEqual(len(pt), 18)
+ 
+     def testPathological1(self):
+         pt = list(Pipeline.tokenize('cat | ls', self._context))
+-        self.assertEquals(len(pt), 3)
++        self.assertEqual(len(pt), 3)
+         
+     def testNoSpace1(self):
+         pt = list(Pipeline.tokenize('cat|sys echo bar', self._context))
+-        self.assertEquals(len(pt), 5)
+-        self.assertEquals(pt[0].text, 'cat')
+-        self.assertEquals(pt[1], hotwire.script.PIPE)
++        self.assertEqual(len(pt), 5)
++        self.assertEqual(pt[0].text, 'cat')
++        self.assertEqual(pt[1], hotwire.script.PIPE)
+         
+     def testNull(self):
+         pt = list(Pipeline.tokenize('', self._context))
+-        self.assertEquals(len(pt), 0)
++        self.assertEqual(len(pt), 0)
+         
+     def testGlob1(self):
+         pt = list(Pipeline.tokenize('echo f*', self._context))
+-        self.assertEquals(len(pt), 2)
++        self.assertEqual(len(pt), 2)
+         
+     def testRedir1(self):
+         pt = list(Pipeline.tokenize('echo f>bar', self._context))
+-        self.assertEquals(len(pt), 4)
+-        self.assertEquals(pt[2], hotwire.script.REDIR_OUT)
++        self.assertEqual(len(pt), 4)
++        self.assertEqual(pt[2], hotwire.script.REDIR_OUT)
+         
+     def testOtherChars1(self):
+         pt = list(Pipeline.tokenize('env f=b true', self._context))
+-        self.assertEquals(len(pt), 3)   
++        self.assertEqual(len(pt), 3)   
+         
+     def testUtf1(self):
+         pt = list(Pipeline.tokenize('sys echo Ω', self._context))
+-        self.assertEquals(len(pt), 3)
+-        self.assertEquals(pt[2].text, 'Ω')
+-        self.assertEquals(pt[2].quoted, False)
++        self.assertEqual(len(pt), 3)
++        self.assertEqual(pt[2].text, 'Ω')
++        self.assertEqual(pt[2].quoted, False)
+         
+     def testUtf2(self):
+         pt = list(Pipeline.tokenize('sys echo "Ω"', self._context))
+-        self.assertEquals(len(pt), 3)
+-        self.assertEquals(pt[2].text, 'Ω')
+-        self.assertEquals(pt[2].quoted, True)
++        self.assertEqual(len(pt), 3)
++        self.assertEqual(pt[2].text, 'Ω')
++        self.assertEqual(pt[2].quoted, True)
+         
+     def testBracket1(self):
+         pt = list(Pipeline.tokenize('echo f>bar{baz}', self._context))
+-        self.assertEquals(len(pt), 4)
+-        self.assertEquals(pt[3].text, 'bar{baz}')
++        self.assertEqual(len(pt), 4)
++        self.assertEqual(pt[3].text, 'bar{baz}')
+         
+     def testParens1(self):
+         pt = list(Pipeline.tokenize('echo foo(bar)', self._context))
+-        self.assertEquals(len(pt), 2)
+-        self.assertEquals(pt[1].text, 'foo(bar)')
++        self.assertEqual(len(pt), 2)
++        self.assertEqual(pt[1].text, 'foo(bar)')
+         
+     def testDollar1(self):
+         pt = list(Pipeline.tokenize('echo $foo', self._context))
+-        self.assertEquals(len(pt), 2)
+-        self.assertEquals(pt[1].text, '$foo')  
++        self.assertEqual(len(pt), 2)
++        self.assertEqual(pt[1].text, '$foo')  
+         
+     def testAt1(self):
+         pt = list(Pipeline.tokenize('echo foo@bar', self._context))
+-        self.assertEquals(len(pt), 2)
+-        self.assertEquals(pt[1].text, 'foo@bar')
++        self.assertEqual(len(pt), 2)
++        self.assertEqual(pt[1].text, 'foo@bar')
+ 
+ class PipelineInstantiateTests(unittest.TestCase):
+     def setUp(self):
+@@ -145,38 +145,38 @@
+ 
+     def testSh(self):
+         p = Pipeline.parse('sys echo true', self._context)
+-        self.assertEquals(p.get_input_type(), str)
+-        self.assertEquals(p.get_output_type(), str)
+-        self.assertEquals(p.get_undoable(), False)
+-        self.assertEquals(p.get_idempotent(), False)
++        self.assertEqual(p.get_input_type(), str)
++        self.assertEqual(p.get_output_type(), str)
++        self.assertEqual(p.get_undoable(), False)
++        self.assertEqual(p.get_idempotent(), False)
+ 
+     def testShFilter(self):
+         p = Pipeline.parse('sys echo true | filter true', self._context)
+-        self.assertEquals(p.get_input_type(), str)
+-        self.assertEquals(p.get_output_type(), str)
+-        self.assertEquals(p.get_undoable(), False)
+-        self.assertEquals(p.get_idempotent(), False)
++        self.assertEqual(p.get_input_type(), str)
++        self.assertEqual(p.get_output_type(), str)
++        self.assertEqual(p.get_undoable(), False)
++        self.assertEqual(p.get_idempotent(), False)
+ 
+     def testPs(self):
+         p = Pipeline.parse('proc', self._context)
+-        self.assertEquals(p.get_input_type(), None)
+-        self.assertEquals(p.get_output_type(), hotwire.sysdep.proc.Process)
+-        self.assertEquals(p.get_undoable(), False)
+-        self.assertEquals(p.get_idempotent(), True)
++        self.assertEqual(p.get_input_type(), None)
++        self.assertEqual(p.get_output_type(), hotwire.sysdep.proc.Process)
++        self.assertEqual(p.get_undoable(), False)
++        self.assertEqual(p.get_idempotent(), True)
+ 
+     def testMv(self):
+         p = Pipeline.parse('mv foo bar', self._context)
+-        self.assertEquals(p.get_input_type(), None)
+-        self.assertEquals(p.get_output_type(), None)
+-        self.assertEquals(p.get_undoable(), False)
+-        self.assertEquals(p.get_idempotent(), False)
++        self.assertEqual(p.get_input_type(), None)
++        self.assertEqual(p.get_output_type(), None)
++        self.assertEqual(p.get_undoable(), False)
++        self.assertEqual(p.get_idempotent(), False)
+ 
+     def testRm(self):
+         p = Pipeline.parse('rm foo bar', self._context)
+-        self.assertEquals(p.get_input_type(), File)
+-        self.assertEquals(p.get_output_type(), None)
+-        self.assertEquals(p.get_undoable(), True)
+-        self.assertEquals(p.get_idempotent(), False)
++        self.assertEqual(p.get_input_type(), File)
++        self.assertEqual(p.get_output_type(), None)
++        self.assertEqual(p.get_undoable(), True)
++        self.assertEqual(p.get_idempotent(), False)
+ 
+     def testInvalid1(self):
+         self.assertRaises(hotwire.command.PipelineParseException, lambda: Pipeline.parse('mv foo bar | sys cat', self._context))
+@@ -206,7 +206,7 @@
+ 
+     def tearDown(self):
+         self._context = None
+-        shutil.rmtree(unicode(self._tmpd))
++        shutil.rmtree(str(self._tmpd))
+ 
+     def _setupTree1(self):
+         os.mkdir(path_join(self._tmpd, 'testdir'))
+@@ -234,7 +234,7 @@
+         for obj in p.get_output(): 
+             found_objs = True
+             break
+-        self.assert_(found_objs)
++        self.assertTrue(found_objs)
+ 
+     def testPsFilter2(self):
+         p = Pipeline.parse('proc | filter this-command-does-not-exist cmd', self._context)
+@@ -243,79 +243,79 @@
+         for obj in p.get_output(): 
+             found_objs = True
+             break
+-        self.assert_(not found_objs)
++        self.assertTrue(not found_objs)
+ 
+     def testRm(self):
+         self._setupTree1()
+         testf_path = path_join(self._tmpd, 'testf') 
+-        self.assertEquals(os.access(testf_path, os.R_OK), True)
++        self.assertEqual(os.access(testf_path, os.R_OK), True)
+         p = Pipeline.parse('rm testf', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(testf_path, os.R_OK), False)
++        self.assertEqual(os.access(testf_path, os.R_OK), False)
+ 
+     def testRm2(self):
+         self._setupTree1()
+         testf_path = path_join(self._tmpd, 'testf') 
+-        self.assertEquals(os.access(testf_path, os.R_OK), True)
++        self.assertEqual(os.access(testf_path, os.R_OK), True)
+         p = Pipeline.parse('rm %s' % (testf_path,), self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(testf_path, os.R_OK), False)
++        self.assertEqual(os.access(testf_path, os.R_OK), False)
+ 
+     def testRm3(self):
+         self._setupTree2()
+         p = Pipeline.parse('rm test* f3test', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf2'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'otherfile'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf2'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'otherfile'), os.R_OK), True)
+ 
+     def testRm4(self):
+         self._setupTree2()
+         p = Pipeline.parse('rm %s %s' % (path_join(self._tmpd, 'f3test'), path_join(self._tmpd, 'otherfile')),
+                            self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'otherfile'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'otherfile'), os.R_OK), False)
+ 
+     def testRm5(self):
+         self._setupTree1()
+         p = Pipeline.parse('rm testf', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
+         open(path_join(self._tmpd, 'testf'), 'w').close()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
+         p = Pipeline.parse('rm testf', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
+ 
+     def testRm6(self):
+         self._setupTree1()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'dir with spaces'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'dir with spaces'), os.R_OK), True)
+         p = Pipeline.parse("rm 'dir with spaces'", self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'dir with spaces'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'dir with spaces'), os.R_OK), False)
+ 
+     def testRm7(self):
+         self._setupTree1()
+         testf_path = path_join(self._tmpd, 'testf') 
+-        self.assertEquals(os.access(testf_path, os.R_OK), True)
++        self.assertEqual(os.access(testf_path, os.R_OK), True)
+         p = Pipeline.parse('rm testf', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(testf_path, os.R_OK), False)
++        self.assertEqual(os.access(testf_path, os.R_OK), False)
+         p.undo()
+-        self.assertEquals(os.access(testf_path, os.R_OK), True)
++        self.assertEqual(os.access(testf_path, os.R_OK), True)
+         
+     def testRm8(self):
+         self._setupTree2()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), True)               
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), True)               
+         p = Pipeline.parse('ls testf f3test | rm --unlink', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'f3test'), os.R_OK), False)
+         
+     def testRm9(self):
+         self._setupTree1()
+@@ -323,17 +323,17 @@
+         f = open(t, 'w')
+         f.write('hi')
+         f.close()
+-        self.assertEquals(os.access(t, os.R_OK), True)        
++        self.assertEqual(os.access(t, os.R_OK), True)        
+         p = Pipeline.parse('rm --unlink -- --frob', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(t, os.R_OK), False)
++        self.assertEqual(os.access(t, os.R_OK), False)
+ 
+     def testMv(self):
+         self._setupTree2()
+         p = Pipeline.parse('mv testf testdir', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir', 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir', 'testf'), os.R_OK), True)
+ 
+     def testMv2(self):
+         self._setupTree2()
+@@ -341,16 +341,16 @@
+         p.execute_sync()
+         p = Pipeline.parse('mv testdir testdir2', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir'), os.R_OK), False)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir2', 'testdir', 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir2', 'testdir', 'testf'), os.R_OK), True)
+ 
+     def testCd(self):
+         self._setupTree1()
+         oldwd = self._context.get_cwd()
+         p = Pipeline.parse('cd testdir', self._context)
+         p.execute_sync()
+-        self.assertEquals(self._context.get_cwd(), path_abs(path_join(oldwd, 'testdir')))
++        self.assertEqual(self._context.get_cwd(), path_abs(path_join(oldwd, 'testdir')))
+ 
+     def testLs(self):
+         self._setupTree1()
+@@ -358,11 +358,11 @@
+         p.execute_sync()
+         results = list(p.get_output())
+         results.sort()
+-        self.assertEquals(len(results), 2)
+-        self.assertEquals(os.path.dirname(results[0].path), self._tmpd)
+-        self.assertEquals(unix_basename(results[0].path), 'testdir')
+-        self.assertEquals(os.path.dirname(results[1].path), self._tmpd)
+-        self.assertEquals(unix_basename(results[1].path), 'testf')
++        self.assertEqual(len(results), 2)
++        self.assertEqual(os.path.dirname(results[0].path), self._tmpd)
++        self.assertEqual(unix_basename(results[0].path), 'testdir')
++        self.assertEqual(os.path.dirname(results[1].path), self._tmpd)
++        self.assertEqual(unix_basename(results[1].path), 'testf')
+ 
+     def testLs2(self):
+         p = Pipeline.parse("ls ~", self._context)
+@@ -373,23 +373,23 @@
+         p = Pipeline.parse("ls testdir", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 0)
++        self.assertEqual(len(results), 0)
+ 
+     def testLs4(self):
+         self._setupTree1()
+         p = Pipeline.parse("ls | filter spac path", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(os.path.dirname(results[0].path), self._tmpd)
+-        self.assertEquals(unix_basename(results[0].path), 'dir with spaces')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(os.path.dirname(results[0].path), self._tmpd)
++        self.assertEqual(unix_basename(results[0].path), 'dir with spaces')
+         
+     def testLs5(self):
+         self._setupTree2()
+         p = Pipeline.parse("ls testdir2/b*", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)   
++        self.assertEqual(len(results), 1)   
+         
+     def testLs6(self):
+         self._setupTree1()
+@@ -397,9 +397,9 @@
+         p.execute_sync()
+         results = list(p.get_output())
+         results.sort()
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(os.path.dirname(results[0].path), self._tmpd)
+-        self.assertEquals(unix_basename(results[0].path), 'testf')                     
++        self.assertEqual(len(results), 1)
++        self.assertEqual(os.path.dirname(results[0].path), self._tmpd)
++        self.assertEqual(unix_basename(results[0].path), 'testf')                     
+ 
+     def testLsQuoted(self):
+         self._setupTree1()
+@@ -408,7 +408,7 @@
+         p = Pipeline.parse("ls \"foo'bar\"", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
++        self.assertEqual(len(results), 1)
+ 
+     def testCdQuoted(self):
+         self._setupTree1()
+@@ -417,7 +417,7 @@
+         p = Pipeline.parse("cd \"foo'bar\"", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 0)
++        self.assertEqual(len(results), 0)
+ 
+     def testCdQuoted2(self):
+         if is_windows():
+@@ -430,52 +430,52 @@
+         p = Pipeline.parse("cd 'foo\"bar'", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 0)
++        self.assertEqual(len(results), 0)
+ 
+     def testCp(self):
+         self._setupTree2()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf3'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf3'), os.R_OK), False)
+         p = Pipeline.parse('cp testf testf3', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf3'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf3'), os.R_OK), True)
+         
+     def testCp2(self):
+         self._setupTree2()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir', 'testf'), os.R_OK), False)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir', 'testf'), os.R_OK), False)
+         p = Pipeline.parse('cp testf testdir', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir', 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir', 'testf'), os.R_OK), True)
+ 
+     def testCp3(self):
+         self._setupTree2()
+         p = Pipeline.parse('cp testf testdir2/blah', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir2', 'blah'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir2', 'blah'), os.R_OK), True)
+ 
+     def testCp4(self):
+         self._setupTree2()
+         p = Pipeline.parse('cp testdir2 testdir3', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir3', 'blah'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir3', 'blah'), os.R_OK), True)
+ 
+     def testCp5(self):
+         self._setupTree2()
+         p = Pipeline.parse('cp testf \'dir with spaces\' testdir2', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir2', 'testf'), os.R_OK), True)
+-        self.assertEquals(os.access(path_join(self._tmpd, 'testdir2', 'dir with spaces'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir2', 'testf'), os.R_OK), True)
++        self.assertEqual(os.access(path_join(self._tmpd, 'testdir2', 'dir with spaces'), os.R_OK), True)
+         
+     def testRedir1(self):
+         self._setupTree2()
+         p = Pipeline.parse("ls testdir2 | prop path > outtest.txt", self._context)
+         p.execute_sync()
+         outpath = path_join(self._tmpd, 'outtest.txt')
+-        self.assertEquals(os.access(outpath, os.R_OK), True)
++        self.assertEqual(os.access(outpath, os.R_OK), True)
+         lines = list(open(outpath))
+-        self.assertEquals(len(lines), 1)
+-        self.assertEquals(lines[0], path_join(self._tmpd, 'testdir2', 'blah'))
++        self.assertEqual(len(lines), 1)
++        self.assertEqual(lines[0], path_join(self._tmpd, 'testdir2', 'blah'))
+         
+     def testRedir2(self):
+         self._setupTree2()
+@@ -487,9 +487,9 @@
+         p = Pipeline.parse("sechash < sectest.txt", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 2)
+-        self.assertEquals(results[0], '22596363b3de40b06f981fb85d82312e8c0ed511')
+-        self.assertEquals(results[1], '84b5d4093c8ffaf2eca0feaf014a53b9f41d28ed')
++        self.assertEqual(len(results), 2)
++        self.assertEqual(results[0], '22596363b3de40b06f981fb85d82312e8c0ed511')
++        self.assertEqual(results[1], '84b5d4093c8ffaf2eca0feaf014a53b9f41d28ed')
+         
+     def testCat1(self):
+         self._setupTree2()
+@@ -500,89 +500,89 @@
+         p = Pipeline.parse("cat cattest.txt", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], 'hello world\n')    
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], 'hello world\n')    
+         
+     def testWrite1(self):
+         self._setupTree1()
+         p = Pipeline.parse("ls | py-map 'it.path+\"\\n\"' | write outtest.txt", self._context)
+         p.execute_sync()
+         outpath = path_join(self._tmpd, 'outtest.txt')
+-        self.assertEquals(os.access(outpath, os.R_OK), True)
++        self.assertEqual(os.access(outpath, os.R_OK), True)
+         lines = list(open(outpath))
+-        self.assertEquals(len(lines), 3)
++        self.assertEqual(len(lines), 3)
+         
+     def testNewlineAndWrite1(self):
+         self._setupTree1()
+         p = Pipeline.parse("ls|prop path|newline|write outtest.txt", self._context)
+         p.execute_sync()
+         outpath = path_join(self._tmpd, 'outtest.txt')
+-        self.assertEquals(os.access(outpath, os.R_OK), True)
++        self.assertEqual(os.access(outpath, os.R_OK), True)
+         lines = list(open(outpath))
+-        self.assertEquals(len(lines), 3)
++        self.assertEqual(len(lines), 3)
+         
+     def testNewline2(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval '[\"hello\\n\", \"world\"]' | iter | newline", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 2)
++        self.assertEqual(len(results), 2)
+         
+     def testFilter1(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval 20 | filter -s 2", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], 20)
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], 20)
+         
+     def testFilter2(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval '\"hello\"' | filter h", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], 'hello')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], 'hello')
+         
+     def testUtf1(self):
+         self._setupTree1()
+-        opath = os.path.join(self._tmpd, u'the ɒ and Ω ends')
++        opath = os.path.join(self._tmpd, 'the ɒ and Ω ends')
+         f=open(opath, 'w')
+         f.write('hi')
+         f.close()        
+-        opath = os.path.join(self._tmpd, u'ending with Ω back to the ɒ')        
++        opath = os.path.join(self._tmpd, 'ending with Ω back to the ɒ')        
+         f=open(opath, 'w')
+         f.write('hi')
+         f.close()
+         p = Pipeline.parse('ls *Ω*', self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 2)
+-        self.assertEquals(results[0].basename, 'ending with Ω back to the ɒ')
+-        self.assertEquals(results[1].basename, 'the ɒ and Ω ends')
++        self.assertEqual(len(results), 2)
++        self.assertEqual(results[0].basename, 'ending with Ω back to the ɒ')
++        self.assertEqual(results[1].basename, 'the ɒ and Ω ends')
+         
+     def testStringify1(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval '\"hello\"' | stringify", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], 'hello')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], 'hello')
+         
+     def testStringify2(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval 20 | stringify", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], '20')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], '20')
+         
+     def testStringify3(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval 'import os,sys; [os,sys]' | iter | stringify", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 2)
++        self.assertEqual(len(results), 2)
+         self.assertTrue(results[0].startswith("<module 'os'"))
+         self.assertTrue(results[1].startswith("<module 'sys'"))
+         
+@@ -591,8 +591,8 @@
+         p = Pipeline.parse("py-eval '\"testf\"' | apply ls -a", self._context)RefactoringTool: Refactored ./hotwire/test_command_unix.py
+RefactoringTool: Refactored ./hotwire/test_completion.py
+
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0].basename, u'testf')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0].basename, 'testf')
+         
+     def testSyncException(self):
+         self._setupTree1()
+@@ -617,21 +617,21 @@
+         p = Pipeline.parse("py-eval '[5,2,7,8,10,0]' | iter | sort")
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals([0,2,5,7,8,10], results)
++        self.assertEqual([0,2,5,7,8,10], results)
+ 
+     def testUniq1(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval '[1,1,2,4,5,4]' | iter | uniq")
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals([1,2,4,5], results)
++        self.assertEqual([1,2,4,5], results)
+ 
+     def testHead1(self):
+         self._setupTree1()
+         p = Pipeline.parse("py-eval '[5,2,7,8,10,0,34]' | iter | head -5")
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals([5,2,7,8,10], results)
++        self.assertEqual([5,2,7,8,10], results)
+ 
+         
+ def suite():
+--- ./hotwire/test_command_unix.py	(original)
++++ ./hotwire/test_command_unix.py	(refactored)
+@@ -29,24 +29,24 @@
+ class PipelineRunTestsUnix(PipelineRunTestFramework):
+     def testSh(self):
+         self._setupTree1()
+-        self.assertEquals(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), False)
++        self.assertEqual(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), False)
+         p = Pipeline.parse('sys touch otherfile', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), True)
++        self.assertEqual(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), True)
+ 
+     def testSh2(self):
+         self._setupTree1()
+-        self.assertEquals(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), False)
++        self.assertEqual(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), False)
+         p = Pipeline.parse('sys touch "file with spaces"', self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), True)
++        self.assertEqual(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), True)
+ 
+     def testSh3(self):
+         self._setupTree2()
+-        self.assertEquals(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), True)
++        self.assertEqual(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), True)
+         p = Pipeline.parse("sys rmdir 'dir with spaces'", self._context)
+         p.execute_sync()
+-        self.assertEquals(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), False)
++        self.assertEqual(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), False)
+ 
+     def testSh4(self):
+         self._setupTree1()
+@@ -54,9 +54,9 @@
+         p.execute_sync()
+         results = list(p.get_output())
+         results.sort()
+-        self.assertEquals(len(results), 2)
+-        self.assertEquals(results[0], 'testdir\n')
+-        self.assertEquals(results[1], 'testf\n')
++        self.assertEqual(len(results), 2)
++        self.assertEqual(results[0], 'testdir\n')
++        self.assertEqual(results[1], 'testf\n')
+ 
+     def testSh5(self):
+         self._setupTree1()
+@@ -64,15 +64,15 @@
+         p.execute_sync()
+         results = list(p.get_output())
+         results.sort()
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], 'testdir\n')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], 'testdir\n')
+ 
+     def testShCancel1(self):
+         p = Pipeline.parse("sys sleep 5", self._context)
+         p.execute()
+         p.cancel()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 0)
++        self.assertEqual(len(results), 0)
+ 
+     def testShCancel2(self):
+         p = Pipeline.parse("sys sleep 6", self._context)
+@@ -80,7 +80,7 @@
+         time.sleep(2)
+         p.cancel()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 0)
++        self.assertEqual(len(results), 0)
+ 
+     def testRedir1(self):
+         self._setupTree2()
+@@ -92,9 +92,9 @@
+         p = Pipeline.parse("sys cat < redirtest.txt > same_redirtest.txt", self._context)
+         p.execute_sync()
+         newoutpath = path_join(self._tmpd, 'same_redirtest.txt')
+-        self.assertEquals(os.access(newoutpath, os.R_OK), True)
++        self.assertEqual(os.access(newoutpath, os.R_OK), True)
+         same_testdata = open(newoutpath).read()
+-        self.assertEquals(same_testdata, testdata)
++        self.assertEqual(same_testdata, testdata)
+         
+     def testCatBinCat(self):
+         self._setupTree1()
+@@ -102,8 +102,8 @@
+         p.execute_sync()
+         results = list(p.get_output())
+         results.sort()
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], '0\n')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], '0\n')
+         
+     def testCatCatCatCat(self):
+         self._setupTree1()
+@@ -111,8 +111,8 @@
+         p.execute_sync()
+         results = list(p.get_output())
+         results.sort()
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0], '0\n')        
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0], '0\n')        
+ 
+     def testLs1(self):
+         self._setupTree1()
+@@ -121,7 +121,7 @@
+         p = Pipeline.parse("ls", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 3)
++        self.assertEqual(len(results), 3)
+ 
+     def testLs2(self):
+         self._setupTree1()
+@@ -130,7 +130,7 @@
+         p = Pipeline.parse("ls -a", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 4)
++        self.assertEqual(len(results), 4)
+         
+     def testLs3(self):
+         self._setupTree2()
+@@ -141,6 +141,6 @@
+         p = Pipeline.parse("ls 'testdir2/b*'", self._context)
+         p.execute_sync()
+         results = list(p.get_output())
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0].path, bglobpath)
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0].path, bglobpath)
+         
+--- ./hotwire/test_completion.py	(original)
++++ ./hotwire/test_completion.py	(refactored)
+@@ -81,68 +81,68 @@
+         else:
+             search='true'
+             verbs = list(self.vc.completions('this does not exist', "."))
+-            self.assertEquals(len(verbs), 0)
++            self.assertEqual(len(verbs), 0)
+ 
+     def testCwd(self):
+         self._setupTree1()
+         result = self.cc.sync_complete(self.pc, 'testf', self._tmpd)
+-        self.assertEquals(len(result.results), 1)
+-        self.assertEquals(result.results[0].target.path, self._test_exe_path)
++        self.assertEqual(len(result.results), 1)
++        self.assertEqual(result.results[0].target.path, self._test_exe_path)
+ 
+     def testCwd2(self):
+         self._setupTree1()
+         result = self.cc.sync_complete(self.pc, 'no such thing', self._tmpd)
+-        self.assertEquals(len(result.results), 0)
++        self.assertEqual(len(result.results), 0)
+ 
+     def testCwd3(self):
+         self._setupTree1()
+         result = self.cc.sync_complete(self.pc, 'test', self._tmpd)
+-        self.assertEquals(len(result.results), 2)
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, 'testdir'))
+-        self.assertEquals(result.results[1].target.path, self._test_exe_path)
++        self.assertEqual(len(result.results), 2)
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, 'testdir'))
++        self.assertEqual(result.results[1].target.path, self._test_exe_path)
+ 
+     def testCwd4(self):
+         self._setupTree2()
+         result = self.cc.sync_complete(self.pc, 'testdir2/', self._tmpd)RefactoringTool: Refactored ./hotwire/test_completion_unix.py
+RefactoringTool: No changes to ./hotwire/text.py
+RefactoringTool: No changes to ./hotwire/unicodeutils.py
+RefactoringTool: Refactored ./hotwire/util.py
+
+-        self.assertEquals(len(result.results), 3)
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'blah'))        
+-        self.assertEquals(result.results[0].suffix, 'blah')
+-        self.assertEquals(result.results[1].suffix, 'moo')
+-        self.assertEquals(result.results[2].suffix, 'moodir/')
++        self.assertEqual(len(result.results), 3)
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'blah'))        
++        self.assertEqual(result.results[0].suffix, 'blah')
++        self.assertEqual(result.results[1].suffix, 'moo')
++        self.assertEqual(result.results[2].suffix, 'moodir/')
+ 
+     def testCwd5(self):
+         self._setupTree2()
+         result = self.cc.sync_complete(self.pc, 'testdir2/m', self._tmpd)
+-        self.assertEquals(len(result.results), 2)
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'moo'))           
+-        self.assertEquals(result.results[0].suffix, 'oo')
+-        self.assertEquals(result.results[1].suffix, 'oodir/')
++        self.assertEqual(len(result.results), 2)
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'moo'))           
++        self.assertEqual(result.results[0].suffix, 'oo')
++        self.assertEqual(result.results[1].suffix, 'oodir/')
+         
+     def testCwd6(self):
+         self._setupTree1()
+         result = self.cc.sync_complete(self.pc, './testd', self._tmpd)
+-        self.assertEquals(len(result.results), 1)
+-        self.assertEquals(result.common_prefix, None)        
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
+-        self.assertEquals(result.results[0].suffix, 'ir/')
++        self.assertEqual(len(result.results), 1)
++        self.assertEqual(result.common_prefix, None)        
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
++        self.assertEqual(result.results[0].suffix, 'ir/')
+ 
+     def testCwd7(self):
+         self._setupTree2()
+         result = self.cc.sync_complete(self.pc, './f3', self._tmpd)
+-        self.assertEquals(len(result.results), 1)
+-        self.assertEquals(result.common_prefix, None) 
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.', 'f3test'))
+-        self.assertEquals(result.results[0].suffix, 'test')
++        self.assertEqual(len(result.results), 1)
++        self.assertEqual(result.common_prefix, None) 
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.', 'f3test'))
++        self.assertEqual(result.results[0].suffix, 'test')
+ 
+     def testCwd8(self):
+         self._setupTree1()
+         result = self.cc.sync_complete(self.vc, './test', self._tmpd)
+-        self.assertEquals(len(result.results), 2)
+-        self.assertEquals(result.common_prefix, None)      
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
+-        self.assertEquals(result.results[0].suffix, 'dir/')
+-        self.assertEquals(result.results[1].target.path, path_join(self._tmpd, '.', self._test_exe))
+-        self.assertEquals(result.results[1].suffix, self._test_exe[4:])
++        self.assertEqual(len(result.results), 2)
++        self.assertEqual(result.common_prefix, None)      
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
++        self.assertEqual(result.results[0].suffix, 'dir/')
++        self.assertEqual(result.results[1].target.path, path_join(self._tmpd, '.', self._test_exe))
++        self.assertEqual(result.results[1].suffix, self._test_exe[4:])
+         
+     def testCwd9(self):
+         self._setupTree1()
+@@ -155,15 +155,15 @@
+         f.write('there')
+         f.close()                
+         result = self.cc.sync_complete(self.pc, '', self._tmpd)
+-        self.assertEquals(len(result.results), 5)
+-        self.assertEquals(result.common_prefix, None)
+-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.bar'))
+-        self.assertEquals(result.results[0].suffix, '.bar')
++        self.assertEqual(len(result.results), 5)
++        self.assertEqual(result.common_prefix, None)
++        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.bar'))
++        self.assertEqual(result.results[0].suffix, '.bar')
+         foo_index=2
+         if is_windows():
+             foo_index = 1
+-        self.assertEquals(result.results[foo_index].target.path, path_join(self._tmpd, '.foo'))
+-        self.assertEquals(result.results[foo_index].suffix, '.foo')
++        self.assertEqual(result.results[foo_index].target.path, path_join(self._tmpd, '.foo'))
++        self.assertEqual(result.results[foo_index].suffix, '.foo')
+         
+     def testSafechar1(self):
+         self._setupTree1()
+@@ -172,27 +172,27 @@
+         f.write('hi')
+         f.close()              
+         result = self.cc.sync_complete(self.pc, 'ba', self._tmpd)
+-        self.assertEquals(len(result.results), 1)
+-        self.assertEquals(result.common_prefix, None)
+-        self.assertEquals(result.results[0].target.path, bpath)
+-        self.assertEquals(result.results[0].suffix, 'r_foo')
++        self.assertEqual(len(result.results), 1)
++        self.assertEqual(result.common_prefix, None)
++        self.assertEqual(result.results[0].target.path, bpath)
++        self.assertEqual(result.results[0].suffix, 'r_foo')
+         
+     def testSafechar2(self):
+         self._setupTree1()
+         bpath = path_join(self._tmpd, 'bar+')
+         os.mkdir(bpath)    
+         result = self.cc.sync_complete(self.pc, 'ba', self._tmpd)
+-        self.assertEquals(len(result.results), 1)
+-        self.assertEquals(result.common_prefix, None)
+-        self.assertEquals(result.results[0].target.path, bpath)
+-        self.assertEquals(result.results[0].suffix, 'r+/')
++        self.assertEqual(len(result.results), 1)
++        self.assertEqual(result.common_prefix, None)
++        self.assertEqual(result.results[0].target.path, bpath)
++        self.assertEqual(result.results[0].suffix, 'r+/')
+         
+     def testSpaces1(self):
+         self._setupTree1()
+         dpath = path_join(self._tmpd, 'dir with spaces')   
+         result = self.cc.sync_complete(self.pc, 'di', self._tmpd)
+-        self.assertEquals(len(result.results), 1)
+-        self.assertEquals(result.common_prefix, None)
+-        self.assertEquals(result.results[0].target.path, dpath)
+-        self.assertEquals(result.results[0].suffix, r'r\ with\ spaces/')        
++        self.assertEqual(len(result.results), 1)
++        self.assertEqual(result.common_prefix, None)
++        self.assertEqual(result.results[0].target.path, dpath)
++        self.assertEqual(result.results[0].suffix, r'r\ with\ spaces/')        
+ 
+--- ./hotwire/test_completion_unix.py	(original)
++++ ./hotwire/test_completion_unix.py	(refactored)
+@@ -48,15 +48,15 @@
+         self._setupTree1()
+         cds = CdCompleter()
+         results = list(cds.completions('test', self._tmpd))
+-        self.assertEquals(len(results), 1)
+-        self.assertEquals(results[0].target.path, os.path.join(self._tmpd, 'testdir'))
+-        self.assertEquals(results[0].suffix, 'dir/')
++        self.assertEqual(len(results), 1)
++        self.assertEqual(results[0].target.path, os.path.join(self._tmpd, 'testdir'))
++        self.assertEqual(results[0].suffix, 'dir/')
+         
+     def testCd2(self):
+         self._setupTree1()
+         cds = CdCompleter()        
+         results = list(cds.completions('foo', self._tmpd))
+-        self.assertEquals(len(results), 1)        
+-        self.assertEquals(results[0].target.path, os.path.join(self._tmpd, 'foolink'))
+-        self.assertEquals(results[0].suffix, 'link/')
++        self.assertEqual(len(results), 1)        
++        self.assertEqual(results[0].target.path, os.path.join(self._tmpd, 'foolink'))
++        self.assertEqual(results[0].suffix, 'link/')
+         
+--- ./hotwire/util.py	(original)
++++ ./hotwire/util.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os, sys, traceback, shlex, string, platformRefactoringTool: No changes to ./hotwire/version.py
+RefactoringTool: Refactored ./hotwire/builtins/apply.py
+RefactoringTool: No changes to ./hotwire/builtins/cat.py
+RefactoringTool: No changes to ./hotwire/builtins/cd.py
+RefactoringTool: Refactored ./hotwire/builtins/cp.py
+RefactoringTool: No changes to ./hotwire/builtins/current.py
+RefactoringTool: No changes to ./hotwire/builtins/exit.py
+RefactoringTool: No changes to ./hotwire/builtins/fileop.py
+RefactoringTool: Refactored ./hotwire/builtins/filter.py
+RefactoringTool: Refactored ./hotwire/builtins/fsearch.py
+RefactoringTool: No changes to ./hotwire/builtins/head.py
+RefactoringTool: No changes to ./hotwire/builtins/help.py
+RefactoringTool: No changes to ./hotwire/builtins/history.py
+RefactoringTool: Refactored ./hotwire/builtins/httpget.py
+RefactoringTool: No changes to ./hotwire/builtins/iter.py
+RefactoringTool: Refactored ./hotwire/builtins/json.py
+RefactoringTool: Refactored ./hotwire/builtins/kill.py
+RefactoringTool: Refactored ./hotwire/builtins/ls.py
+RefactoringTool: Refactored ./hotwire/builtins/mkdir.py
+RefactoringTool: Refactored ./hotwire/builtins/mv.py
+RefactoringTool: Refactored ./hotwire/builtins/newline.py
+RefactoringTool: No changes to ./hotwire/builtins/open.py
+RefactoringTool: No changes to ./hotwire/builtins/path.py
+RefactoringTool: Refactored ./hotwire/builtins/pprint_builtin.py
+RefactoringTool: No changes to ./hotwire/builtins/proc.py
+RefactoringTool: No changes to ./hotwire/builtins/prop.py
+RefactoringTool: Refactored ./hotwire/builtins/pyeval.py
+
+-import fnmatch, commands
++import fnmatch, subprocess
+ from xml.sax.saxutils import escape as escape_xml
+ import hotwire.unicodeutils
+ from hotwire.unicodeutils import get_unichar_category, is_category_letter, is_category_number
+@@ -84,17 +84,17 @@
+ 
+ def tracefn(f):
+     def _do_trace(*args, **kwargs):
+-        print "%s(%s %s)" %(f.func_name,args, kwargs)
++        print("%s(%s %s)" %(f.__name__,args, kwargs))
+         result = f(*args, **kwargs)
+-        print "=> %s" % (result,)
++        print("=> %s" % (result,))
+         return result
+     return _do_trace
+ 
+ def quote_arg(arg):
+     """Quote arg for processing by a shell.
+     If arg would pass through unquoted, return unmodified arg."""
+-    if not isinstance(arg, unicode):
+-        arg = unicode(arg, 'utf-8')
++    if not isinstance(arg, str):
++        arg = str(arg, 'utf-8')
+     safechars = '.,/~_-+:'
+     safeonly = True
+     safe_space_only = True
+@@ -114,7 +114,7 @@
+ 
+ # FIXME - is this right?
+ def quote_shell_arg(cmd):
+-  return commands.mkarg(cmd)
++  return subprocess.mkarg(cmd)
+ 
+ def ellipsize(buf, l):
+     """Return a possibly-truncated version of buf to maximum length l, adding
+--- ./hotwire/builtins/apply.py	(original)
++++ ./hotwire/builtins/apply.py	(refactored)
+@@ -31,8 +31,8 @@
+ 
+     newargs = list(args)
+     for argument in context.input:
+-        if not isinstance(argument, basestring):
+-            argument = unicode(argument)
++        if not isinstance(argument, str):
++            argument = str(argument)
+         newargs.append(argument)
+         
+     new_context = HotwireContext(initcwd=context.cwd)
+--- ./hotwire/builtins/cp.py	(original)
++++ ./hotwire/builtins/cp.py	(refactored)
+@@ -43,7 +43,7 @@
+         try:
+             target_is_dir = stat.S_ISDIR(os.stat(target).st_mode)
+             target_exists = True
+-        except OSError, e:
++        except OSError as e:
+             target_is_dir = False
+             target_exists = False
+         
+--- ./hotwire/builtins/filter.py	(original)
++++ ./hotwire/builtins/filter.py	(refactored)
+@@ -55,13 +55,13 @@
+                 target_propvalue = getattr(arg, target_prop)
+             else:
+                 target_propvalue = arg
+-            if not isinstance(target_propvalue, basestring):
++            if not isinstance(target_propvalue, str):
+                 if not stringify:
+                     raise ValueError(_("Value not a string: %r" % (target_propvalue,)))
+                 else:
+                     target_propvalue = repr(target_propvalue)
+-            elif not isinstance(target_propvalue, unicode):
+-                target_propvalue = unicode(target_propvalue, 'utf-8')                
++            elif not isinstance(target_propvalue, str):
++                target_propvalue = str(target_propvalue, 'utf-8')                
+                         
+             match = compiled_re.search(target_propvalue)
+             if invert:
+--- ./hotwire/builtins/fsearch.py	(original)
++++ ./hotwire/builtins/fsearch.py	(refactored)
+@@ -75,8 +75,8 @@
+                     if match:
+                         yield FileStringMatch(fobj.path, line[:-1], i, match.start(), match.end())
+                 fp.close()
+-            except OSError, e:
++            except OSError as e:
+                 pass
+-            except UnicodeDecodeError, e:
++            except UnicodeDecodeError as e:
+                 pass
+ BuiltinRegistry.getInstance().register_hotwire(FSearchBuiltin())
+--- ./hotwire/builtins/httpget.py	(original)
++++ ./hotwire/builtins/httpget.py	(refactored)
+@@ -19,9 +19,9 @@
+ # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+-import os,sys,httplib
+-from httplib import HTTPResponse
+-from StringIO import StringIO
++import os,sys,http.client
++from http.client import HTTPResponse
++from io import StringIO
+ 
+ from hotwire.fs import FilePath
+ 
+@@ -45,7 +45,7 @@
+             path = args[1]
+         else:
+             assert False         
+-        conn = httplib.HTTPConnection(host)
++        conn = http.client.HTTPConnection(host)
+         conn.request('GET', path)
+         response = conn.getresponse() 
+         return response
+--- ./hotwire/builtins/json.py	(original)
++++ ./hotwire/builtins/json.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os,sys,pickle,inspect,locale
+-from StringIO import StringIO
++from io import StringIO
+ 
+ from hotwire.fs import FilePath
+ 
+--- ./hotwire/builtins/kill.py	(original)
++++ ./hotwire/builtins/kill.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os,sys,signal
+-from itertools import imap
++
+ 
+ import hotwire
+ 
+@@ -48,7 +48,7 @@
+         proclist = ProcessManager.getInstance().get_cached_processes()         
+         try:
+             textint = int(text)
+-        except ValueError, e:
++        except ValueError as e:
+             textint = None   
+         if textint is not None:
+             for proc in proclist:
+@@ -95,7 +95,7 @@
+                     raise ValueError("Invalid signal number: %d", optnum)
+         if sigidx >= 0:
+             del args[sigidx]
+-        for arg in imap(int, args):
++        for arg in map(int, args):
+             os.kill(arg, signum)
+         if context.input is not None:
+             for arg in context.input:
+--- ./hotwire/builtins/ls.py	(original)
++++ ./hotwire/builtins/ls.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os, sys, os.path, stat, logging, locale
+-from itertools import imap
++
+ 
+ from hotwire.builtin import builtin_hotwire, InputStreamSchema, MultiArgSpec
+ from hotwire.fs import FilePath
+--- ./hotwire/builtins/mkdir.py	(original)
++++ ./hotwire/builtins/mkdir.py	(refactored)
+@@ -41,7 +41,7 @@
+             arg_path = FilePath(arg, context.cwd)
+             try:
+                 os.makedirs(arg_path)
+-            except OSError, e:
++            except OSError as e:
+                 pass
+             self._status_notify(context, sources_total, i+1)
+ 
+--- ./hotwire/builtins/mv.py	(original)
++++ ./hotwire/builtins/mv.py	(refactored)
+@@ -39,7 +39,7 @@
+         try:
+             target_is_dir = stat.S_ISDIR(os.stat(target).st_mode)
+             target_exists = True
+-        except OSError, e:
++        except OSError as e:
+             target_is_dir = False
+             target_exists = False
+         
+--- ./hotwire/builtins/newline.py	(original)
++++ ./hotwire/builtins/newline.py	(refactored)
+@@ -33,7 +33,7 @@
+ 
+     def execute(self, context, args, options=[]):
+         for arg in context.input:
+-            if not isinstance(arg, basestring):
++            if not isinstance(arg, str):
+                 arg = str(arg) 
+             if not arg.endswith('\n'):
+                 arg += '\n'
+--- ./hotwire/builtins/pprint_builtin.py	(original)
++++ ./hotwire/builtins/pprint_builtin.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os
+-from cStringIO import StringIO
++from io import StringIO
+ 
+ from hotwire.builtin import builtin_hotwire, InputStreamSchema
+ 
+--- ./hotwire/builtins/pyeval.py	(original)
++++ ./hotwire/builtins/pyeval.py	(refactored)
+@@ -43,7 +43,7 @@
+         if context.current_output_metadata.single:
+             try:
+                 locals['it'] = context.snapshot_current_output()
+-            except ValueError, e:
++            except ValueError as e:
+                 locals['it'] = None
+         else:
+             locals['current'] = lambda: context.snapshot_current_output()
+@@ -56,10 +56,10 @@
+         f = open(fpath)
+         compiled = compile(f.read(), fpath, 'exec')
+         f.close()
+-        exec compiled in locals
++        exec(compiled, locals)
+         try:
+             mainfunc = locals['main']
+-        except KeyError, e:
++        except KeyError as e:
+             return None
+         if not hasattr(mainfunc, '__call__'):
+             return None
+@@ -80,5 +80,5 @@
+         locals['_hotwire_handle_output'] = handle_output
+         locals['_hotwire_handle_output_self'] = {'result': None}
+         (compiled, mutated) = rewrite_and_compile(args[0], output_func_name='_hotwire_handle_output', output_func_self='_hotwire_handle_output_self')RefactoringTool: Refactored ./hotwire/builtins/pyfilter.py
+RefactoringTool: Refactored ./hotwire/builtins/pymap.py
+RefactoringTool: No changes to ./hotwire/builtins/replace.py
+RefactoringTool: Refactored ./hotwire/builtins/rm.py
+RefactoringTool: No changes to ./hotwire/builtins/sechash.py
+RefactoringTool: No changes to ./hotwire/builtins/selection.py
+RefactoringTool: No changes to ./hotwire/builtins/setenv.py
+RefactoringTool: No changes to ./hotwire/builtins/sort.py
+RefactoringTool: Refactored ./hotwire/builtins/stringify.py
+RefactoringTool: Refactored ./hotwire/builtins/sys_builtin.py
+RefactoringTool: No changes to ./hotwire/builtins/term.py
+RefactoringTool: No changes to ./hotwire/builtins/uniq.py
+RefactoringTool: Refactored ./hotwire/builtins/walk.py
+RefactoringTool: Refactored ./hotwire/builtins/write.py
+RefactoringTool: Refactored ./hotwire/externals/glob2.py
+
+-        exec compiled in locals
++        exec(compiled, locals)
+         return locals['_hotwire_handle_output_self']['result']
+--- ./hotwire/builtins/pyfilter.py	(original)
++++ ./hotwire/builtins/pyfilter.py	(refactored)
+@@ -45,7 +45,7 @@
+         buf = self.PYFILTER_CONTENT % (args[0],)
+         code = compile(buf, '<input>', 'exec')
+         locals = {}
+-        exec code in locals
++        exec(code, locals)
+         execute = locals['execute']
+         custom_out = execute(context, context.input)
+         if custom_out is None:
+--- ./hotwire/builtins/pymap.py	(original)
++++ ./hotwire/builtins/pymap.py	(refactored)
+@@ -44,7 +44,7 @@
+         buf = self.PYMAP_CONTENT % (args[0],)
+         code = compile(buf, '<input>', 'exec')
+         locals = {}
+-        exec code in locals
++        exec(code, locals)
+         execute = locals['execute']
+         custom_out = execute(context, context.input)
+         if custom_out is None:
+--- ./hotwire/builtins/rm.py	(original)
++++ ./hotwire/builtins/rm.py	(refactored)
+@@ -20,7 +20,7 @@
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ import os, shutil
+-from itertools import imap
++
+ 
+ import hotwire
+ from hotwire.fs import FilePath, unix_basename
+@@ -43,9 +43,9 @@
+         if len(args) == 0 and context.input is None:
+             raise ValueError(_("Must specify at least one file"))
+         mkfile = lambda arg: FilePath(arg, context.cwd)
+-        sources = map(mkfile, args)
++        sources = list(map(mkfile, args))
+         if context.input is not None:
+-            sources.extend(imap(lambda f: f.path, context.input)) 
++            sources.extend(map(lambda f: f.path, context.input)) 
+         sources_total = len(sources)
+         undo_targets = []
+         self._status_notify(context, sources_total, 0)
+--- ./hotwire/builtins/stringify.py	(original)
++++ ./hotwire/builtins/stringify.py	(refactored)
+@@ -35,7 +35,7 @@
+         if len(args) != 0:
+             raise ValueError(_("Too many arguments specified"))
+         for arg in context.input:
+-            if not isinstance(arg, basestring):
++            if not isinstance(arg, str):
+                 yield str(arg)
+             else:
+                 yield arg
+--- ./hotwire/builtins/sys_builtin.py	(original)
++++ ./hotwire/builtins/sys_builtin.py	(refactored)
+@@ -51,7 +51,7 @@
+         self.fd = fd
+         
+     def write(self, obj):
+-        if isinstance(obj, unicode):
++        if isinstance(obj, str):
+             buf = obj.encode(sys.stdout.encoding or 'UTF-8')
+         else:
+             buf = obj
+@@ -85,18 +85,18 @@
+                 if val is None:
+                     stream.close()
+                     return
+-                stream.write(unicode(val))
+-        except IOError, e:
++                stream.write(str(val))
++        except IOError as e:
+             pass
+             
+     @log_except(_logger)            
+     def __inputwriter(self, input, stdin):
+         try:
+             for val in input:
+-                stdin.write(unicode(val))
++                stdin.write(str(val))
+                 stdin.flush()
+             stdin.close()
+-        except IOError, e:
++        except IOError as e:
+             pass
+ 
+     @staticmethod
+@@ -106,7 +106,7 @@
+             while line:
+                 yield line
+                 line = stream.readline()
+-        except IOError, e:
++        except IOError as e:
+             pass
+ 
+     @staticmethod
+@@ -121,7 +121,7 @@
+             buf = os.read(fdno, 512)
+ 
+     def cancel(self, context):
+-        if context.attribs.has_key('pid'):
++        if 'pid' in context.attribs:
+             pid = context.attribs['pid']
+             _logger.debug("cancelling pid %s", pid)
+             ProcessManager.getInstance().terminate_pidgroup(pid)
+@@ -147,8 +147,8 @@
+     def get_completer(self, context, args, i):
+         verb = args[0].text
+         _logger.debug("looking for completion for: %s", verb)
+-        for matcher,completer in SystemCompleters.getInstance().iteritems():
+-            if isinstance(matcher, basestring):
++        for matcher,completer in SystemCompleters.getInstance().items():
++            if isinstance(matcher, str):
+                 if verb.startswith(matcher):
+                     _logger.debug("matched completer %s", matcher)
+                     return completer(context, args, i)
+@@ -193,7 +193,7 @@
+             if using_pty_in:
+                 stdin_target = slave_fd
+             elif in_opt_format == 'x-unix-pipe-file-object/special':
+-                stdin_target = iter(context.input).next()                
++                stdin_target = next(iter(context.input))                
+             else:
+                 stdin_target = subprocess.PIPE
+             _logger.debug("using stdin target: %r", stdin_target)                
+@@ -205,7 +205,7 @@
+             if context.input is None:
+                 stdin_target = None
+             elif in_opt_format == 'x-unix-pipe-file-object/special':
+-                stdin_target = iter(context.input).next()                
++                stdin_target = next(iter(context.input))                
+             else:
+                 stdin_target = subprocess.PIPE
+             _logger.debug("using stdin target: %r", stdin_target)
+@@ -223,7 +223,7 @@
+         if fs_encoding is not None:
+             args[0] = args[0].encode(fs_encoding)
+         if stdin_encoding is not None:
+-            args[1:] = map(lambda x: x.encode(stdin_encoding), args[1:])
++            args[1:] = [x.encode(stdin_encoding) for x in args[1:]]
+         
+         if is_windows():
+             subproc_args['universal_newlines'] = True
+@@ -291,7 +291,7 @@
+             try:
+                 for buf in SysBuiltin.__unbuffered_read_pipe(stream=stdout_read, fd=stdout_fd):
+                     yield buf
+-            except OSError, e:
++            except OSError as e:
+                 pass
+         elif out_opt_format == 'x-unix-pipe-file-object/special':
+             yield subproc.stdout
+--- ./hotwire/builtins/walk.py	(original)
++++ ./hotwire/builtins/walk.py	(refactored)
+@@ -57,7 +57,7 @@
+                         dstat = fs.get_file_sync(dpath)
+                         if dstat.hidden:
+                             filtered_dirs.append(i)
+-                    except FileStatError, e:
++                    except FileStatError as e:
+                         continue
+                 for c,i in enumerate(filtered_dirs):
+                     del subdirs[i-c]
+--- ./hotwire/builtins/write.py	(original)
++++ ./hotwire/builtins/write.py	(refactored)
+@@ -43,11 +43,11 @@
+             open_mode = 'wb'
+         if not context.input:
+             return
+-        streams = map(lambda x: open_text_file(FilePath(x, context.cwd), open_mode), args)
++        streams = [open_text_file(FilePath(x, context.cwd), open_mode) for x in args]
+         if not do_pickle:
+             for arg in context.input:
+                 for stream in streams:
+-                    stream.write('%s' % (unicode(arg),))
++                    stream.write('%s' % (str(arg),))
+                     if with_newline:
+                         stream.write('\n')
+         else:
+@@ -55,7 +55,7 @@
+             arglist = list(context.input)
+             for stream in streams:
+                 pickle.dump(arglist, stream)
+-        map(lambda x: x.close(), streams)
++        list(map(lambda x: x.close(), streams))
+         return []
+ 
+ BuiltinRegistry.getInstance().register_hotwire(WriteBuiltin())
+--- ./hotwire/externals/glob2.py	(original)
++++ ./hotwire/externals/glob2.py	(refactored)
+@@ -56,15 +56,15 @@
+ def glob1(dirname, pattern):
+     if not dirname:
+         dirname = os.curdir
+-    if isinstance(pattern, unicode) and not isinstance(dirname, unicode):
+-        dirname = unicode(dirname, sys.getfilesystemencoding() or
++    if isinstance(pattern, str) and not isinstance(dirname, str):
++        dirname = str(dirname, sys.getfilesystemencoding() or
+                                    sys.getdefaultencoding())
+     try:
+         names = os.listdir(dirname)
+     except os.error:
+         return []
+     if pattern[0] != '.':
+-        names = filter(lambda x: x[0] != '.', names)
++        names = [x for x in names if x[0] != '.']
+     return fnmatch.filter(names, pattern)RefactoringTool: Refactored ./hotwire/externals/rewrite.py
+RefactoringTool: Refactored ./hotwire/externals/shlex.py
+
+ 
+ def glob0(dirname, basename):
+--- ./hotwire/externals/rewrite.py	(original)
++++ ./hotwire/externals/rewrite.py	(refactored)
+@@ -32,7 +32,7 @@
+         return None
+     
+     result = {}
+-    for i in (xrange(1, len(pattern))):
++    for i in (range(1, len(pattern))):
+         if i >= len(t):
+             return None
+         if isinstance(pattern[i], tuple):
+@@ -295,10 +295,10 @@
+     # Generic rewriting of an AST, actions is a map of symbol/token type to function
+     # to call to produce a modified version of the the subtree
+     result = t
+-    for i in xrange(1, len(t)):
++    for i in range(1, len(t)):
+         subnode = t[i]
+         subtype = subnode[0]
+-        if actions.has_key(subtype):
++        if subtype in actions:
+             filtered = actions[subtype](subnode, state)
+             if filtered != subnode:
+                 if result is t:
+@@ -317,7 +317,7 @@
+     if len(t) == 2:
+         # testlist
+         subnode = t[1]
+-        for i in xrange(1, len(subnode)):
++        for i in range(1, len(subnode)):
+             subsubnode = subnode[i]
+             if subsubnode[0] == symbol.test:
+                 method_spec = _is_test_method_call(subsubnode)
+@@ -325,7 +325,7 @@
+                     state.add_mutated(method_spec)
+ 
+         if state.output_func_name != None:
+-            args = list(filter(lambda x: type(x) != int and x[0] == symbol.test, subnode))
++            args = list([x for x in subnode if type(x) != int and x[0] == symbol.test])
+             if state.output_func_self != None:
+                 args.insert(0, _create_varref(state.output_func_self))
+             return _create_funccall_expr_stmt(state.output_func_name, tuple(args))
+@@ -345,11 +345,11 @@
+                 state.add_mutated(variable)
+         else:
+             # testlist ('=' (yield_expr|testlist))+
+-            for i in xrange(1, len(t) - 1):
++            for i in range(1, len(t) - 1):
+                 if (t[i + 1][0] == token.EQUAL):
+                     subnode = t[i]
+                     assert(subnode[0] == symbol.testlist)
+-                    for j in xrange(1, len(subnode)):
++                    for j in range(1, len(subnode)):
+                         subsubnode = subnode[j]
+                         if subsubnode[0] == symbol.test:
+                             variable = _is_test_slice(subsubnode)
+@@ -364,7 +364,7 @@
+     # print_stmt: 'print' ( [ test (',' test)* [','] ] |
+     #                       '>>' test [ (',' test)+ [','] ] )
+     if state.print_func_name !=None and t[2][0] == symbol.test:
+-        return _create_funccall_expr_stmt(state.print_func_name, filter(lambda x: type(x) != int and x[0] == symbol.test, t))
++        return _create_funccall_expr_stmt(state.print_func_name, [x for x in t if type(x) != int and x[0] == symbol.test])
+     else:
+         return t
+     
+@@ -442,7 +442,7 @@
+     """
+     state = _RewriteState(output_func_name=output_func_name, output_func_self=output_func_self, print_func_name=print_func_name)
+ 
+-    if (isinstance(code, unicode)):
++    if (isinstance(code, str)):
+         code = code.encode("utf8")
+         encoding = "utf8"
+     
+@@ -510,12 +510,12 @@
+ 
+     def test_funccall(args):
+         t = create_file_input(_create_funccall_expr_stmt('set_test_args',
+-                                                         map(lambda c: create_constant_test(c), args)))
++                                                         [create_constant_test(c) for c in args]))
+         test_args = [ 'UNSET' ]
+         def set_test_args(*args): test_args[:] = args
+         scope = { 'set_test_args': set_test_args }
+         
+-        exec parser.sequence2ast(t).compile() in scope
++        exec(parser.sequence2ast(t).compile(), scope)
+         assert tuple(test_args) == args
+ 
+     test_funccall(())
+@@ -533,7 +533,7 @@
+             test_args[:] = args
+         scope = { 'reinteract_output': set_test_args} 
+ 
+-        exec compiled in scope
++        exec(compiled, scope)
+ 
+         if tuple(test_args) != tuple(expected):
+             raise AssertionError("Got '%s', expected '%s'" % (test_args, expected))
+@@ -554,7 +554,7 @@
+         scope = { 'reinteract_output': set_test_args, 
+                   'reinteract_output_self': test_self} 
+ 
+-        exec compiled in scope
++        exec(compiled, scope)
+ 
+         if 'args' not in test_self:
+             raise AssertionError("Failed to set arguments")
+@@ -576,7 +576,7 @@
+         def set_test_args(*args): test_args[:] = args
+         scope = { 'reinteract_print': set_test_args }
+ 
+-        exec compiled in scope
++        exec(compiled, scope)
+ 
+         if tuple(test_args) != tuple(expected):
+             raise AssertionError("Got '%s', expected '%s'" % (test_args, expected))
+@@ -630,13 +630,13 @@
+         def set_test_args(*args): test_args[:] = args
+         scope = { 'reinteract_output': set_test_args }
+ 
+-        exec compiled in scope
++        exec(compiled, scope)
+ 
+         if test_args[0] != expected:
+             raise AssertionError("Got '%s', expected '%s'" % (test_args[0], expected))
+ 
+-    test_encoding(u"u'\u00e4'".encode("utf8"), u'\u00e4')
+-    test_encoding(u"u'\u00e4'", u'\u00e4')
+-    test_encoding(u"u'\u00e4'".encode("iso-8859-1"), u'\u00e4', "iso-8859-1")
+-
+-    print "Passed"
++    test_encoding("u'\u00e4'".encode("utf8"), '\u00e4')
++    test_encoding("u'\u00e4'", '\u00e4')
++    test_encoding("u'\u00e4'".encode("iso-8859-1"), '\u00e4', "iso-8859-1")
++
++    print("Passed")
+--- ./hotwire/externals/shlex.py	(original)
++++ ./hotwire/externals/shlex.py	(refactored)
+@@ -17,16 +17,16 @@
+ from hotwire.unicodeutils import get_unichar_category, is_category_letter, is_category_number, is_category_whitespace
+ 
+ try:
+-    from cStringIO import StringIO
++    from io import StringIO
+ except ImportError:
+-    from StringIO import StringIO
++    from io import StringIO
+ 
+ __all__ = ["shlex", "split"]
+ 
+ class shlex:
+     "A lexical analyzer class for simple shell-like syntaxes."
+     def __init__(self, instream=None, infile=None, posix=False, utf=True):
+-        if isinstance(instream, basestring):
++        if isinstance(instream, str):
+             instream = StringIO(instream)
+         if instream is not None:
+             self.instream = instream
+@@ -63,18 +63,18 @@
+         self.filestack = deque()
+         self.source = None
+         if self.debug:
+-            print 'shlex: reading from %s, line %d' \
+-                  % (self.instream, self.lineno)
++            print('shlex: reading from %s, line %d' \
++                  % (self.instream, self.lineno))
+ 
+     def push_token(self, tok):
+         "Push a token onto the stack popped by the get_token method"
+         if self.debug >= 1:
+-            print "shlex: pushing token " + repr(tok)
++            print("shlex: pushing token " + repr(tok))
+         self.pushback.appendleft(tok)
+ 
+     def push_source(self, newstream, newfile=None):
+         "Push an input source onto the lexer's input source stack."
+-        if isinstance(newstream, basestring):
++        if isinstance(newstream, str):
+             newstream = StringIO(newstream)
+         self.filestack.appendleft((self.infile, self.instream, self.lineno))
+         self.infile = newfile
+@@ -82,17 +82,17 @@
+         self.lineno = 1
+         if self.debug:
+             if newfile is not None:
+-                print 'shlex: pushing to file %s' % (self.infile,)
+-            else:
+-                print 'shlex: pushing to stream %s' % (self.instream,)
++                print('shlex: pushing to file %s' % (self.infile,))
++            else:
++                print('shlex: pushing to stream %s' % (self.instream,))
+ 
+     def pop_source(self):
+         "Pop the input source stack."
+         self.instream.close()
+         (self.infile, self.instream, self.lineno) = self.filestack.popleft()
+         if self.debug:
+-            print 'shlex: popping to %s, line %d' \
+-                  % (self.instream, self.lineno)
++            print('shlex: popping to %s, line %d' \
++                  % (self.instream, self.lineno))
+         self.state = ' '
+ 
+     def get_token_info(self):
+@@ -100,7 +100,7 @@
+         if self.pushback:
+             tok = self.pushback.popleft()
+             if self.debug >= 1:RefactoringTool: Refactored ./hotwire/externals/singletonmixin.py
+RefactoringTool: Refactored ./hotwire/externals/webbrowser.py
+
+-                print "shlex: popping token " + repr(tok)
++                print("shlex: popping token " + repr(tok))
+             return tok
+         # No pushback.  Get a token.
+         (raw, quoted) = self.read_token_info()
+@@ -122,9 +122,9 @@
+         # Neither inclusion nor EOF
+         if self.debug >= 1:
+             if raw != self.eof:
+-                print "shlex: token=" + repr(raw)
+-            else:
+-                print "shlex: token=EOF"
++                print("shlex: token=" + repr(raw))
++            else:
++                print("shlex: token=EOF")
+         return (raw, quoted)
+     
+     def get_token(self):
+@@ -149,8 +149,8 @@
+             if nextchar == '\n':
+                 self.lineno = self.lineno + 1
+             if self.debug >= 3:
+-                print "shlex: in state", repr(self.state), \
+-                      "I see character:", repr(nextchar)
++                print("shlex: in state", repr(self.state), \
++                      "I see character:", repr(nextchar))
+             if self.state is None:
+                 self.token = ''        # past end of file
+                 break
+@@ -160,7 +160,7 @@
+                     break
+                 if self.__is_whitespace(nextchar, nextcategory):
+                     if self.debug >= 2:
+-                        print "shlex: I see whitespace in whitespace state"
++                        print("shlex: I see whitespace in whitespace state")
+                     if self.token or (self.posix and quoted):
+                         break   # emit current token
+                     else:
+@@ -191,9 +191,9 @@
+                 quoted = True
+                 if not nextchar:      # end of file
+                     if self.debug >= 2:
+-                        print "shlex: I see EOF in quotes state"
++                        print("shlex: I see EOF in quotes state")
+                     # XXX what error should be raised here?
+-                    raise ValueError, "No closing quotation"
++                    raise ValueError("No closing quotation")
+                 if nextchar == self.state:
+                     if not self.posix:
+                         self.token = self.token + nextchar
+@@ -210,9 +210,9 @@
+             elif self.state in self.escape:
+                 if not nextchar:      # end of file
+                     if self.debug >= 2:
+-                        print "shlex: I see EOF in escape state"
++                        print("shlex: I see EOF in escape state")
+                     # XXX what error should be raised here?
+-                    raise ValueError, "No escaped character"
++                    raise ValueError("No escaped character")
+                 # In posix shells, only the quote itself or the escape
+                 # character may be escaped within quotes.
+                 if escapedstate in self.quotes and \
+@@ -226,7 +226,7 @@
+                     break                
+                 if self.__is_whitespace(nextchar, nextcategory):
+                     if self.debug >= 2:
+-                        print "shlex: I see whitespace in word state"
++                        print("shlex: I see whitespace in word state")
+                     self.state = ' '
+                     if self.token or (self.posix and quoted):
+                         break   # emit current token
+@@ -252,7 +252,7 @@
+                 else:
+                     self.pushback.appendleft((nextchar, quoted))
+                     if self.debug >= 2:
+-                        print "shlex: I see punctuation in word state"
++                        print("shlex: I see punctuation in word state")
+                     self.state = ' '
+                     if self.token:
+                         break   # emit current token
+@@ -264,9 +264,9 @@
+             result = None
+         if self.debug > 1:
+             if result:
+-                print "shlex: raw token=" + repr(result)
+-            else:
+-                print "shlex: raw token=EOF"
++                print("shlex: raw token=" + repr(result))
++            else:
++                print("shlex: raw token=EOF")
+         return (result, quoted)
+     
+     def read_token(self):
+@@ -278,7 +278,7 @@
+         if newfile[0] == '"':
+             newfile = newfile[1:-1]
+         # This implements cpp-like semantics for relative-path inclusion.
+-        if isinstance(self.infile, basestring) and not os.path.isabs(newfile):
++        if isinstance(self.infile, str) and not os.path.isabs(newfile):
+             newfile = os.path.join(os.path.dirname(self.infile), newfile)
+         return (newfile, open(newfile, "r"))
+ 
+@@ -293,7 +293,7 @@
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         token = self.get_token()
+         if token == self.eof:
+             raise StopIteration
+@@ -315,6 +315,6 @@
+     while 1:
+         tt = lexer.get_token()
+         if tt:
+-            print "Token: " + repr(tt)
++            print("Token: " + repr(tt))
+         else:
+             break
+--- ./hotwire/externals/singletonmixin.py	(original)
++++ ./hotwire/externals/singletonmixin.py	(refactored)
+@@ -60,16 +60,14 @@
+ 
+ class MetaSingleton(type):
+     def __new__(metaclass, strName, tupBases, dict):
+-        if dict.has_key('__new__'):
+-            raise SingletonException, 'Can not override __new__ in a Singleton'
++        if '__new__' in dict:
++            raise SingletonException('Can not override __new__ in a Singleton')
+         return super(MetaSingleton,metaclass).__new__(metaclass, strName, tupBases, dict)
+         
+     def __call__(cls, *lstArgs, **dictArgs):
+-        raise SingletonException, 'Singletons may only be instantiated through getInstance()'
+-        
+-class Singleton(object):
+-    __metaclass__ = MetaSingleton
+-    
++        raise SingletonException('Singletons may only be instantiated through getInstance()')
++        
++class Singleton(object, metaclass=MetaSingleton):
+     def getInstance(cls, *lstArgs):
+         """
+         Call this to instantiate an instance or retrieve the existing instance.
+@@ -78,10 +76,10 @@
+         """
+         if cls._isInstantiated():
+             if len(lstArgs) != 0:
+-                raise SingletonException, 'If no supplied args, singleton must already be instantiated, or __init__ must require no args'
++                raise SingletonException('If no supplied args, singleton must already be instantiated, or __init__ must require no args')
+         else:
+             if cls._getConstructionArgCountNotCountingSelf() > 0 and len(lstArgs) <= 0:
+-                raise SingletonException, 'If the singleton requires __init__ args, supply them on first instantiation'
++                raise SingletonException('If the singleton requires __init__ args, supply them on first instantiation')
+             instance = cls.__new__(cls)
+             instance.__init__(*lstArgs)
+             cls.cInstance = instance
+@@ -93,7 +91,7 @@
+     _isInstantiated = classmethod(_isInstantiated)  
+ 
+     def _getConstructionArgCountNotCountingSelf(cls):
+-        return cls.__init__.im_func.func_code.co_argcount - 1
++        return cls.__init__.__func__.__code__.co_argcount - 1
+     _getConstructionArgCountNotCountingSelf = classmethod(_getConstructionArgCountNotCountingSelf)
+ 
+     def _forgetClassInstanceReferenceForTesting(cls):
+@@ -132,7 +130,7 @@
+                     
+             a1 = A.getInstance()
+             a2 = A.getInstance()
+-            self.assertEquals(id(a1), id(a2))
++            self.assertEqual(id(a1), id(a2))
+             
+         def testInstantiateWithMultiArgConstructor(self):
+             """
+@@ -149,9 +147,9 @@
+ 
+             b1 = B.getInstance('arg1 value', 'arg2 value')
+             b2 = B.getInstance()
+-            self.assertEquals(b1.arg1, 'arg1 value')
+-            self.assertEquals(b1.arg2, 'arg2 value')
+-            self.assertEquals(id(b1), id(b2))
++            self.assertEqual(b1.arg1, 'arg1 value')
++            self.assertEqual(b1.arg2, 'arg2 value')
++            self.assertEqual(id(b1), id(b2))
+             
+             
+         def testTryToInstantiateWithoutNeededArgs(self):
+--- ./hotwire/externals/webbrowser.py	(original)
++++ ./hotwire/externals/webbrowser.py	(refactored)RefactoringTool: No changes to ./hotwire/externals/dispatch/__init__.py
+RefactoringTool: Refactored ./hotwire/externals/dispatch/dispatcher.py
+RefactoringTool: No changes to ./hotwire/externals/dispatch/errors.py
+RefactoringTool: Refactored ./hotwire/externals/dispatch/robust.py
+RefactoringTool: Refactored ./hotwire/externals/dispatch/robustapply.py
+RefactoringTool: Refactored ./hotwire/externals/dispatch/saferef.py
+
+@@ -3,7 +3,7 @@
+ # Maintained by Georg Brandl.
+ 
+ import os
+-import shlex
++from . import shlex
+ import sys
+ import stat
+ import subprocess
+@@ -159,7 +159,7 @@
+        and without remote functionality."""
+ 
+     def __init__(self, name):
+-        if isinstance(name, basestring):
++        if isinstance(name, str):
+             self.name = name
+             self.args = ["%s"]
+         else:
+@@ -640,22 +640,22 @@
+     -t: open new tab""" % sys.argv[0]
+     try:
+         opts, args = getopt.getopt(sys.argv[1:], 'ntd')
+-    except getopt.error, msg:
+-        print >>sys.stderr, msg
+-        print >>sys.stderr, usage
++    except getopt.error as msg:
++        print(msg, file=sys.stderr)
++        print(usage, file=sys.stderr)
+         sys.exit(1)
+     new_win = 0
+     for o, a in opts:
+         if o == '-n': new_win = 1
+         elif o == '-t': new_win = 2
+-    if len(args) <> 1:
+-        print >>sys.stderr, usage
++    if len(args) != 1:
++        print(usage, file=sys.stderr)
+         sys.exit(1)
+ 
+     url = args[0]
+     open(url, new_win)
+ 
+-    print "\a"
++    print("\a")
+ 
+ if __name__ == "__main__":
+     main()
+--- ./hotwire/externals/dispatch/dispatcher.py	(original)
++++ ./hotwire/externals/dispatch/dispatcher.py	(refactored)
+@@ -153,7 +153,7 @@
+     receiverID = id(receiver)
+     # get current set, remove any current references to
+     # this receiver in the set, including back-references
+-    if signals.has_key(signal):
++    if signal in signals:
+         receivers = signals[signal]
+         _removeOldBackRefs(senderkey, signal, receiver, receivers)
+     else:
+@@ -392,8 +392,8 @@
+     backKey = id(receiver)
+     for senderkey in sendersBack.get(backKey,()):
+         try:
+-            signals = connections[senderkey].keys()
+-        except KeyError,err:
++            signals = list(connections[senderkey].keys())
++        except KeyError as err:
+             pass
+         else:
+             for signal in signals:
+@@ -404,7 +404,7 @@
+                 else:
+                     try:
+                         receivers.remove( receiver )
+-                    except Exception, err:
++                    except Exception as err:
+                         pass
+                 _cleanupConnections(senderkey, signal)
+     try:
+@@ -441,7 +441,7 @@
+ 
+ def _removeBackrefs( senderkey):
+     """Remove all back-references to this senderkey"""
+-    for receiver_list in connections.pop(senderkey, {}).values():
++    for receiver_list in list(connections.pop(senderkey, {}).values()):
+         for receiver in receiver_list:
+             _killBackref( receiver, senderkey )
+ 
+@@ -466,7 +466,7 @@
+         found = 0
+         signals = connections.get(signal)
+         if signals is not None:
+-            for sig,recs in connections.get(signal,{}).iteritems():
++            for sig,recs in connections.get(signal,{}).items():
+                 if sig != signal:
+                     for rec in recs:
+                         if rec is oldReceiver:
+--- ./hotwire/externals/dispatch/robust.py	(original)
++++ ./hotwire/externals/dispatch/robust.py	(refactored)
+@@ -50,7 +50,7 @@
+                 *arguments,
+                 **named
+             )
+-        except Exception, err:
++        except Exception as err:
+             responses.append((receiver, err))
+         else:
+             responses.append((receiver, response))
+--- ./hotwire/externals/dispatch/robustapply.py	(original)
++++ ./hotwire/externals/dispatch/robustapply.py	(refactored)
+@@ -21,10 +21,10 @@
+             receiver = receiver.__call__
+     if hasattr( receiver, 'im_func' ):
+         # an instance-method...
+-        return receiver, receiver.im_func.func_code, 1
++        return receiver, receiver.__func__.__code__, 1
+     elif not hasattr( receiver, 'func_code'):
+         raise ValueError('unknown reciever type %s %s'%(receiver, type(receiver)))
+-    return receiver, receiver.func_code, 0
++    return receiver, receiver.__code__, 0
+ 
+ def robustApply(receiver, *arguments, **named):
+     """Call receiver with arguments and an appropriate subset of named
+@@ -32,7 +32,7 @@
+     receiver, codeObject, startIndex = function( receiver )
+     acceptable = codeObject.co_varnames[startIndex+len(arguments):codeObject.co_argcount]
+     for name in codeObject.co_varnames[startIndex:startIndex+len(arguments)]:
+-        if named.has_key( name ):
++        if name in named:
+             raise TypeError(
+                 """Argument %r specified both positionally and as a keyword for calling %r"""% (
+                     name, receiver,
+@@ -41,7 +41,7 @@
+     if not (codeObject.co_flags & 8):
+         # fc does not have a **kwds type parameter, therefore 
+         # remove unacceptable arguments.
+-        for arg in named.keys():
++        for arg in list(named.keys()):
+             if arg not in acceptable:
+                 del named[arg]
+     return receiver(*arguments, **named)
+--- ./hotwire/externals/dispatch/saferef.py	(original)
++++ ./hotwire/externals/dispatch/saferef.py	(refactored)
+@@ -1,5 +1,6 @@
+ """Refactored "safe reference" from dispatcher.py"""
+ import weakref, traceback
++import collections
+ 
+ def safeRef(target, onDelete = None):
+     """Return a *safe* weak reference to a callable target
+@@ -13,7 +14,7 @@
+         weakref or a BoundMethodWeakref) as argument.
+     """
+     if hasattr(target, 'im_self'):
+-        if target.im_self is not None:
++        if target.__self__ is not None:
+             # Turn a bound method into a BoundMethodWeakref instance.
+             # Keep track of these instances for lookup by disconnect().
+             assert hasattr(target, 'im_func'), """safeRef target %r has im_self, but no im_func, don't know how to create reference"""%( target,)
+@@ -22,7 +23,7 @@
+                 onDelete=onDelete
+             )
+             return reference
+-    if callable(onDelete):
++    if isinstance(onDelete, collections.Callable):
+         return weakref.ref(target, onDelete)
+     else:
+         return weakref.ref( target )
+@@ -107,28 +108,28 @@
+                 pass
+             for function in methods:
+                 try:
+-                    if callable( function ):
++                    if isinstance( function, collections.Callable):
+                         function( self )
+-                except Exception, e:
++                except Exception as e:
+                     try:
+                         traceback.print_exc()
+-                    except AttributeError, err:
+-                        print '''Exception during saferef %s cleanup function %s: %s'''%(
++                    except AttributeError as err:
++                        print('''Exception during saferef %s cleanup function %s: %s'''%(
+                             self, function, e
+-                        )
++                        ))
+         self.deletionMethods = [onDelete]
+         self.key = self.calculateKey( target )
+-        self.weakSelf = weakref.ref(target.im_self, remove)
+-        self.weakFunc = weakref.ref(target.im_func, remove)
+-        self.selfName = str(target.im_self)
+-        self.funcName = str(target.im_func.__name__)
++        self.weakSelf = weakref.ref(target.__self__, remove)
++        self.weakFunc = weakref.ref(target.__func__, remove)
++        self.selfName = str(target.__self__)
++        self.funcName = str(target.__func__.__name__)
+     def calculateKey( cls, target ):
+         """Calculate the reference key for this reference
+ 
+         Currently this is a two-tuple of the id()'s of the
+         target object and the target function respectively.
+         """
+-        return (id(target.im_self),id(target.im_func))
++        return (id(target.__self__),id(target.__func__))
+     calculateKey = classmethod( calculateKey )
+     def __str__(self):
+         """Give a friendly representation of the object"""
+@@ -138,7 +139,7 @@
+             self.funcName,
+         )
+     __repr__ = __str__
+-    def __nonzero__( self ):
++    def __bool__( self ):
+         """Whether we are still a valid reference"""
+         return self() is not None
+     def __cmp__( self, other ):
+@@ -195,9 +196,9 @@
+             collected).  Should take a single argument,
+             which will be passed a pointer to this object.
+         """RefactoringTool: No changes to ./hotwire/sysdep/__init__.py
+RefactoringTool: Refactored ./hotwire/sysdep/fs.py
+RefactoringTool: No changes to ./hotwire/sysdep/ipc.py
+RefactoringTool: No changes to ./hotwire/sysdep/proc.py
+RefactoringTool: No changes to ./hotwire/sysdep/sysenv.py
+RefactoringTool: Refactored ./hotwire/sysdep/term.py
+RefactoringTool: Refactored ./hotwire/sysdep/unix.py
+RefactoringTool: No changes to ./hotwire/sysdep/unix_completers.py
+RefactoringTool: Refactored ./hotwire/sysdep/win32.py
+RefactoringTool: Refactored ./hotwire/sysdep/fs_impl/fs_gnomevfs.py
+RefactoringTool: Refactored ./hotwire/sysdep/fs_impl/fs_unix.py
+RefactoringTool: Refactored ./hotwire/sysdep/fs_impl/fs_win32.py
+
+-        assert getattr(target.im_self, target.__name__) == target, \
++        assert getattr(target.__self__, target.__name__) == target, \
+                ("method %s isn't available as the attribute %s of %s" %
+-                (target, target.__name__, target.im_self))
++                (target, target.__name__, target.__self__))
+         super(BoundNonDescriptorMethodWeakref, self).__init__(target, onDelete)
+ 
+     def __call__(self):
+--- ./hotwire/sysdep/fs.py	(original)
++++ ./hotwire/sysdep/fs.py	(refactored)
+@@ -19,8 +19,8 @@
+ # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+ # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+-import os,sys,shutil,stat,logging,tempfile,urllib
+-from cStringIO import StringIO
++import os,sys,shutil,stat,logging,tempfile,urllib.request,urllib.parse,urllib.error
++from io import StringIO
+ 
+ import hotwire
+ from hotwire.fs import unix_basename, FilePath, path_expanduser, path_fromurl, path_tourl, atomic_rename, iterd_sorted
+@@ -87,7 +87,7 @@
+             return None
+         try:
+             syspath = self._get_system_conf_dir_path()
+-        except NotImplementedError, e:
++        except NotImplementedError as e:
+             return None
+         return syspath 
+         
+@@ -112,7 +112,7 @@
+             epath = FilePath(execname, dpath)
+             try:
+                 fobj = self.get_file_sync(epath)
+-            except FileStatError, e:
++            except FileStatError as e:
+                 continue            
+             if fobj.is_executable:
+                 return epath
+@@ -126,7 +126,7 @@
+         newf = os.path.join(self._trashdir, bn)
+         try:
+             statbuf = os.stat(newf) 
+-        except OSError, e:
++        except OSError as e:
+             statbuf = None
+         if statbuf:
+             _logger.debug("Removing from trash: %s", newf) 
+@@ -146,7 +146,7 @@
+     def makedirs_p(self, path):
+         try:
+             os.makedirs(path)
+-        except OSError, e:
++        except OSError as e:
+             # hopefully it was EEXIST...
+             pass
+         return path
+@@ -184,10 +184,10 @@
+     __slots__ = ['fs', 'stat', 'xaccess', 'icon_error', '_permstring', 'target_stat', 'stat_error']
+     def __init__(self, path, fs=None):
+         super(File, self).__init__()
+-        if not isinstance(path, unicode):
+-            path = unicode(path, 'utf-8')
++        if not isinstance(path, str):
++            path = str(path, 'utf-8')
+         self._path = path
+-        self._uri = 'file://' + urllib.pathname2url(path.encode(sys.getfilesystemencoding()))
++        self._uri = 'file://' + urllib.request.pathname2url(path.encode(sys.getfilesystemencoding()))
+         self._basename = unix_basename(path)
+         self.fs = fs
+         self.stat = None
+@@ -295,9 +295,9 @@
+             if stat.S_ISLNK(self.stat[stat.ST_MODE]):
+                 try:
+                     self.target_stat = os.stat(self.path)
+-                except OSError, e:
++                except OSError as e:
+                     self.target_stat = None		
+-        except OSError, e:
++        except OSError as e:
+             _logger.debug("Failed to stat '%s': %s", self.path, e)
+             self.stat_error = str(e)
+             if rethrow:
+@@ -332,7 +332,7 @@
+         self.__bookmarks_path = path_expanduser('~/.gtk-bookmarks')
+         try:
+             self.__monitor = Filesystem.getInstance().get_monitor(self.__bookmarks_path, self.__on_bookmarks_changed)
+-        except NotImplementedError, e:
++        except NotImplementedError as e:
+             pass
+         self.__bookmarks = []
+         self.__read_bookmarks()
+@@ -360,10 +360,10 @@
+     def __read_bookmarks(self):
+         try:
+             f = open(self.__bookmarks_path)
+-        except IOError, e: 
++        except IOError as e: 
+             _logger.debug("failed to open bookmarks", exc_info=True)
+             return
+-        self.__bookmarks = map(lambda x: path_fromurl(x).strip(), f)
++        self.__bookmarks = [path_fromurl(x).strip() for x in f]
+         f.close()
+         
+     def __iter__(self):
+--- ./hotwire/sysdep/term.py	(original)
++++ ./hotwire/sysdep/term.py	(refactored)
+@@ -28,7 +28,7 @@
+ try:
+     import hotwire.sysdep.term_impl.term_vte
+     _module = hotwire.sysdep.term_impl.term_vte
+-except ImportError, e:
++except ImportError as e:
+     _logger.debug("Failed to import vte", exc_info=True)
+ 
+ _instance = None
+--- ./hotwire/sysdep/unix.py	(original)
++++ ./hotwire/sysdep/unix.py	(refactored)
+@@ -53,7 +53,7 @@
+ def getpwuid_cached(uid):
+     try:
+         return _pwuid_cache[uid]
+-    except KeyError, e:
++    except KeyError as e:
+         _pwuid_cache[uid] = result = getpwuid(uid)
+         return result
+ 
+@@ -61,6 +61,6 @@
+ def getgrgid_cached(gid):
+     try:
+         return _grgid_cache[gid]
+-    except KeyError, e:
++    except KeyError as e:
+         _grgid_cache[gid] = result = getgrgid(gid)
+         return result
+--- ./hotwire/sysdep/win32.py	(original)
++++ ./hotwire/sysdep/win32.py	(refactored)
+@@ -21,7 +21,7 @@
+ 
+ import os,sys,re
+ _pathexts = os.environ.get('PATHEXT', '.com;.exe;.bat').split(';')
+-_win_exec_re_str = '(' + ('|'.join(map(lambda x: '(' + re.escape(x) + ')', _pathexts))) + ')$'
++_win_exec_re_str = '(' + ('|'.join(['(' + re.escape(x) + ')' for x in _pathexts])) + ')$'
+ win_exec_re = re.compile(_win_exec_re_str, re.IGNORECASE)
+ # Better suggestions accepted!  This is used to try to find the entrypoint for a process.
+ win_dll_re = re.compile(r'\.((dll)|(DLL)|(drv)|(DRV))$')
+--- ./hotwire/sysdep/fs_impl/fs_gnomevfs.py	(original)
++++ ./hotwire/sysdep/fs_impl/fs_gnomevfs.py	(refactored)
+@@ -91,10 +91,10 @@
+             if self.vfsstat.type == gnomevfs.FILE_TYPE_SYMBOLIC_LINK:
+                 try:
+                     self.target_vfsstat = gnomevfs.get_file_info(self.uri, gnomevfs.FILE_INFO_GET_MIME_TYPE | gnomevfs.FILE_INFO_FOLLOW_LINKS)
+-                except Exception, e:
++                except Exception as e:
+                     _logger.debug("Failed to get file info for target of '%s'", self.uri, exc_info=True)
+                     self.target_vfsstat_error = str(e)
+-        except Exception, e:
++        except Exception as e:
+             _logger.debug("Failed to get file info for '%s'", self.uri, exc_info=True)
+             self.stat_error = str(e)
+             if rethrow:
+@@ -107,7 +107,7 @@
+             self._icon = self.fs.icon_lookup(self)
+             if self._icon is None:
+                 super(GnomeVfsFile, self)._do_get_icon()
+-        except Exception, e:
++        except Exception as e:
+             _logger.debug("Failed to get file icon for '%s'", self.uri, exc_info=True)
+             self._icon = 'gtk-dialog-error'
+ 
+--- ./hotwire/sysdep/fs_impl/fs_unix.py	(original)
++++ ./hotwire/sysdep/fs_impl/fs_unix.py	(refactored)
+@@ -31,13 +31,13 @@
+         self.fileklass = UnixFile         
+         
+     def _get_conf_dir_path(self):
+-        return os.path.expanduser(u'~/.hotwire')
++        return os.path.expanduser('~/.hotwire')
+ 
+     def _get_system_conf_dir_path(self):
+-        return u'/etc/hotwire'
++        return '/etc/hotwire'
+ 
+     def get_path_generator(self):
+-        for d in os.environ['PATH'].split(u':'):
++        for d in os.environ['PATH'].split(':'):
+             yield d
+ 
+     def path_executable_match(self, input, file_path):
+@@ -87,7 +87,7 @@
+             return
+         try:
+             return getpwuid_cached(uid).pw_name
+-        except KeyError, e:
++        except KeyError as e:
+             return str(uid)
+ 
+     def _get_group(self):
+@@ -96,7 +96,7 @@
+             return
+         try:
+             return getgrgid_cached(gid).gr_name
+-        except KeyError, e:
++        except KeyError as e:
+             return str(gid)         
+ 
+ def getInstance():
+--- ./hotwire/sysdep/fs_impl/fs_win32.py	(original)
++++ ./hotwire/sysdep/fs_impl/fs_win32.py	(refactored)
+@@ -82,12 +82,12 @@
+                 pass
+ 
+     def _get_conf_dir_path(self):
+-        return os.path.expanduser(u'~/Application Data/hotwire')
++        return os.path.expanduser('~/Application Data/hotwire')
+ 
+     def get_path_generator(self):
+         pathenv = os.environ['PATH']
+         # TODO - what encoding is PATHENV in? RefactoringTool: No changes to ./hotwire/sysdep/ipc_impl/dbusutil.py
+RefactoringTool: Refactored ./hotwire/sysdep/ipc_impl/ipc_dbus.py
+RefactoringTool: Refactored ./hotwire/sysdep/proc_impl/proc_linux.py
+RefactoringTool: Refactored ./hotwire/sysdep/proc_impl/proc_unix.py
+RefactoringTool: No changes to ./hotwire/sysdep/proc_impl/proc_win32.py
+RefactoringTool: Refactored ./hotwire/sysdep/term_impl/term_vte.py
+RefactoringTool: Refactored ./hotwire_ui/aboutdialog.py
+RefactoringTool: Refactored ./hotwire_ui/command.py
+RefactoringTool: Refactored ./hotwire_ui/completion.py
+RefactoringTool: No changes to ./hotwire_ui/dirswitch.py
+RefactoringTool: Refactored ./hotwire_ui/editor.py
+
+-        for d in pathenv.split(u';'):
++        for d in pathenv.split(';'):
+             yield d
+         
+     def get_basename_is_ignored(self, bn):
+@@ -134,7 +134,7 @@
+     def _do_get_stat(self, rethrow=False):
+         try:
+             super(Win32File, self)._do_get_stat(rethrow)
+-        except FileStatError, e:
++        except FileStatError as e:
+             _logger.debug("Failed to stat '%s': %s", self.path, e)
+             if msvcrt != None:
+                 _logger.debug("Trying our own wrapper of _stat32")
+--- ./hotwire/sysdep/ipc_impl/ipc_dbus.py	(original)
++++ ./hotwire/sysdep/ipc_impl/ipc_dbus.py	(refactored)
+@@ -60,7 +60,7 @@
+         try:
+             _logger.debug("Requesting D-BUS name %s on session bus", BUS_NAME)
+             dbusutil.take_name(BUS_NAME, bus=dbus.SessionBus())
+-        except dbusutil.DBusNameExistsException, e:
++        except dbusutil.DBusNameExistsException as e:
+             return True
+         return False
+ 
+@@ -73,7 +73,7 @@
+         startup_time = None
+         try:
+             startup_id_env = os.environ['DESKTOP_STARTUP_ID']
+-        except KeyError, e:
++        except KeyError as e:
+             startup_id_env = None
+         if startup_id_env:
+             idx = startup_id_env.find('_TIME')
+@@ -88,7 +88,7 @@
+         _logger.debug("Sending RaiseNoTimestamp to existing instance")
+         try:
+             inst_iface.NewWindow(self.__parse_startup_id() or 0) 
+-        except dbus.DBusException, e:
++        except dbus.DBusException as e:
+             _logger.error("Caught exception attempting to send RaiseNoTimestamp", exc_info=True)
+             
+     def run_tty(self, cwd, *args):
+--- ./hotwire/sysdep/proc_impl/proc_linux.py	(original)
++++ ./hotwire/sysdep/proc_impl/proc_linux.py	(refactored)
+@@ -48,10 +48,10 @@
+             if num_re.match(d):
+                 try:
+                     yield LinuxProcess(int(d))
+-                except OSError, e:
++                except OSError as e:
+                     # Ignore processes that go away as we read them
+                     pass
+-                except IOError, e:
++                except IOError as e:
+                     pass
+                 
+ def getInstance():
+--- ./hotwire/sysdep/proc_impl/proc_unix.py	(original)
++++ ./hotwire/sysdep/proc_impl/proc_unix.py	(refactored)
+@@ -38,16 +38,16 @@
+             try:
+                 os.killpg(pgid, signum)
+                 return # This hopefully worked, just return
+-            except OSError, e:
++            except OSError as e:
+                 _logger.warn("failed to send sig %s to process group %d", signum, pgid, exc_info=True)
+-        except OSError, e:
++        except OSError as e:
+             _logger.warn("failed to get process group for %d", pid, exc_info=True)
+             pgid = None
+         # Ok, we failed to kill the process group; fall back to the pid itself
+         try:
+             os.kill(pid, signum)
+             return True
+-        except OSError, e:
++        except OSError as e:
+             _logger.debug("Failed to send sig %s to pid %d", signum, pid)
+             return False    
+     
+@@ -66,7 +66,7 @@
+         try:
+             os.kill(pid, signal.SIGKILL)
+             return True
+-        except OSError, e:
++        except OSError as e:
+             _logger.debug("Failed to kill pid '%d': %s", pid, e)
+             return False
+ 
+--- ./hotwire/sysdep/term_impl/term_vte.py	(original)
++++ ./hotwire/sysdep/term_impl/term_vte.py	(refactored)
+@@ -73,7 +73,7 @@
+         prefs.monitor_prefs('term.', self.__on_pref_changed)
+ 
+         termargs = {}
+-        if isinstance(cmd, basestring):
++        if isinstance(cmd, str):
+             termargs['cmd'] = ['/bin/sh', '-c', cmd]
+         else:
+             termargs['cmd'] = cmd
+--- ./hotwire_ui/aboutdialog.py	(original)
++++ ./hotwire_ui/aboutdialog.py	(refactored)
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-import os, sys, logging, StringIO, traceback
++import os, sys, logging, io, traceback
+ 
+ import cairo, gtk, gobject, pango
+ 
+@@ -33,7 +33,7 @@
+         dialog.set_property('website', 'http://hotwire-shell.org')
+         dialog.set_property('version', hotwire.version.__version__)
+         dialog.set_property('authors', ['Colin Walters <walters@verbum.org>'])
+-        dialog.set_property('copyright', u'Copyright \u00A9 2007,2008 Colin Walters <walters@verbum.org>')
++        dialog.set_property('copyright', 'Copyright \u00A9 2007,2008 Colin Walters <walters@verbum.org>')
+         dialog.set_property('logo-icon-name', 'hotwire')
+         dialog.set_property('license', 
+                             '''Hotwire is free software; you can redistribute it and/or modify
+--- ./hotwire_ui/command.py	(original)
++++ ./hotwire_ui/command.py	(refactored)
+@@ -679,7 +679,7 @@
+             pipeline.disconnect()
+         try:
+             self.__complete_unseen_pipelines.remove(pipeline)
+-        except KeyError, e:
++        except KeyError as e:
+             pass
+         (cmdview, overview) = self.__get_widgets_for_pipeline(pipeline)
+         self.__cmd_notebook.remove(cmdview)
+@@ -907,9 +907,9 @@
+         self.__sync_display()
+             
+     def __sync_cmd_sensitivity(self, curpage=None):
+-        actions = map(self.__action_group.get_action, ['Copy', 'Cancel', 'PreviousCommand', 'NextCommand', 'Undo', 
++        actions = list(map(self.__action_group.get_action, ['Copy', 'Cancel', 'PreviousCommand', 'NextCommand', 'Undo', 
+                                                        'Input', 'RemovePipeline', 'DetachPipeline', 
+-                                                       'PreviousUnseenCommand', 'LastCommand', 'UndoRemovePipeline'])
++                                                       'PreviousUnseenCommand', 'LastCommand', 'UndoRemovePipeline']))
+         if self.__history_visible:
+             for action in actions:
+                 action.set_sensitive(False)
+@@ -1014,9 +1014,9 @@
+             nth = self.__cmd_notebook.get_current_page()
+         n_pages = self.__cmd_notebook.get_n_pages()
+         if is_end:
+-            r = xrange(nth+1, n_pages)
+-        else:
+-            r = xrange(0, nth)
++            r = range(nth+1, n_pages)
++        else:
++            r = range(0, nth)
+         for i in r:
+             yield self.__cmd_notebook.get_nth_page(i)
+ 
+@@ -1078,8 +1078,8 @@
+         self.connect('notify::active', self.__on_self_active_changed)
+         
+     def __on_pipeline_count_changed(self, *args):
+-        (count, unseen_count, executing_count) = map(self.__outputs.get_property, 
+-                                                     ('pipeline-count', 'unseen-pipeline-count', 'executing-pipeline-count'))
++        (count, unseen_count, executing_count) = list(map(self.__outputs.get_property, 
++                                                     ('pipeline-count', 'unseen-pipeline-count', 'executing-pipeline-count')))
+         self.set_label(_('%d (%d)') % (count, executing_count))
+         self.__tooltips.set_tip(self, _('%d total, %d executing, %d complete') % (count, executing_count, unseen_count))         
+     
+--- ./hotwire_ui/completion.py	(original)
++++ ./hotwire_ui/completion.py	(refactored)
+@@ -470,7 +470,7 @@
+         self.set_size_request((int(ref_w*0.75)), -1)
+         
+     def set_history_search(self, lang_uuid, histsearch):
+-        histitems = map(lambda result: (lang_uuid,result), self.__context.history.search_commands(lang_uuid, histsearch))
++        histitems = [(lang_uuid,result) for result in self.__context.history.search_commands(lang_uuid, histsearch)]
+         self.__current_history = not not histitems
+         self.__global_history_display.set_content(histitems, uniquify=True)
+         self.__global_history_display.set_matchtext(histsearch)
+--- ./hotwire_ui/editor.py	(original)
++++ ./hotwire_ui/editor.py	(refactored)
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-import os, sys, logging, StringIO, traceback, tempfile
++import os, sys, logging, io, traceback, tempfileRefactoringTool: No changes to ./hotwire_ui/inlinesearch.py
+RefactoringTool: No changes to ./hotwire_ui/msgarea.py
+RefactoringTool: Refactored ./hotwire_ui/navigationbar.py
+RefactoringTool: Refactored ./hotwire_ui/odisp.py
+RefactoringTool: Refactored ./hotwire_ui/oinspect.py
+RefactoringTool: Refactored ./hotwire_ui/pixbufcache.py
+RefactoringTool: No changes to ./hotwire_ui/prefs.py
+RefactoringTool: Refactored ./hotwire_ui/pyshell.py
+RefactoringTool: No changes to ./hotwire_ui/quickfind.py
+RefactoringTool: Refactored ./hotwire_ui/render.py
+
+ 
+ import cairo, gtk, gobject, pango
+ 
+@@ -32,12 +32,12 @@
+     try:
+         from gtksourceview2 import Buffer as SourceBuffer, View as SourceView
+         gtksourceview2_avail = True
+-    except ImportError, e:
++    except ImportError as e:
+         from gtksourceview import SourceBuffer, SourceView
+         gtksourceview2_avail = False
+     gtksourceview_avail = True
+     _logger.debug("gtksourceview available")
+-except ImportError, e:
++except ImportError as e:
+     gtksourceview_avail = False
+     _logger.debug("gtksourceview not available")
+ 
+@@ -199,7 +199,7 @@
+         fs = Filesystem.getInstance()
+         try:
+             mimetype = fs.get_file_sync(self.__filename).mimetype
+-        except FileStatError, e:
++        except FileStatError as e:
+             mimetype = None
+         target_lang = None        
+         if gtksourceview2_avail:
+@@ -257,7 +257,7 @@
+         os.close(tempfd)
+         f = open_text_file(temppath, 'w')
+         text = self.input.get_property("text")
+-        utext = unicode(text)
++        utext = str(text)
+         f.write(utext)
+         f.flush()
+         os.fsync(tempfd)
+--- ./hotwire_ui/navigationbar.py	(original)
++++ ./hotwire_ui/navigationbar.py	(refactored)
+@@ -103,10 +103,10 @@
+             i += 1
+         if i >= len(self.__components):
+             children[i - 1].down()
+-            for j in xrange(i, len(children)):
++            for j in range(i, len(children)):
+                 children[j].up()
+             return
+-        for j in xrange(i, len(children)):
++        for j in range(i, len(children)):
+             self.remove(children[j])
+         self.__append_components(self.__components, i)
+         self.get_children()[-1].down()
+@@ -115,10 +115,10 @@
+         cwd = self.__context.get_cwd()
+         self.__components = cwd.split('/')
+         self.__components[0] += '/'
+-        self.__components = filter(lambda x: x != '', self.__components)
++        self.__components = [x for x in self.__components if x != '']
+ 
+     def __append_components(self, components, i = 0):
+-        for j in xrange(i, len(components)):
++        for j in range(i, len(components)):
+             b = BreadButton(self.__context, self,
+                             components[0] + '/'.join(components[1:j+1]),
+                             label = components[j]) 
+--- ./hotwire_ui/odisp.py	(original)
++++ ./hotwire_ui/odisp.py	(refactored)
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-import os,sys,re,Queue,logging,inspect,locale
++import os,sys,re,queue,logging,inspect,locale
+ 
+ import gtk, gobject, pango
+ 
+@@ -74,7 +74,7 @@
+         try:
+             self.__display.start_search()
+             return True
+-        except NotImplementedError, e:
++        except NotImplementedError as e:
+             pass        
+         if self.__search is None:
+             self.__search = self.__display.get_search()
+@@ -327,7 +327,7 @@
+ 
+     def cancel(self):
+         self.__cancelled = True
+-        for queue in self.__queues.iterkeys():
++        for queue in self.__queues.keys():
+             queue.disconnect()
+ 
+     def get_ocount(self):
+@@ -386,7 +386,7 @@
+                     active_odisp = True
+                 else:
+                     _logger.warn("Unexpected item %s from queue %s", item, name)
+-        except Queue.Empty:
++        except queue.Empty:
+             pass
+         if empty:
+             del self.__queues[queue]
+--- ./hotwire_ui/oinspect.py	(original)
++++ ./hotwire_ui/oinspect.py	(refactored)
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-import os, sys, logging, StringIO, traceback, inspect, locale
++import os, sys, logging, io, traceback, inspect, locale
+ 
+ import cairo, gtk, gobject, pango
+ 
+@@ -235,7 +235,7 @@
+             else:
+                 osrc_target = type(obj)
+             srcpath = inspect.getsourcefile(osrc_target)                
+-        except TypeError, e:
++        except TypeError as e:
+             _logger.debug("failed to get sourcefile", exc_info=True)
+             srcpath = None
+         if srcpath:
+--- ./hotwire_ui/pixbufcache.py	(original)
++++ ./hotwire_ui/pixbufcache.py	(refactored)
+@@ -59,7 +59,7 @@
+             if path == gtk.STOCK_MISSING_IMAGE:
+                 return None
+             return self.get_stock(gtk.STOCK_MISSING_IMAGE)        
+-        if not self.__cache.has_key((path, size)):
++        if (path, size) not in self.__cache:
+             pixbuf = self.__do_load(path, size, animation)
+             self.__cache[(path, size)] = pixbuf
+         return self.__cache[(path, size)]
+@@ -71,7 +71,7 @@
+         theme = gtk.icon_theme_get_default()
+         try:
+             return theme.load_icon(name, size, 0)
+-        except gobject.GError, e:
++        except gobject.GError as e:
+             return None
+         
+     def __do_load(self, path, size, animation):
+--- ./hotwire_ui/pyshell.py	(original)
++++ ./hotwire_ui/pyshell.py	(refactored)
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-import os, sys, logging, StringIO, traceback
++import os, sys, logging, io, traceback
+ 
+ import cairo, gtk, gobject, pango
+ 
+@@ -107,7 +107,7 @@
+             try:
+                 import gtksourceview2
+                 pylang = gtksourceview2.language_manager_get_default().get_language('python')
+-            except ImportError, e:
++            except ImportError as e:
+                 import gtksourceview
+                 pylang = gtksourceview.SourceLanguagesManager().get_language_from_mime_type("text/x-python")
+                 self.input.set_highlight(True)
+@@ -129,16 +129,16 @@
+ 
+     def __eval_cb(self, a):
+         try:
+-            output_stream = StringIO.StringIO()
++            output_stream = io.StringIO()
+             text = self.input.get_property("text")
+             code_obj = compile(text, '<input>', 'exec')
+             locals = {}
+-            for k, v in self._locals.items():
++            for k, v in list(self._locals.items()):
+                 locals[k] = v
+             locals['output'] = output_stream
+             locals['outln'] = lambda v: self.__outln(output_stream, v)
+             locals['inspect'] = self.__do_inspect
+-            exec code_obj in locals
++            exec(code_obj, locals)
+             _logger.debug("execution complete with %d output characters" % (len(output_stream.getvalue())),)
+             output_str = output_stream.getvalue()
+             if output_str:
+--- ./hotwire_ui/render.py	(original)
++++ ./hotwire_ui/render.py	(refactored)
+@@ -121,7 +121,7 @@
+             attrval = getattr(self, item)
+             if hasattr(attrval, '__call__'):
+                 if hasattr(attrval, 'hotwire_menuitem'):
+-                    name = getattr(attrval, 'hotwire_menuitem') or (attrval.func_name[0].upper() + attrval.func_name[1:])
++                    name = getattr(attrval, 'hotwire_menuitem') or (attrval.__name__[0].upper() + attrval.__name__[1:])
+                     menuitems.append((attrval, name))
+         func_menuitems = []
+         for (item, name) in menuitems:
+@@ -132,7 +132,7 @@
+ 
+     def __do_menuitem(self, menuitem, func, iter):
+         func(iter)
+-        self.context.push_msg('Execution of <b>%s</b> successful' % (gobject.markup_escape_text(func.func_name),),
++        self.context.push_msg('Execution of <b>%s</b> successful' % (gobject.markup_escape_text(func.__name__),),
+                               markup=True)
+ 
+     def get_widget(self):
+@@ -180,7 +180,7 @@
+         return col        
+ 
+     def _insert_proptext(self, name, title=None, **kwargs):
+-        return self._insert_column(name, proptype=unicode, title=title, renderfunc=self._render_proptext, **kwargs)
++        return self._insert_column(name, proptype=str, title=title, renderfunc=self._render_proptext, **kwargs)
+ 
+     def _insert_propcol(self, name, title=None, idx=0, **kwargs):
+         return self._insert_column(name, proptype='any', title=title, renderfunc=self._render_propcol, **kwargs)RefactoringTool: Refactored ./hotwire_ui/shell.py
+RefactoringTool: Refactored ./hotwire_ui/widgets.py
+RefactoringTool: No changes to ./hotwire_ui/adaptors/__init__.py
+RefactoringTool: Refactored ./hotwire_ui/adaptors/aliases_unix.py
+RefactoringTool: No changes to ./hotwire_ui/adaptors/edit.py
+RefactoringTool: Refactored ./hotwire_ui/adaptors/editors.py
+RefactoringTool: No changes to ./hotwire_ui/adaptors/ssh.py
+RefactoringTool: No changes to ./hotwire_ui/adaptors/sudo.py
+RefactoringTool: No changes to ./hotwire_ui/adaptors/view.py
+RefactoringTool: Refactored ./hotwire_ui/renderers/dict.py
+RefactoringTool: Refactored ./hotwire_ui/renderers/file.py
+
+@@ -213,14 +213,14 @@
+         assert colidx != -1
+         self.__search_enabled = True
+         self._table.set_search_column(colidx)
+-        self._table.set_search_equal_func(col.get_data('hotwire-proptype') is unicode and self._search_proptext or self._search_propcol,
++        self._table.set_search_equal_func(col.get_data('hotwire-proptype') is str and self._search_proptext or self._search_propcol,
+                                           col.get_data('hotwire-propname'))
+ 
+     def _render_propcol(self, col, cell, model, iter, data):
+         (prop, idx) = data        
+         obj = model.get_value(iter, idx)
+         propval = getattr(obj, prop)
+-        cell.set_property('text', unicode(propval))
++        cell.set_property('text', str(propval))
+ 
+     def _render_proptext(self, col, cell, model, iter, data):
+         (prop, idx) = data
+@@ -244,14 +244,14 @@
+     def _search_propcol(self, model, col, key, iter, prop):
+         obj = model.get_value(iter, 0)
+         propval = getattr(obj, prop)
+-        text = unicode(propval) 
++        text = str(propval) 
+         if text.find(key) >= 0:
+             return False
+         return True
+ 
+     def _search_proptext(self, model, col, key, iter, prop):
+         obj = model.get_value(iter, 0)
+-        propval = unicode(getattr(obj, prop))
++        propval = str(getattr(obj, prop))
+         if propval.find(key) >= 0:
+             return False
+         return True
+@@ -272,7 +272,7 @@
+ 
+     def _render_objtext(self, col, cell, model, iter):
+         obj = model.get_value(iter, 0)
+-        cell.set_property('text', unicode(repr(obj)))
++        cell.set_property('text', str(repr(obj)))
+ 
+     def append_obj(self, obj, **kwargs):
+         self._liststore.append((obj,))
+@@ -365,6 +365,6 @@
+ import hotwire_ui.renderers.help
+ import hotwire_ui.renderers.list
+ import hotwire_ui.renderers.ps
+-import hotwire_ui.renderers.unicode
++import hotwire_ui.renderers.str
+ #moddir = hotwire.ModuleDir(os.path.join(os.path.dirname(hotwire.__file__), 'renderers'))
+ #moddir.do_import()
+--- ./hotwire_ui/shell.py	(original)
++++ ./hotwire_ui/shell.py	(refactored)
+@@ -725,7 +725,7 @@
+             if url.startswith('file://'):
+                 return url[7:]
+             return url
+-        fpaths = map(fstrip, urls.split('\r\n'))
++        fpaths = list(map(fstrip, urls.split('\r\n')))
+         _logger.debug("path is %s, got drop paths: %s", path, fpaths)
+         fpaths.append(path)
+         self.internal_execute('cp', *fpaths)
+@@ -806,7 +806,7 @@
+         self.__completions.hide_all()
+         try:
+             self.__do_parse(partial=False, resolve=True)
+-        except hotwire.command.PipelineParseException, e:
++        except hotwire.command.PipelineParseException as e:
+             self.push_error(_("Failed to parse pipeline"), secondary=e.args[0])
+             return
+                 
+@@ -854,7 +854,7 @@
+         if self.__parse_stale:
+             try:
+                 self.__do_parse(partial=True, resolve=False)
+-            except hotwire.command.PipelineParseException, e:
++            except hotwire.command.PipelineParseException as e:
+                 self.push_error(_('Failed to parse pipeline'), secondary=e.args[0])
+                 return
+             self.__do_complete()
+@@ -1116,7 +1116,7 @@
+             self.__parsed_pipeline = self.__pipeline_factory.parse(text, accept_partial=partial, 
+                                                                          curlang=self.__langtype,
+                                                                          resolve=resolve)
+-        except hotwire.command.PipelineParseException, e:
++        except hotwire.command.PipelineParseException as e:
+             _logger.debug("parse failed, current syntax=%s", self.__langtype, exc_info=True)
+             self.__parsed_pipeline = None
+             if (not partial):
+@@ -1158,7 +1158,7 @@
+         _logger.debug("using Emacs keys: %s", emacs)
+             
+ class HotWindow(gtk.Window):
+-    ascii_nums = [long(x+ord('0')) for x in xrange(10)]
++    ascii_nums = [int(x+ord('0')) for x in range(10)]
+ 
+     def __init__(self, factory=None, is_initial=False, subtitle='', **kwargs):
+         super(HotWindow, self).__init__()
+@@ -1665,13 +1665,13 @@
+     def create_window(self, is_initial=False, *args, **kwargs):
+         _logger.debug("creating window")
+         if is_initial:
+-            for k,v in kwargs.iteritems():
+-                if self.__sticky_keywords.has_key(k):
++            for k,v in kwargs.items():
++                if k in self.__sticky_keywords:
+                     self.__sticky_keywords[k] = v
+             if 'initcmd' not in kwargs:
+                 kwargs['initcmd'] = 'help'
+-        for k,v in self.__sticky_keywords.iteritems():
+-            if not kwargs.has_key(k):
++        for k,v in self.__sticky_keywords.items():
++            if k not in kwargs:
+                 kwargs[k] = v
+         win = HotWindow(factory=self, is_initial=is_initial, **kwargs)
+         win.connect('destroy', self.__on_win_destroy)
+@@ -1698,7 +1698,7 @@
+         self.__windows.remove(win)
+         if win == self.__active_window and len(self.__windows) > 0:
+             # Pick one.
+-            self.__active_window = self.__windows.__iter__().next()
++            self.__active_window = next(self.__windows.__iter__())
+         if len(self.__windows) == 0:
+             gtk.main_quit()
+ 
+--- ./hotwire_ui/widgets.py	(original)
++++ ./hotwire_ui/widgets.py	(refactored)
+@@ -222,7 +222,7 @@
+     """This class takes keyword arguments, in contrast to the GTK+ one."""
+     def __init__(self, **kwargs):
+         super(CellRendererText, self).__init__()
+-        for k,v in kwargs.iteritems():
++        for k,v in kwargs.items():
+             self.set_property(k.replace('_', '-'), v)
+         
+ class CellRendererLink(CellRendererText):
+--- ./hotwire_ui/adaptors/aliases_unix.py	(original)
++++ ./hotwire_ui/adaptors/aliases_unix.py	(refactored)
+@@ -44,5 +44,5 @@
+                    'nethack': 'term nethack',
+                   }
+ aliases = AliasRegistry.getInstance()
+-for name,value in default_aliases.iteritems():
++for name,value in default_aliases.items():
+     aliases.insert(name, value)
+--- ./hotwire_ui/adaptors/editors.py	(original)
++++ ./hotwire_ui/adaptors/editors.py	(refactored)
+@@ -128,7 +128,7 @@
+         self.__custom_editor_set = False             
+         self.__sync_pref()
+         editor = ' '.join(map(quote_arg, self[self.__pref_editor_uuid].build_default_arguments()))
+-        if isinstance(editor, unicode) and sys.stdin.encoding is not None:
++        if isinstance(editor, str) and sys.stdin.encoding is not None:
+             editor = editor.encode(sys.stdin.encoding)
+         os.environ['EDITOR'] = editor
+         
+@@ -148,7 +148,7 @@
+         return self.__editors[uuid]
+         
+     def __iter__(self):
+-        for x in self.__editors.itervalues():
++        for x in self.__editors.values():
+             yield x
+ 
+     def register(self, editor):
+--- ./hotwire_ui/renderers/dict.py	(original)
++++ ./hotwire_ui/renderers/dict.py	(refactored)
+@@ -41,7 +41,7 @@
+     def __render_tuple_slice(self, col, cell, model, iter, idx):
+         tup = model.get_value(iter, 0)
+         v = tup[idx]
+-        valrepr = unicode(repr(v))
++        valrepr = str(repr(v))
+         cell.set_property('text', valrepr)
+         
+     def get_objects(self):
+@@ -52,7 +52,7 @@
+             return
+         self.__obj = o
+         superappend = super(DictRenderer, self).append_obj 
+-        for k,v in o.iteritems():
++        for k,v in o.items():
+             superappend((k, v))
+ 
+ ClassRendererMapping.getInstance().register(dict, DictRenderer)
+--- ./hotwire_ui/renderers/file.py	(original)
++++ ./hotwire_ui/renderers/file.py	(refactored)
+@@ -17,7 +17,7 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+ import os, stat, signal, datetime, logging, subprocess
+-from StringIO import StringIO
++from io import StringIO
+ 
+ import gtk, gobject, pango
+ 
+@@ -40,7 +40,7 @@
+ 
+ class FilePathRenderer(TreeObjectsRenderer):
+     def __init__(self, *args, **kwargs):
+-        if not 'column_types' in kwargs.iterkeys():
++        if not 'column_types' in iter(kwargs.keys()):RefactoringTool: No changes to ./hotwire_ui/renderers/filestringmatch.py
+RefactoringTool: Refactored ./hotwire_ui/renderers/help.py
+RefactoringTool: Refactored ./hotwire_ui/renderers/list.py
+RefactoringTool: No changes to ./hotwire_ui/renderers/ps.py
+RefactoringTool: Refactored ./hotwire_ui/renderers/unicode.py
+RefactoringTool: Files that were modified:
+RefactoringTool: ./setup.py
+RefactoringTool: ./DistUtilsExtra/pygettext.py
+RefactoringTool: ./DistUtilsExtra/command/__init__.py
+RefactoringTool: ./DistUtilsExtra/command/build_extra.py
+RefactoringTool: ./DistUtilsExtra/command/build_help.py
+RefactoringTool: ./DistUtilsExtra/command/build_i18n.py
+RefactoringTool: ./DistUtilsExtra/command/build_icons.py
+RefactoringTool: ./hotapps/hotsudo/sudowindow.py
+RefactoringTool: ./hotvte/vteterm.py
+RefactoringTool: ./hotvte/vtewindow.py
+RefactoringTool: ./hotwire/async.py
+RefactoringTool: ./hotwire/builtin.py
+RefactoringTool: ./hotwire/cmdalias.py
+RefactoringTool: ./hotwire/command.py
+RefactoringTool: ./hotwire/completion.py
+RefactoringTool: ./hotwire/fs.py
+RefactoringTool: ./hotwire/gutil.py
+RefactoringTool: ./hotwire/logutil.py
+RefactoringTool: ./hotwire/mainloop_g.py
+RefactoringTool: ./hotwire/mainloop_null.py
+RefactoringTool: ./hotwire/pluginsystem.py
+RefactoringTool: ./hotwire/script.py
+RefactoringTool: ./hotwire/sshutil.py
+RefactoringTool: ./hotwire/state.py
+RefactoringTool: ./hotwire/test_command.py
+RefactoringTool: ./hotwire/test_command_unix.py
+RefactoringTool: ./hotwire/test_completion.py
+RefactoringTool: ./hotwire/test_completion_unix.py
+RefactoringTool: ./hotwire/text.py
+RefactoringTool: ./hotwire/unicodeutils.py
+RefactoringTool: ./hotwire/util.py
+RefactoringTool: ./hotwire/version.py
+RefactoringTool: ./hotwire/builtins/apply.py
+RefactoringTool: ./hotwire/builtins/cat.py
+RefactoringTool: ./hotwire/builtins/cd.py
+RefactoringTool: ./hotwire/builtins/cp.py
+RefactoringTool: ./hotwire/builtins/current.py
+RefactoringTool: ./hotwire/builtins/exit.py
+RefactoringTool: ./hotwire/builtins/fileop.py
+RefactoringTool: ./hotwire/builtins/filter.py
+RefactoringTool: ./hotwire/builtins/fsearch.py
+RefactoringTool: ./hotwire/builtins/head.py
+RefactoringTool: ./hotwire/builtins/help.py
+RefactoringTool: ./hotwire/builtins/history.py
+RefactoringTool: ./hotwire/builtins/httpget.py
+RefactoringTool: ./hotwire/builtins/iter.py
+RefactoringTool: ./hotwire/builtins/json.py
+RefactoringTool: ./hotwire/builtins/kill.py
+RefactoringTool: ./hotwire/builtins/ls.py
+RefactoringTool: ./hotwire/builtins/mkdir.py
+RefactoringTool: ./hotwire/builtins/mv.py
+RefactoringTool: ./hotwire/builtins/newline.py
+RefactoringTool: ./hotwire/builtins/open.py
+RefactoringTool: ./hotwire/builtins/path.py
+RefactoringTool: ./hotwire/builtins/pprint_builtin.py
+RefactoringTool: ./hotwire/builtins/proc.py
+RefactoringTool: ./hotwire/builtins/prop.py
+RefactoringTool: ./hotwire/builtins/pyeval.py
+RefactoringTool: ./hotwire/builtins/pyfilter.py
+RefactoringTool: ./hotwire/builtins/pymap.py
+RefactoringTool: ./hotwire/builtins/replace.py
+RefactoringTool: ./hotwire/builtins/rm.py
+RefactoringTool: ./hotwire/builtins/sechash.py
+RefactoringTool: ./hotwire/builtins/selection.py
+RefactoringTool: ./hotwire/builtins/setenv.py
+RefactoringTool: ./hotwire/builtins/sort.py
+RefactoringTool: ./hotwire/builtins/stringify.py
+RefactoringTool: ./hotwire/builtins/sys_builtin.py
+RefactoringTool: ./hotwire/builtins/term.py
+RefactoringTool: ./hotwire/builtins/uniq.py
+RefactoringTool: ./hotwire/builtins/walk.py
+RefactoringTool: ./hotwire/builtins/write.py
+RefactoringTool: ./hotwire/externals/glob2.py
+RefactoringTool: ./hotwire/externals/rewrite.py
+RefactoringTool: ./hotwire/externals/shlex.py
+RefactoringTool: ./hotwire/externals/singletonmixin.py
+RefactoringTool: ./hotwire/externals/webbrowser.py
+RefactoringTool: ./hotwire/externals/dispatch/__init__.py
+RefactoringTool: ./hotwire/externals/dispatch/dispatcher.py
+RefactoringTool: ./hotwire/externals/dispatch/errors.py
+RefactoringTool: ./hotwire/externals/dispatch/robust.py
+RefactoringTool: ./hotwire/externals/dispatch/robustapply.py
+RefactoringTool: ./hotwire/externals/dispatch/saferef.py
+RefactoringTool: ./hotwire/sysdep/__init__.py
+RefactoringTool: ./hotwire/sysdep/fs.py
+RefactoringTool: ./hotwire/sysdep/ipc.py
+RefactoringTool: ./hotwire/sysdep/proc.py
+RefactoringTool: ./hotwire/sysdep/sysenv.py
+RefactoringTool: ./hotwire/sysdep/term.py
+RefactoringTool: ./hotwire/sysdep/unix.py
+RefactoringTool: ./hotwire/sysdep/unix_completers.py
+RefactoringTool: ./hotwire/sysdep/win32.py
+RefactoringTool: ./hotwire/sysdep/fs_impl/fs_gnomevfs.py
+RefactoringTool: ./hotwire/sysdep/fs_impl/fs_unix.py
+RefactoringTool: ./hotwire/sysdep/fs_impl/fs_win32.py
+RefactoringTool: ./hotwire/sysdep/ipc_impl/dbusutil.py
+RefactoringTool: ./hotwire/sysdep/ipc_impl/ipc_dbus.py
+RefactoringTool: ./hotwire/sysdep/proc_impl/proc_linux.py
+RefactoringTool: ./hotwire/sysdep/proc_impl/proc_unix.py
+RefactoringTool: ./hotwire/sysdep/proc_impl/proc_win32.py
+RefactoringTool: ./hotwire/sysdep/term_impl/term_vte.py
+RefactoringTool: ./hotwire_ui/aboutdialog.py
+RefactoringTool: ./hotwire_ui/command.py
+RefactoringTool: ./hotwire_ui/completion.py
+RefactoringTool: ./hotwire_ui/dirswitch.py
+RefactoringTool: ./hotwire_ui/editor.py
+RefactoringTool: ./hotwire_ui/inlinesearch.py
+RefactoringTool: ./hotwire_ui/msgarea.py
+RefactoringTool: ./hotwire_ui/navigationbar.py
+RefactoringTool: ./hotwire_ui/odisp.py
+RefactoringTool: ./hotwire_ui/oinspect.py
+RefactoringTool: ./hotwire_ui/pixbufcache.py
+RefactoringTool: ./hotwire_ui/prefs.py
+RefactoringTool: ./hotwire_ui/pyshell.py
+RefactoringTool: ./hotwire_ui/quickfind.py
+RefactoringTool: ./hotwire_ui/render.py
+RefactoringTool: ./hotwire_ui/shell.py
+RefactoringTool: ./hotwire_ui/widgets.py
+RefactoringTool: ./hotwire_ui/adaptors/__init__.py
+RefactoringTool: ./hotwire_ui/adaptors/aliases_unix.py
+RefactoringTool: ./hotwire_ui/adaptors/edit.py
+RefactoringTool: ./hotwire_ui/adaptors/editors.py
+RefactoringTool: ./hotwire_ui/adaptors/ssh.py
+RefactoringTool: ./hotwire_ui/adaptors/sudo.py
+RefactoringTool: ./hotwire_ui/adaptors/view.py
+RefactoringTool: ./hotwire_ui/renderers/dict.py
+RefactoringTool: ./hotwire_ui/renderers/file.py
+RefactoringTool: ./hotwire_ui/renderers/filestringmatch.py
+RefactoringTool: ./hotwire_ui/renderers/help.py
+RefactoringTool: ./hotwire_ui/renderers/list.py
+RefactoringTool: ./hotwire_ui/renderers/ps.py
+RefactoringTool: ./hotwire_ui/renderers/unicode.py
+RefactoringTool: Warnings/messages while refactoring:
+RefactoringTool: ### In file ./hotwire/builtins/write.py ###
+RefactoringTool: Line 58: You should use a for loop here
+
+             kwargs['column_types'] = [gobject.TYPE_PYOBJECT]
+         self.__fs = Filesystem.getInstance()
+         self.__basedir = None
+@@ -306,7 +306,7 @@
+         for colname in ['size', 'last_modified', 'owner', 'group', 'permissions', 'mime']:
+             try:
+                 col = self._get_propcol_by_name(colname)
+-            except KeyError, e:
++            except KeyError as e:
+                 _logger.debug("failed to find col %r", colname, exc_info=True)
+                 continue
+             pref = prefs.get_pref('hotwire.ui.render.File.columns.' + colname, default=True)
+--- ./hotwire_ui/renderers/help.py	(original)
++++ ./hotwire_ui/renderers/help.py	(refactored)
+@@ -16,12 +16,12 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-import StringIO
++import io
+ 
+ import gtk,gobject
+ 
+ from hotwire_ui.render import ClassRendererMapping
+-from hotwire_ui.renderers.unicode import UnicodeRenderer
++from hotwire_ui.renderers.str import UnicodeRenderer
+ from hotwire.cmdalias import AliasRegistry
+ from hotwire.command import PipelineLanguageRegistry
+ from hotwire.builtin import BuiltinRegistry, MultiArgSpec, ArgSpec
+@@ -54,7 +54,7 @@
+         self._buf.insert_markup('\n\n')
+ 
+         registry = BuiltinRegistry.getInstance()
+-        for (setname,builtins) in zip((_('User'), _('Standard'), _('System')), map(list, [registry.user_set, registry.hotwire_set, registry.system_set])):
++        for (setname,builtins) in zip((_('User'), _('Standard'), _('System')), list(map(list, [registry.user_set, registry.hotwire_set, registry.system_set]))):
+             if len(builtins) == 0:
+                 continue 
+             self._buf.insert_markup('<larger>%s:</larger>\n' % (_('%s Builtin Commands' % (setname,)),))
+@@ -130,7 +130,7 @@
+ 
+     def __append_builtin_doc(self, builtin):
+         if builtin.doc:
+-            for line in StringIO.StringIO(builtin.doc):
++            for line in io.StringIO(builtin.doc):
+                 self._buf.insert_markup('    ' + gobject.markup_escape_text(line))
+             self._buf.insert_markup('\n')        
+                 
+@@ -157,7 +157,7 @@
+         if not builtin.options:
+             self._buf.insert_markup('    <i>%s</i>\n' % (_('(No options)'),))
+         else:
+-            argstr = '  '.join(map(lambda x: ','.join(x), builtin.options))
++            argstr = '  '.join([','.join(x) for x in builtin.options])
+             self._buf.insert_markup('    %s: ' % (_('Options'),))
+             self._buf.insert_markup('<tt>' + gobject.markup_escape_text(argstr) + '</tt>')
+             self._buf.insert_markup('\n')                
+--- ./hotwire_ui/renderers/list.py	(original)
++++ ./hotwire_ui/renderers/list.py	(refactored)
+@@ -41,7 +41,7 @@
+     def __render_tuple_slice(self, col, cell, model, iter, idx):
+         tup = model.get_value(iter, 0)
+         v = tup[idx]
+-        valrepr = unicode(repr(v))
++        valrepr = str(repr(v))
+         cell.set_property('text', valrepr)
+         
+     def get_objects(self):
+--- ./hotwire_ui/renderers/unicode.py	(original)
++++ ./hotwire_ui/renderers/unicode.py	(refactored)
+@@ -98,7 +98,7 @@
+         self.emit("close")
+         
+     def __do_send(self):
+-        obj = unicode(self.__input.get_property('text') + '\n')
++        obj = str(self.__input.get_property('text') + '\n')
+         self.emit('object-input', obj, self.__password_button.get_active())
+         self.reset()
+         
+@@ -183,7 +183,7 @@
+                 iterend.forward_to_tag_toggle(tag)
+                 bufslice = self._buf.get_slice(iterstart, iterend)
+                 linkvalue = self.__links[bufslice]
+-                if isinstance(linkvalue, basestring):
++                if isinstance(linkvalue, str):
+                     webbrowser.open(linkvalue)
+                 elif hasattr(linkvalue, '__call__'):
+                     linkvalue(bufslice)
+@@ -436,5 +436,5 @@
+     def get_input(self):
+         return self.__inputarea
+ 
+-ClassRendererMapping.getInstance().register(unicode, UnicodeRenderer)
++ClassRendererMapping.getInstance().register(str, UnicodeRenderer)
+ ClassRendererMapping.getInstance().register(str, UnicodeRenderer) # for now
