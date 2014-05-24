@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os, sys, logging, StringIO, traceback
+import os, sys, logging, io, traceback
 
 import cairo, gtk, gobject, pango
 
@@ -107,7 +107,7 @@ outln('''
             try:
                 import gtksourceview2
                 pylang = gtksourceview2.language_manager_get_default().get_language('python')
-            except ImportError, e:
+            except ImportError as e:
                 import gtksourceview
                 pylang = gtksourceview.SourceLanguagesManager().get_language_from_mime_type("text/x-python")
                 self.input.set_highlight(True)
@@ -129,16 +129,16 @@ outln('''
 
     def __eval_cb(self, a):
         try:
-            output_stream = StringIO.StringIO()
+            output_stream = io.StringIO()
             text = self.input.get_property("text")
             code_obj = compile(text, '<input>', 'exec')
             locals = {}
-            for k, v in self._locals.items():
+            for k, v in list(self._locals.items()):
                 locals[k] = v
             locals['output'] = output_stream
             locals['outln'] = lambda v: self.__outln(output_stream, v)
             locals['inspect'] = self.__do_inspect
-            exec code_obj in locals
+            exec(code_obj, locals)
             _logger.debug("execution complete with %d output characters" % (len(output_stream.getvalue())),)
             output_str = output_stream.getvalue()
             if output_str:

@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import os, stat, signal, datetime, logging, subprocess
-from StringIO import StringIO
+from io import StringIO
 
 import gtk, gobject, pango
 
@@ -40,7 +40,7 @@ _logger = logging.getLogger("hotwire.ui.render.File")
 
 class FilePathRenderer(TreeObjectsRenderer):
     def __init__(self, *args, **kwargs):
-        if not 'column_types' in kwargs.iterkeys():
+        if not 'column_types' in iter(kwargs.keys()):
             kwargs['column_types'] = [gobject.TYPE_PYOBJECT]
         self.__fs = Filesystem.getInstance()
         self.__basedir = None
@@ -306,7 +306,7 @@ class FilePathRenderer(TreeObjectsRenderer):
         for colname in ['size', 'last_modified', 'owner', 'group', 'permissions', 'mime']:
             try:
                 col = self._get_propcol_by_name(colname)
-            except KeyError, e:
+            except KeyError as e:
                 _logger.debug("failed to find col %r", colname, exc_info=True)
                 continue
             pref = prefs.get_pref('hotwire.ui.render.File.columns.' + colname, default=True)

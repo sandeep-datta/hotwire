@@ -29,24 +29,24 @@ from hotwire.fs import unix_basename, path_join
 class PipelineRunTestsUnix(PipelineRunTestFramework):
     def testSh(self):
         self._setupTree1()
-        self.assertEquals(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), False)
+        self.assertEqual(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), False)
         p = Pipeline.parse('sys touch otherfile', self._context)
         p.execute_sync()
-        self.assertEquals(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), True)
+        self.assertEqual(os.access(os.path.join(self._tmpd, 'otherfile'), os.R_OK), True)
 
     def testSh2(self):
         self._setupTree1()
-        self.assertEquals(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), False)
+        self.assertEqual(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), False)
         p = Pipeline.parse('sys touch "file with spaces"', self._context)
         p.execute_sync()
-        self.assertEquals(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), True)
+        self.assertEqual(os.access(os.path.join(self._tmpd, 'file with spaces'), os.R_OK), True)
 
     def testSh3(self):
         self._setupTree2()
-        self.assertEquals(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), True)
+        self.assertEqual(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), True)
         p = Pipeline.parse("sys rmdir 'dir with spaces'", self._context)
         p.execute_sync()
-        self.assertEquals(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), False)
+        self.assertEqual(os.access(os.path.join(self._tmpd, 'dir with spaces'), os.R_OK), False)
 
     def testSh4(self):
         self._setupTree1()
@@ -54,9 +54,9 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p.execute_sync()
         results = list(p.get_output())
         results.sort()
-        self.assertEquals(len(results), 2)
-        self.assertEquals(results[0], 'testdir\n')
-        self.assertEquals(results[1], 'testf\n')
+        self.assertEqual(len(results), 2)
+        self.assertEqual(results[0], 'testdir\n')
+        self.assertEqual(results[1], 'testf\n')
 
     def testSh5(self):
         self._setupTree1()
@@ -64,15 +64,15 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p.execute_sync()
         results = list(p.get_output())
         results.sort()
-        self.assertEquals(len(results), 1)
-        self.assertEquals(results[0], 'testdir\n')
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0], 'testdir\n')
 
     def testShCancel1(self):
         p = Pipeline.parse("sys sleep 5", self._context)
         p.execute()
         p.cancel()
         results = list(p.get_output())
-        self.assertEquals(len(results), 0)
+        self.assertEqual(len(results), 0)
 
     def testShCancel2(self):
         p = Pipeline.parse("sys sleep 6", self._context)
@@ -80,7 +80,7 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         time.sleep(2)
         p.cancel()
         results = list(p.get_output())
-        self.assertEquals(len(results), 0)
+        self.assertEqual(len(results), 0)
 
     def testRedir1(self):
         self._setupTree2()
@@ -92,9 +92,9 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p = Pipeline.parse("sys cat < redirtest.txt > same_redirtest.txt", self._context)
         p.execute_sync()
         newoutpath = path_join(self._tmpd, 'same_redirtest.txt')
-        self.assertEquals(os.access(newoutpath, os.R_OK), True)
+        self.assertEqual(os.access(newoutpath, os.R_OK), True)
         same_testdata = open(newoutpath).read()
-        self.assertEquals(same_testdata, testdata)
+        self.assertEqual(same_testdata, testdata)
         
     def testCatBinCat(self):
         self._setupTree1()
@@ -102,8 +102,8 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p.execute_sync()
         results = list(p.get_output())
         results.sort()
-        self.assertEquals(len(results), 1)
-        self.assertEquals(results[0], '0\n')
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0], '0\n')
         
     def testCatCatCatCat(self):
         self._setupTree1()
@@ -111,8 +111,8 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p.execute_sync()
         results = list(p.get_output())
         results.sort()
-        self.assertEquals(len(results), 1)
-        self.assertEquals(results[0], '0\n')        
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0], '0\n')        
 
     def testLs1(self):
         self._setupTree1()
@@ -121,7 +121,7 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p = Pipeline.parse("ls", self._context)
         p.execute_sync()
         results = list(p.get_output())
-        self.assertEquals(len(results), 3)
+        self.assertEqual(len(results), 3)
 
     def testLs2(self):
         self._setupTree1()
@@ -130,7 +130,7 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p = Pipeline.parse("ls -a", self._context)
         p.execute_sync()
         results = list(p.get_output())
-        self.assertEquals(len(results), 4)
+        self.assertEqual(len(results), 4)
         
     def testLs3(self):
         self._setupTree2()
@@ -141,6 +141,6 @@ class PipelineRunTestsUnix(PipelineRunTestFramework):
         p = Pipeline.parse("ls 'testdir2/b*'", self._context)
         p.execute_sync()
         results = list(p.get_output())
-        self.assertEquals(len(results), 1)
-        self.assertEquals(results[0].path, bglobpath)
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].path, bglobpath)
         

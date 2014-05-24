@@ -206,14 +206,14 @@ def _default_funcname_transform(name):
 
 class PyFuncBuiltin(Builtin):
     def __init__(self, func, name=None, **kwargs):
-        name = func.func_name
+        name = func.__name__
         if not name:
             raise ValueError("Couldn't determine name of function: %s" % (f,))
         name = _default_funcname_transform(name)
         self.__func = func
         self.__func_args = inspect.getargspec(func)
         # 0x20 appears to signify the function is a generator according to the CPython sources
-        self.__func_is_generator = func.func_code.co_flags & 0x20
+        self.__func_is_generator = func.__code__.co_flags & 0x20
         if not self.__func_is_generator:
             kwargs['singlevalue'] = True
         kwargs['output'] = 'any'
@@ -253,7 +253,7 @@ def load():
     try:
         import simplejson
         have_simplejson = True
-    except ImportError, e:
+    except ImportError as e:
         have_simplejson = False
     if have_simplejson:
         import hotwire.builtins.json

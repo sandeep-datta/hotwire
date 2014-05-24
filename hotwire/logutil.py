@@ -19,7 +19,7 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import sys, logging, logging.config, StringIO
+import sys, logging, logging.config, io
 
 def log_except(logger=None, text=''):
     def annotate(func):

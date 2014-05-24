@@ -19,9 +19,9 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os, sys, threading, Queue, logging, string, re, time, traceback
+import os, sys, threading, queue, logging, string, re, time, traceback
 import posixpath, locale
-from StringIO import StringIO
+from io import StringIO
 
 import hotwire.fs
 from hotwire.fs import path_normalize, unix_basename, FilePath, open_text_file
@@ -60,8 +60,8 @@ class HotwireContext(object):
         _logger.debug("Context created, dir=%s" % (self.get_cwd(),))
 
     def chdir(self, dpath):
-        if not isinstance(dpath, unicode):
-            dpath = unicode(dpath, 'utf-8')
+        if not isinstance(dpath, str):
+            dpath = str(dpath, 'utf-8')
         dpath = os.path.expanduser(dpath)
         newcwd = os.path.isabs(dpath) and dpath or posixpath.join(self.__cwd, dpath)
         newcwd = path_normalize(newcwd)
@@ -108,7 +108,7 @@ class CommandContext(object):
             self.current_output_ref = hotwire.get_current_output_ref()
             _logger.debug("got current metadata %r, ref: %r", self.current_output_metadata,
                           self.current_output_ref)
-        except NotImplementedError, e:
+        except NotImplementedError as e:
             _logger.debug("no current output!")
             self.current_output_metadata = None
             self.current_output_ref = None
@@ -141,7 +141,7 @@ class CommandContext(object):
         self.auxstream_append(name, None)
 
     def get_auxstreams(self):
-        for obj in self.__auxstreams.itervalues():
+        for obj in self.__auxstreams.values():
             yield obj
 
     def push_undo(self, fn):
@@ -203,7 +203,7 @@ class CommandAuxStream(object):
 class CommandException(Exception):
     pass
 
-class CommandArgument(unicode):
+class CommandArgument(str):
     """An argument for a command, with the additional metadata of quotation status."""
     def __new__(cls, value, quoted=False):
         inst = super(CommandArgument, cls).__new__(cls, value)
@@ -337,7 +337,7 @@ class Command(object):
                 execresult = exectarget(self.context, *target_args, **kwargs)                
                 if self.builtin.singlevalue:
                     if outfile:
-                        outfile.write(unicode(execresult))
+                        outfile.write(str(execresult))
                     else:
                         self.output.put(execresult)
                 else:
@@ -349,7 +349,7 @@ class Command(object):
                             dispatcher.send('complete', self)
                             return
                         if outfile and (result is not None):
-                            result = unicode(result)
+                            result = str(result)
                             outfile.write(result)
                         else:                        
                             self.output.put(self.map_fn(result))
@@ -357,7 +357,7 @@ class Command(object):
                 if outfile:
                     outfile.close()
                 self.builtin.cleanup(self.context)
-        except Exception, e:
+        except Exception as e:
             _logger.debug("Caught exception from command: %s", e, exc_info=True)
             if self.__executing_sync:
                 raise
@@ -371,7 +371,7 @@ class Command(object):
 
     def __str__(self):
         def unijoin(args):
-            return ' '.join(map(unicode, args))
+            return ' '.join(map(str, args))
         args = [self.builtin.name]
         args.extend(self.context.options)
         for cmdarg in self.args:
@@ -610,7 +610,7 @@ class Pipeline(object):
         meta_ref = self.__cmd_metadata
         self.__cmd_metadata = {}
         self.__cmd_metadata_lock.release()
-        for (cmd,cmdidx,key),(flags,meta) in meta_ref.iteritems():
+        for (cmd,cmdidx,key),(flags,meta) in meta_ref.items():
             dispatcher.send('metadata', self, cmdidx, cmd, key, flags, meta)
 
     def __on_cmd_complete(self, sender=None):
@@ -721,10 +721,10 @@ Otherwise, return arg."""
 
     @staticmethod
     def mkparser(text):
-        if isinstance(text, unicode):
+        if isinstance(text, str):
             utext = text
         else:
-            utext = unicode(text, 'utf-8')
+            utext = str(text, 'utf-8')
         countstream = CountingStream(StringIO(utext))
         parser = shlex.shlex(countstream, posix=True)
         parser.wordchars += ',./[]{}~!@$%^&*()-_=+:;'
@@ -748,7 +748,7 @@ Otherwise, return arg."""
         while True:
             try:
                 (token, quoted) = parser.get_token_info()
-            except ValueError, e:
+            except ValueError as e:
                 # FIXME gross, but...any way to fix?
                 msg = hasattr(e, 'message') and e.message or (e.args[0])
                 was_quotation_error = (e.message == 'No closing quotation' and parser.token[0:1] == "'")
@@ -814,7 +814,7 @@ Otherwise, return arg."""
             def forcetoken(t):
                 # Allow passing plain strings for convenience from Python.
                 # Treat them as quoted.
-                if isinstance(t, basestring):
+                if isinstance(t, str):
                     return ParsedToken(t, -1, quoted=True)
                 return t
             
@@ -829,7 +829,7 @@ Otherwise, return arg."""
                 try:
                     b = BuiltinRegistry.getInstance()[builtin_token.text]
                     cmdargs = []
-                except KeyError, e:
+                except KeyError as e:
                     if resolver:
                         (b, cmdargs) = resolver.resolve(builtin_token.text, context)
                         _logger.debug("resolved: %r to %r %r", builtin_token.text, b, cmdargs)
@@ -848,7 +848,7 @@ Otherwise, return arg."""
                 
             # We maintain the set of all tokens we processed in the command so that the completion system can use them.
             alltokens = [builtin_token]
-            cmdargs = map(forcetoken, cmdargs)
+            cmdargs = list(map(forcetoken, cmdargs))
             alltokens.extend(cmdargs)
                 
             in_redir = None
@@ -885,7 +885,7 @@ Otherwise, return arg."""
                           builtin_opts, cmdargs)
             for token in cmdargs:
                 arg = CommandArgument(token.text, quoted=token.quoted)
-                if token.text == u'--':
+                if token.text == '--':
                     options_ended = True
                 elif options_ended:
                     expanded_cmdargs.append(arg)
@@ -1012,7 +1012,7 @@ Otherwise, return arg."""
         return self.__components[i]
 
     def __str__(self):
-        return string.join(map(lambda x: x.__str__(), self.__components), ' | ')        
+        return string.join([x.__str__() for x in self.__components], ' | ')        
 
 class PipelineLanguage(object):
     """Abstract class representing a supported input language."""
@@ -1060,7 +1060,7 @@ class PipelineLanguageRegistry(Singleton):
                 return lang
         
     def __iter__(self):
-        for x in self.__langs.itervalues():
+        for x in self.__langs.values():
             yield x
             
     def iter_sorted(self):

@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os, shutil
-from itertools import imap
+
 
 import hotwire
 from hotwire.fs import FilePath, unix_basename
@@ -43,9 +43,9 @@ class RmBuiltin(FileOpBuiltin):
         if len(args) == 0 and context.input is None:
             raise ValueError(_("Must specify at least one file"))
         mkfile = lambda arg: FilePath(arg, context.cwd)
-        sources = map(mkfile, args)
+        sources = list(map(mkfile, args))
         if context.input is not None:
-            sources.extend(imap(lambda f: f.path, context.input)) 
+            sources.extend(map(lambda f: f.path, context.input)) 
         sources_total = len(sources)
         undo_targets = []
         self._status_notify(context, sources_total, 0)

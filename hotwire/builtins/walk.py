@@ -57,7 +57,7 @@ class WalkBuiltin(FileOpBuiltin):
                         dstat = fs.get_file_sync(dpath)
                         if dstat.hidden:
                             filtered_dirs.append(i)
-                    except FileStatError, e:
+                    except FileStatError as e:
                         continue
                 for c,i in enumerate(filtered_dirs):
                     del subdirs[i-c]

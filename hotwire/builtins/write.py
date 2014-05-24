@@ -43,11 +43,11 @@ class WriteBuiltin(Builtin):
             open_mode = 'wb'
         if not context.input:
             return
-        streams = map(lambda x: open_text_file(FilePath(x, context.cwd), open_mode), args)
+        streams = [open_text_file(FilePath(x, context.cwd), open_mode) for x in args]
         if not do_pickle:
             for arg in context.input:
                 for stream in streams:
-                    stream.write('%s' % (unicode(arg),))
+                    stream.write('%s' % (str(arg),))
                     if with_newline:
                         stream.write('\n')
         else:
@@ -55,7 +55,7 @@ class WriteBuiltin(Builtin):
             arglist = list(context.input)
             for stream in streams:
                 pickle.dump(arglist, stream)
-        map(lambda x: x.close(), streams)
+        list(map(lambda x: x.close(), streams))
         return []
 
 BuiltinRegistry.getInstance().register_hotwire(WriteBuiltin())

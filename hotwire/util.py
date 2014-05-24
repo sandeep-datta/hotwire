@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os, sys, traceback, shlex, string, platform
-import fnmatch, commands
+import fnmatch, subprocess
 from xml.sax.saxutils import escape as escape_xml
 import hotwire.unicodeutils
 from hotwire.unicodeutils import get_unichar_category, is_category_letter, is_category_number
@@ -84,17 +84,17 @@ def format_file_size(bytes):
 
 def tracefn(f):
     def _do_trace(*args, **kwargs):
-        print "%s(%s %s)" %(f.func_name,args, kwargs)
+        print("%s(%s %s)" %(f.__name__,args, kwargs))
         result = f(*args, **kwargs)
-        print "=> %s" % (result,)
+        print("=> %s" % (result,))
         return result
     return _do_trace
 
 def quote_arg(arg):
     """Quote arg for processing by a shell.
     If arg would pass through unquoted, return unmodified arg."""
-    if not isinstance(arg, unicode):
-        arg = unicode(arg, 'utf-8')
+    if not isinstance(arg, str):
+        arg = str(arg, 'utf-8')
     safechars = '.,/~_-+:'
     safeonly = True
     safe_space_only = True
@@ -114,7 +114,7 @@ def quote_arg(arg):
 
 # FIXME - is this right?
 def quote_shell_arg(cmd):
-  return commands.mkarg(cmd)
+  return subprocess.mkarg(cmd)
 
 def ellipsize(buf, l):
     """Return a possibly-truncated version of buf to maximum length l, adding

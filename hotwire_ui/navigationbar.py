@@ -103,10 +103,10 @@ class NavigationBar(gtk.HBox):
             i += 1
         if i >= len(self.__components):
             children[i - 1].down()
-            for j in xrange(i, len(children)):
+            for j in range(i, len(children)):
                 children[j].up()
             return
-        for j in xrange(i, len(children)):
+        for j in range(i, len(children)):
             self.remove(children[j])
         self.__append_components(self.__components, i)
         self.get_children()[-1].down()
@@ -115,10 +115,10 @@ class NavigationBar(gtk.HBox):
         cwd = self.__context.get_cwd()
         self.__components = cwd.split('/')
         self.__components[0] += '/'
-        self.__components = filter(lambda x: x != '', self.__components)
+        self.__components = [x for x in self.__components if x != '']
 
     def __append_components(self, components, i = 0):
-        for j in xrange(i, len(components)):
+        for j in range(i, len(components)):
             b = BreadButton(self.__context, self,
                             components[0] + '/'.join(components[1:j+1]),
                             label = components[j]) 

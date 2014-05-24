@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os, sys, logging, StringIO, traceback, tempfile
+import os, sys, logging, io, traceback, tempfile
 
 import cairo, gtk, gobject, pango
 
@@ -32,12 +32,12 @@ try:
     try:
         from gtksourceview2 import Buffer as SourceBuffer, View as SourceView
         gtksourceview2_avail = True
-    except ImportError, e:
+    except ImportError as e:
         from gtksourceview import SourceBuffer, SourceView
         gtksourceview2_avail = False
     gtksourceview_avail = True
     _logger.debug("gtksourceview available")
-except ImportError, e:
+except ImportError as e:
     gtksourceview_avail = False
     _logger.debug("gtksourceview not available")
 
@@ -199,7 +199,7 @@ class HotEditorWindow(gtk.Window):
         fs = Filesystem.getInstance()
         try:
             mimetype = fs.get_file_sync(self.__filename).mimetype
-        except FileStatError, e:
+        except FileStatError as e:
             mimetype = None
         target_lang = None        
         if gtksourceview2_avail:
@@ -257,7 +257,7 @@ class HotEditorWindow(gtk.Window):
         os.close(tempfd)
         f = open_text_file(temppath, 'w')
         text = self.input.get_property("text")
-        utext = unicode(text)
+        utext = str(text)
         f.write(utext)
         f.flush()
         os.fsync(tempfd)

@@ -121,7 +121,7 @@ class TreeObjectsRenderer(ObjectsRenderer):
             attrval = getattr(self, item)
             if hasattr(attrval, '__call__'):
                 if hasattr(attrval, 'hotwire_menuitem'):
-                    name = getattr(attrval, 'hotwire_menuitem') or (attrval.func_name[0].upper() + attrval.func_name[1:])
+                    name = getattr(attrval, 'hotwire_menuitem') or (attrval.__name__[0].upper() + attrval.__name__[1:])
                     menuitems.append((attrval, name))
         func_menuitems = []
         for (item, name) in menuitems:
@@ -132,7 +132,7 @@ class TreeObjectsRenderer(ObjectsRenderer):
 
     def __do_menuitem(self, menuitem, func, iter):
         func(iter)
-        self.context.push_msg('Execution of <b>%s</b> successful' % (gobject.markup_escape_text(func.func_name),),
+        self.context.push_msg('Execution of <b>%s</b> successful' % (gobject.markup_escape_text(func.__name__),),
                               markup=True)
 
     def get_widget(self):
@@ -180,7 +180,7 @@ class TreeObjectsRenderer(ObjectsRenderer):
         return col        
 
     def _insert_proptext(self, name, title=None, **kwargs):
-        return self._insert_column(name, proptype=unicode, title=title, renderfunc=self._render_proptext, **kwargs)
+        return self._insert_column(name, proptype=str, title=title, renderfunc=self._render_proptext, **kwargs)
 
     def _insert_propcol(self, name, title=None, idx=0, **kwargs):
         return self._insert_column(name, proptype='any', title=title, renderfunc=self._render_propcol, **kwargs)
@@ -213,14 +213,14 @@ class TreeObjectsRenderer(ObjectsRenderer):
         assert colidx != -1
         self.__search_enabled = True
         self._table.set_search_column(colidx)
-        self._table.set_search_equal_func(col.get_data('hotwire-proptype') is unicode and self._search_proptext or self._search_propcol,
+        self._table.set_search_equal_func(col.get_data('hotwire-proptype') is str and self._search_proptext or self._search_propcol,
                                           col.get_data('hotwire-propname'))
 
     def _render_propcol(self, col, cell, model, iter, data):
         (prop, idx) = data        
         obj = model.get_value(iter, idx)
         propval = getattr(obj, prop)
-        cell.set_property('text', unicode(propval))
+        cell.set_property('text', str(propval))
 
     def _render_proptext(self, col, cell, model, iter, data):
         (prop, idx) = data
@@ -244,14 +244,14 @@ class TreeObjectsRenderer(ObjectsRenderer):
     def _search_propcol(self, model, col, key, iter, prop):
         obj = model.get_value(iter, 0)
         propval = getattr(obj, prop)
-        text = unicode(propval) 
+        text = str(propval) 
         if text.find(key) >= 0:
             return False
         return True
 
     def _search_proptext(self, model, col, key, iter, prop):
         obj = model.get_value(iter, 0)
-        propval = unicode(getattr(obj, prop))
+        propval = str(getattr(obj, prop))
         if propval.find(key) >= 0:
             return False
         return True
@@ -272,7 +272,7 @@ class TreeObjectsRenderer(ObjectsRenderer):
 
     def _render_objtext(self, col, cell, model, iter):
         obj = model.get_value(iter, 0)
-        cell.set_property('text', unicode(repr(obj)))
+        cell.set_property('text', str(repr(obj)))
 
     def append_obj(self, obj, **kwargs):
         self._liststore.append((obj,))
@@ -365,6 +365,6 @@ import hotwire_ui.renderers.filestringmatch
 import hotwire_ui.renderers.help
 import hotwire_ui.renderers.list
 import hotwire_ui.renderers.ps
-import hotwire_ui.renderers.unicode
+import hotwire_ui.renderers.str
 #moddir = hotwire.ModuleDir(os.path.join(os.path.dirname(hotwire.__file__), 'renderers'))
 #moddir.do_import()

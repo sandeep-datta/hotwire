@@ -19,8 +19,8 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os,sys,shutil,stat,logging,tempfile,urllib
-from cStringIO import StringIO
+import os,sys,shutil,stat,logging,tempfile,urllib.request,urllib.parse,urllib.error
+from io import StringIO
 
 import hotwire
 from hotwire.fs import unix_basename, FilePath, path_expanduser, path_fromurl, path_tourl, atomic_rename, iterd_sorted
@@ -87,7 +87,7 @@ class BaseFilesystem(object):
             return None
         try:
             syspath = self._get_system_conf_dir_path()
-        except NotImplementedError, e:
+        except NotImplementedError as e:
             return None
         return syspath 
         
@@ -112,7 +112,7 @@ class BaseFilesystem(object):
             epath = FilePath(execname, dpath)
             try:
                 fobj = self.get_file_sync(epath)
-            except FileStatError, e:
+            except FileStatError as e:
                 continue            
             if fobj.is_executable:
                 return epath
@@ -126,7 +126,7 @@ class BaseFilesystem(object):
         newf = os.path.join(self._trashdir, bn)
         try:
             statbuf = os.stat(newf) 
-        except OSError, e:
+        except OSError as e:
             statbuf = None
         if statbuf:
             _logger.debug("Removing from trash: %s", newf) 
@@ -146,7 +146,7 @@ class BaseFilesystem(object):
     def makedirs_p(self, path):
         try:
             os.makedirs(path)
-        except OSError, e:
+        except OSError as e:
             # hopefully it was EEXIST...
             pass
         return path
@@ -184,10 +184,10 @@ class File(object):
     __slots__ = ['fs', 'stat', 'xaccess', 'icon_error', '_permstring', 'target_stat', 'stat_error']
     def __init__(self, path, fs=None):
         super(File, self).__init__()
-        if not isinstance(path, unicode):
-            path = unicode(path, 'utf-8')
+        if not isinstance(path, str):
+            path = str(path, 'utf-8')
         self._path = path
-        self._uri = 'file://' + urllib.pathname2url(path.encode(sys.getfilesystemencoding()))
+        self._uri = 'file://' + urllib.request.pathname2url(path.encode(sys.getfilesystemencoding()))
         self._basename = unix_basename(path)
         self.fs = fs
         self.stat = None
@@ -295,9 +295,9 @@ class File(object):
             if stat.S_ISLNK(self.stat[stat.ST_MODE]):
                 try:
                     self.target_stat = os.stat(self.path)
-                except OSError, e:
+                except OSError as e:
                     self.target_stat = None		
-        except OSError, e:
+        except OSError as e:
             _logger.debug("Failed to stat '%s': %s", self.path, e)
             self.stat_error = str(e)
             if rethrow:
@@ -332,7 +332,7 @@ class BaseBookmarks(Singleton):
         self.__bookmarks_path = path_expanduser('~/.gtk-bookmarks')
         try:
             self.__monitor = Filesystem.getInstance().get_monitor(self.__bookmarks_path, self.__on_bookmarks_changed)
-        except NotImplementedError, e:
+        except NotImplementedError as e:
             pass
         self.__bookmarks = []
         self.__read_bookmarks()
@@ -360,10 +360,10 @@ class BaseBookmarks(Singleton):
     def __read_bookmarks(self):
         try:
             f = open(self.__bookmarks_path)
-        except IOError, e: 
+        except IOError as e: 
             _logger.debug("failed to open bookmarks", exc_info=True)
             return
-        self.__bookmarks = map(lambda x: path_fromurl(x).strip(), f)
+        self.__bookmarks = [path_fromurl(x).strip() for x in f]
         f.close()
         
     def __iter__(self):

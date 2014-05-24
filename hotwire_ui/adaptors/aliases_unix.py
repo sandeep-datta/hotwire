@@ -44,5 +44,5 @@ default_aliases = {'su': 'term su',
                    'nethack': 'term nethack',
                   }
 aliases = AliasRegistry.getInstance()
-for name,value in default_aliases.iteritems():
+for name,value in default_aliases.items():
     aliases.insert(name, value)

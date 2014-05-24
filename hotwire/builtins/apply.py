@@ -31,8 +31,8 @@ def apply(context, *args):
 
     newargs = list(args)
     for argument in context.input:
-        if not isinstance(argument, basestring):
-            argument = unicode(argument)
+        if not isinstance(argument, str):
+            argument = str(argument)
         newargs.append(argument)
         
     new_context = HotwireContext(initcwd=context.cwd)

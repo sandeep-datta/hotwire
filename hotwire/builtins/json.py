@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os,sys,pickle,inspect,locale
-from StringIO import StringIO
+from io import StringIO
 
 from hotwire.fs import FilePath
 

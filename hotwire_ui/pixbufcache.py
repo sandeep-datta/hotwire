@@ -59,7 +59,7 @@ class PixbufCache(Singleton):
             if path == gtk.STOCK_MISSING_IMAGE:
                 return None
             return self.get_stock(gtk.STOCK_MISSING_IMAGE)        
-        if not self.__cache.has_key((path, size)):
+        if (path, size) not in self.__cache:
             pixbuf = self.__do_load(path, size, animation)
             self.__cache[(path, size)] = pixbuf
         return self.__cache[(path, size)]
@@ -71,7 +71,7 @@ class PixbufCache(Singleton):
         theme = gtk.icon_theme_get_default()
         try:
             return theme.load_icon(name, size, 0)
-        except gobject.GError, e:
+        except gobject.GError as e:
             return None
         
     def __do_load(self, path, size, animation):

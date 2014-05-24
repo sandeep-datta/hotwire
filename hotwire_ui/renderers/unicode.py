@@ -98,7 +98,7 @@ class InputArea(gtk.HBox):
         self.emit("close")
         
     def __do_send(self):
-        obj = unicode(self.__input.get_property('text') + '\n')
+        obj = str(self.__input.get_property('text') + '\n')
         self.emit('object-input', obj, self.__password_button.get_active())
         self.reset()
         
@@ -183,7 +183,7 @@ class UnicodeRenderer(ObjectsRenderer):
                 iterend.forward_to_tag_toggle(tag)
                 bufslice = self._buf.get_slice(iterstart, iterend)
                 linkvalue = self.__links[bufslice]
-                if isinstance(linkvalue, basestring):
+                if isinstance(linkvalue, str):
                     webbrowser.open(linkvalue)
                 elif hasattr(linkvalue, '__call__'):
                     linkvalue(bufslice)
@@ -436,5 +436,5 @@ class UnicodeRenderer(ObjectsRenderer):
     def get_input(self):
         return self.__inputarea
 
-ClassRendererMapping.getInstance().register(unicode, UnicodeRenderer)
+ClassRendererMapping.getInstance().register(str, UnicodeRenderer)
 ClassRendererMapping.getInstance().register(str, UnicodeRenderer) # for now

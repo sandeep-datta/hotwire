@@ -725,7 +725,7 @@ class Hotwire(gtk.VBox):
             if url.startswith('file://'):
                 return url[7:]
             return url
-        fpaths = map(fstrip, urls.split('\r\n'))
+        fpaths = list(map(fstrip, urls.split('\r\n')))
         _logger.debug("path is %s, got drop paths: %s", path, fpaths)
         fpaths.append(path)
         self.internal_execute('cp', *fpaths)
@@ -806,7 +806,7 @@ class Hotwire(gtk.VBox):
         self.__completions.hide_all()
         try:
             self.__do_parse(partial=False, resolve=True)
-        except hotwire.command.PipelineParseException, e:
+        except hotwire.command.PipelineParseException as e:
             self.push_error(_("Failed to parse pipeline"), secondary=e.args[0])
             return
                 
@@ -854,7 +854,7 @@ class Hotwire(gtk.VBox):
         if self.__parse_stale:
             try:
                 self.__do_parse(partial=True, resolve=False)
-            except hotwire.command.PipelineParseException, e:
+            except hotwire.command.PipelineParseException as e:
                 self.push_error(_('Failed to parse pipeline'), secondary=e.args[0])
                 return
             self.__do_complete()
@@ -1116,7 +1116,7 @@ class Hotwire(gtk.VBox):
             self.__parsed_pipeline = self.__pipeline_factory.parse(text, accept_partial=partial, 
                                                                          curlang=self.__langtype,
                                                                          resolve=resolve)
-        except hotwire.command.PipelineParseException, e:
+        except hotwire.command.PipelineParseException as e:
             _logger.debug("parse failed, current syntax=%s", self.__langtype, exc_info=True)
             self.__parsed_pipeline = None
             if (not partial):
@@ -1158,7 +1158,7 @@ class Hotwire(gtk.VBox):
         _logger.debug("using Emacs keys: %s", emacs)
             
 class HotWindow(gtk.Window):
-    ascii_nums = [long(x+ord('0')) for x in xrange(10)]
+    ascii_nums = [int(x+ord('0')) for x in range(10)]
 
     def __init__(self, factory=None, is_initial=False, subtitle='', **kwargs):
         super(HotWindow, self).__init__()
@@ -1665,13 +1665,13 @@ class HotWindowFactory(Singleton):
     def create_window(self, is_initial=False, *args, **kwargs):
         _logger.debug("creating window")
         if is_initial:
-            for k,v in kwargs.iteritems():
-                if self.__sticky_keywords.has_key(k):
+            for k,v in kwargs.items():
+                if k in self.__sticky_keywords:
                     self.__sticky_keywords[k] = v
             if 'initcmd' not in kwargs:
                 kwargs['initcmd'] = 'help'
-        for k,v in self.__sticky_keywords.iteritems():
-            if not kwargs.has_key(k):
+        for k,v in self.__sticky_keywords.items():
+            if k not in kwargs:
                 kwargs[k] = v
         win = HotWindow(factory=self, is_initial=is_initial, **kwargs)
         win.connect('destroy', self.__on_win_destroy)
@@ -1698,7 +1698,7 @@ class HotWindowFactory(Singleton):
         self.__windows.remove(win)
         if win == self.__active_window and len(self.__windows) > 0:
             # Pick one.
-            self.__active_window = self.__windows.__iter__().next()
+            self.__active_window = next(self.__windows.__iter__())
         if len(self.__windows) == 0:
             gtk.main_quit()
 

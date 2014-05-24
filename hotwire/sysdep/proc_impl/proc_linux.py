@@ -48,10 +48,10 @@ class LinuxProcessManager(UnixProcessManager):
             if num_re.match(d):
                 try:
                     yield LinuxProcess(int(d))
-                except OSError, e:
+                except OSError as e:
                     # Ignore processes that go away as we read them
                     pass
-                except IOError, e:
+                except IOError as e:
                     pass
                 
 def getInstance():

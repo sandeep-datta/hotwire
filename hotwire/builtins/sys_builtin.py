@@ -51,7 +51,7 @@ class BareFdStreamWriter(object):
         self.fd = fd
         
     def write(self, obj):
-        if isinstance(obj, unicode):
+        if isinstance(obj, str):
             buf = obj.encode(sys.stdout.encoding or 'UTF-8')
         else:
             buf = obj
@@ -85,18 +85,18 @@ class SysBuiltin(Builtin):
                 if val is None:
                     stream.close()
                     return
-                stream.write(unicode(val))
-        except IOError, e:
+                stream.write(str(val))
+        except IOError as e:
             pass
             
     @log_except(_logger)            
     def __inputwriter(self, input, stdin):
         try:
             for val in input:
-                stdin.write(unicode(val))
+                stdin.write(str(val))
                 stdin.flush()
             stdin.close()
-        except IOError, e:
+        except IOError as e:
             pass
 
     @staticmethod
@@ -106,7 +106,7 @@ class SysBuiltin(Builtin):
             while line:
                 yield line
                 line = stream.readline()
-        except IOError, e:
+        except IOError as e:
             pass
 
     @staticmethod
@@ -121,7 +121,7 @@ class SysBuiltin(Builtin):
             buf = os.read(fdno, 512)
 
     def cancel(self, context):
-        if context.attribs.has_key('pid'):
+        if 'pid' in context.attribs:
             pid = context.attribs['pid']
             _logger.debug("cancelling pid %s", pid)
             ProcessManager.getInstance().terminate_pidgroup(pid)
@@ -147,8 +147,8 @@ class SysBuiltin(Builtin):
     def get_completer(self, context, args, i):
         verb = args[0].text
         _logger.debug("looking for completion for: %s", verb)
-        for matcher,completer in SystemCompleters.getInstance().iteritems():
-            if isinstance(matcher, basestring):
+        for matcher,completer in SystemCompleters.getInstance().items():
+            if isinstance(matcher, str):
                 if verb.startswith(matcher):
                     _logger.debug("matched completer %s", matcher)
                     return completer(context, args, i)
@@ -193,7 +193,7 @@ class SysBuiltin(Builtin):
             if using_pty_in:
                 stdin_target = slave_fd
             elif in_opt_format == 'x-unix-pipe-file-object/special':
-                stdin_target = iter(context.input).next()                
+                stdin_target = next(iter(context.input))                
             else:
                 stdin_target = subprocess.PIPE
             _logger.debug("using stdin target: %r", stdin_target)                
@@ -205,7 +205,7 @@ class SysBuiltin(Builtin):
             if context.input is None:
                 stdin_target = None
             elif in_opt_format == 'x-unix-pipe-file-object/special':
-                stdin_target = iter(context.input).next()                
+                stdin_target = next(iter(context.input))                
             else:
                 stdin_target = subprocess.PIPE
             _logger.debug("using stdin target: %r", stdin_target)
@@ -223,7 +223,7 @@ class SysBuiltin(Builtin):
         if fs_encoding is not None:
             args[0] = args[0].encode(fs_encoding)
         if stdin_encoding is not None:
-            args[1:] = map(lambda x: x.encode(stdin_encoding), args[1:])
+            args[1:] = [x.encode(stdin_encoding) for x in args[1:]]
         
         if is_windows():
             subproc_args['universal_newlines'] = True
@@ -291,7 +291,7 @@ class SysBuiltin(Builtin):
             try:
                 for buf in SysBuiltin.__unbuffered_read_pipe(stream=stdout_read, fd=stdout_fd):
                     yield buf
-            except OSError, e:
+            except OSError as e:
                 pass
         elif out_opt_format == 'x-unix-pipe-file-object/special':
             yield subproc.stdout

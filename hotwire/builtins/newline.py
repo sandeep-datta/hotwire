@@ -33,7 +33,7 @@ class NewlineBuiltin(Builtin):
 
     def execute(self, context, args, options=[]):
         for arg in context.input:
-            if not isinstance(arg, basestring):
+            if not isinstance(arg, str):
                 arg = str(arg) 
             if not arg.endswith('\n'):
                 arg += '\n'

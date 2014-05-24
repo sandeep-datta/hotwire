@@ -16,12 +16,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import StringIO
+import io
 
 import gtk,gobject
 
 from hotwire_ui.render import ClassRendererMapping
-from hotwire_ui.renderers.unicode import UnicodeRenderer
+from hotwire_ui.renderers.str import UnicodeRenderer
 from hotwire.cmdalias import AliasRegistry
 from hotwire.command import PipelineLanguageRegistry
 from hotwire.builtin import BuiltinRegistry, MultiArgSpec, ArgSpec
@@ -54,7 +54,7 @@ class HelpItemRenderer(UnicodeRenderer):
         self._buf.insert_markup('\n\n')
 
         registry = BuiltinRegistry.getInstance()
-        for (setname,builtins) in zip((_('User'), _('Standard'), _('System')), map(list, [registry.user_set, registry.hotwire_set, registry.system_set])):
+        for (setname,builtins) in zip((_('User'), _('Standard'), _('System')), list(map(list, [registry.user_set, registry.hotwire_set, registry.system_set]))):
             if len(builtins) == 0:
                 continue 
             self._buf.insert_markup('<larger>%s:</larger>\n' % (_('%s Builtin Commands' % (setname,)),))
@@ -130,7 +130,7 @@ class HelpItemRenderer(UnicodeRenderer):
 
     def __append_builtin_doc(self, builtin):
         if builtin.doc:
-            for line in StringIO.StringIO(builtin.doc):
+            for line in io.StringIO(builtin.doc):
                 self._buf.insert_markup('    ' + gobject.markup_escape_text(line))
             self._buf.insert_markup('\n')        
                 
@@ -157,7 +157,7 @@ class HelpItemRenderer(UnicodeRenderer):
         if not builtin.options:
             self._buf.insert_markup('    <i>%s</i>\n' % (_('(No options)'),))
         else:
-            argstr = '  '.join(map(lambda x: ','.join(x), builtin.options))
+            argstr = '  '.join([','.join(x) for x in builtin.options])
             self._buf.insert_markup('    %s: ' % (_('Options'),))
             self._buf.insert_markup('<tt>' + gobject.markup_escape_text(argstr) + '</tt>')
             self._buf.insert_markup('\n')                

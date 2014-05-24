@@ -38,16 +38,16 @@ class UnixProcessManager(BaseProcessManager):
             try:
                 os.killpg(pgid, signum)
                 return # This hopefully worked, just return
-            except OSError, e:
+            except OSError as e:
                 _logger.warn("failed to send sig %s to process group %d", signum, pgid, exc_info=True)
-        except OSError, e:
+        except OSError as e:
             _logger.warn("failed to get process group for %d", pid, exc_info=True)
             pgid = None
         # Ok, we failed to kill the process group; fall back to the pid itself
         try:
             os.kill(pid, signum)
             return True
-        except OSError, e:
+        except OSError as e:
             _logger.debug("Failed to send sig %s to pid %d", signum, pid)
             return False    
     
@@ -66,7 +66,7 @@ class UnixProcessManager(BaseProcessManager):
         try:
             os.kill(pid, signal.SIGKILL)
             return True
-        except OSError, e:
+        except OSError as e:
             _logger.debug("Failed to kill pid '%d': %s", pid, e)
             return False
 

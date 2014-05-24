@@ -43,7 +43,7 @@ class CpBuiltin(FileOpBuiltin):
         try:
             target_is_dir = stat.S_ISDIR(os.stat(target).st_mode)
             target_exists = True
-        except OSError, e:
+        except OSError as e:
             target_is_dir = False
             target_exists = False
         

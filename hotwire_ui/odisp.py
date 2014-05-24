@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os,sys,re,Queue,logging,inspect,locale
+import os,sys,re,queue,logging,inspect,locale
 
 import gtk, gobject, pango
 
@@ -74,7 +74,7 @@ class ObjectsDisplay(gtk.VBox):
         try:
             self.__display.start_search()
             return True
-        except NotImplementedError, e:
+        except NotImplementedError as e:
             pass        
         if self.__search is None:
             self.__search = self.__display.get_search()
@@ -327,7 +327,7 @@ class MultiObjectsDisplay(gtk.Notebook):
 
     def cancel(self):
         self.__cancelled = True
-        for queue in self.__queues.iterkeys():
+        for queue in self.__queues.keys():
             queue.disconnect()
 
     def get_ocount(self):
@@ -386,7 +386,7 @@ class MultiObjectsDisplay(gtk.Notebook):
                     active_odisp = True
                 else:
                     _logger.warn("Unexpected item %s from queue %s", item, name)
-        except Queue.Empty:
+        except queue.Empty:
             pass
         if empty:
             del self.__queues[queue]

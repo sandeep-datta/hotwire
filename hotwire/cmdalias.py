@@ -46,6 +46,6 @@ class AliasRegistry(Singleton):
         return self.__aliases[item]
 
     def __iter__(self):
-        for x in self.__aliases.itervalues():
+        for x in self.__aliases.values():
             yield x
  

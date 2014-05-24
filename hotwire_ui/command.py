@@ -679,7 +679,7 @@ class CommandExecutionControl(gtk.VBox):
             pipeline.disconnect()
         try:
             self.__complete_unseen_pipelines.remove(pipeline)
-        except KeyError, e:
+        except KeyError as e:
             pass
         (cmdview, overview) = self.__get_widgets_for_pipeline(pipeline)
         self.__cmd_notebook.remove(cmdview)
@@ -907,9 +907,9 @@ class CommandExecutionControl(gtk.VBox):
         self.__sync_display()
             
     def __sync_cmd_sensitivity(self, curpage=None):
-        actions = map(self.__action_group.get_action, ['Copy', 'Cancel', 'PreviousCommand', 'NextCommand', 'Undo', 
+        actions = list(map(self.__action_group.get_action, ['Copy', 'Cancel', 'PreviousCommand', 'NextCommand', 'Undo', 
                                                        'Input', 'RemovePipeline', 'DetachPipeline', 
-                                                       'PreviousUnseenCommand', 'LastCommand', 'UndoRemovePipeline'])
+                                                       'PreviousUnseenCommand', 'LastCommand', 'UndoRemovePipeline']))
         if self.__history_visible:
             for action in actions:
                 action.set_sensitive(False)
@@ -1014,9 +1014,9 @@ class CommandExecutionControl(gtk.VBox):
             nth = self.__cmd_notebook.get_current_page()
         n_pages = self.__cmd_notebook.get_n_pages()
         if is_end:
-            r = xrange(nth+1, n_pages)
+            r = range(nth+1, n_pages)
         else:
-            r = xrange(0, nth)
+            r = range(0, nth)
         for i in r:
             yield self.__cmd_notebook.get_nth_page(i)
 
@@ -1078,8 +1078,8 @@ class OverviewButton(gtk.ToggleButton):
         self.connect('notify::active', self.__on_self_active_changed)
         
     def __on_pipeline_count_changed(self, *args):
-        (count, unseen_count, executing_count) = map(self.__outputs.get_property, 
-                                                     ('pipeline-count', 'unseen-pipeline-count', 'executing-pipeline-count'))
+        (count, unseen_count, executing_count) = list(map(self.__outputs.get_property, 
+                                                     ('pipeline-count', 'unseen-pipeline-count', 'executing-pipeline-count')))
         self.set_label(_('%d (%d)') % (count, executing_count))
         self.__tooltips.set_tip(self, _('%d total, %d executing, %d complete') % (count, executing_count, unseen_count))         
     

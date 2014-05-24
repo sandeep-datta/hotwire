@@ -55,13 +55,13 @@ class FilterBuiltin(Builtin):
                 target_propvalue = getattr(arg, target_prop)
             else:
                 target_propvalue = arg
-            if not isinstance(target_propvalue, basestring):
+            if not isinstance(target_propvalue, str):
                 if not stringify:
                     raise ValueError(_("Value not a string: %r" % (target_propvalue,)))
                 else:
                     target_propvalue = repr(target_propvalue)
-            elif not isinstance(target_propvalue, unicode):
-                target_propvalue = unicode(target_propvalue, 'utf-8')                
+            elif not isinstance(target_propvalue, str):
+                target_propvalue = str(target_propvalue, 'utf-8')                
                         
             match = compiled_re.search(target_propvalue)
             if invert:

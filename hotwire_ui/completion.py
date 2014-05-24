@@ -470,7 +470,7 @@ class CompletionStatusDisplay(hotwidgets.TransientPopup):
         self.set_size_request((int(ref_w*0.75)), -1)
         
     def set_history_search(self, lang_uuid, histsearch):
-        histitems = map(lambda result: (lang_uuid,result), self.__context.history.search_commands(lang_uuid, histsearch))
+        histitems = [(lang_uuid,result) for result in self.__context.history.search_commands(lang_uuid, histsearch)]
         self.__current_history = not not histitems
         self.__global_history_display.set_content(histitems, uniquify=True)
         self.__global_history_display.set_matchtext(histsearch)

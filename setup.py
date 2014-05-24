@@ -24,15 +24,15 @@ if __name__ == '__main__' and hasattr(sys.modules['__main__'], '__file__'):
     basedir = os.path.dirname(os.path.abspath(__file__))
     up_basedir = os.path.dirname(basedir)
     if os.path.basename(basedir) == 'hotwire-shell':
-        print "Running uninstalled, extending path"
+        print("Running uninstalled, extending path")
         sys.path.insert(0, basedir)
         os.environ['PYTHONPATH'] = os.pathsep.join(sys.path)
 from hotwire.version import __version__
 
 def svn_info(wd):
-    import subprocess,StringIO
+    import subprocess,io
     tip = {}
-    for line in StringIO.StringIO(subprocess.Popen(['svn', 'info', wd], stdout=subprocess.PIPE).communicate()[0]):
+    for line in io.StringIO(subprocess.Popen(['svn', 'info', wd], stdout=subprocess.PIPE).communicate()[0]):
         line = line.strip()
         if not line:
             continue
@@ -47,7 +47,7 @@ def svn_dist():
     dt = os.path.join('dist', 'test')
     try:
         os.mkdir('dist')
-    except OSError, e:
+    except OSError as e:
         pass
     if os.path.exists(dt):
         shutil.rmtree(dt)
@@ -102,7 +102,7 @@ class HotInstall(install):
         install.run(self)
         if os.name == 'posix':                       
             if self.root is None:
-                print "Running gtk-update-icon-cache"
+                print("Running gtk-update-icon-cache")
                 subprocess.call(['gtk-update-icon-cache', os.path.join(self.install_data, 'share', 'icons', 'hicolor')])
 kwargs['cmdclass']['install'] = HotInstall                    
 

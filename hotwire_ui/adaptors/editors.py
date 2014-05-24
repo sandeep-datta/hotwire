@@ -128,7 +128,7 @@ class EditorRegistry(Singleton):
         self.__custom_editor_set = False             
         self.__sync_pref()
         editor = ' '.join(map(quote_arg, self[self.__pref_editor_uuid].build_default_arguments()))
-        if isinstance(editor, unicode) and sys.stdin.encoding is not None:
+        if isinstance(editor, str) and sys.stdin.encoding is not None:
             editor = editor.encode(sys.stdin.encoding)
         os.environ['EDITOR'] = editor
         
@@ -148,7 +148,7 @@ class EditorRegistry(Singleton):
         return self.__editors[uuid]
         
     def __iter__(self):
-        for x in self.__editors.itervalues():
+        for x in self.__editors.values():
             yield x
 
     def register(self, editor):

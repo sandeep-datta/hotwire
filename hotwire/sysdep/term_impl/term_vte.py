@@ -73,7 +73,7 @@ class VteTerminal(gtk.VBox):
         prefs.monitor_prefs('term.', self.__on_pref_changed)
 
         termargs = {}
-        if isinstance(cmd, basestring):
+        if isinstance(cmd, str):
             termargs['cmd'] = ['/bin/sh', '-c', cmd]
         else:
             termargs['cmd'] = cmd

@@ -82,12 +82,12 @@ class Win32Filesystem(BaseFilesystem):
                 pass
 
     def _get_conf_dir_path(self):
-        return os.path.expanduser(u'~/Application Data/hotwire')
+        return os.path.expanduser('~/Application Data/hotwire')
 
     def get_path_generator(self):
         pathenv = os.environ['PATH']
         # TODO - what encoding is PATHENV in? 
-        for d in pathenv.split(u';'):
+        for d in pathenv.split(';'):
             yield d
         
     def get_basename_is_ignored(self, bn):
@@ -134,7 +134,7 @@ class Win32File(File):
     def _do_get_stat(self, rethrow=False):
         try:
             super(Win32File, self)._do_get_stat(rethrow)
-        except FileStatError, e:
+        except FileStatError as e:
             _logger.debug("Failed to stat '%s': %s", self.path, e)
             if msvcrt != None:
                 _logger.debug("Trying our own wrapper of _stat32")

@@ -43,7 +43,7 @@ expressed as an iterable which yielded a single object.""")
         if context.current_output_metadata.single:
             try:
                 locals['it'] = context.snapshot_current_output()
-            except ValueError, e:
+            except ValueError as e:
                 locals['it'] = None
         else:
             locals['current'] = lambda: context.snapshot_current_output()
@@ -56,10 +56,10 @@ expressed as an iterable which yielded a single object.""")
         f = open(fpath)
         compiled = compile(f.read(), fpath, 'exec')
         f.close()
-        exec compiled in locals
+        exec(compiled, locals)
         try:
             mainfunc = locals['main']
-        except KeyError, e:
+        except KeyError as e:
             return None
         if not hasattr(mainfunc, '__call__'):
             return None
@@ -80,5 +80,5 @@ expressed as an iterable which yielded a single object.""")
         locals['_hotwire_handle_output'] = handle_output
         locals['_hotwire_handle_output_self'] = {'result': None}
         (compiled, mutated) = rewrite_and_compile(args[0], output_func_name='_hotwire_handle_output', output_func_self='_hotwire_handle_output_self')
-        exec compiled in locals
+        exec(compiled, locals)
         return locals['_hotwire_handle_output_self']['result']

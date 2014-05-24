@@ -81,68 +81,68 @@ class CompletionTests(unittest.TestCase):
         else:
             search='true'
             verbs = list(self.vc.completions('this does not exist', "."))
-            self.assertEquals(len(verbs), 0)
+            self.assertEqual(len(verbs), 0)
 
     def testCwd(self):
         self._setupTree1()
         result = self.cc.sync_complete(self.pc, 'testf', self._tmpd)
-        self.assertEquals(len(result.results), 1)
-        self.assertEquals(result.results[0].target.path, self._test_exe_path)
+        self.assertEqual(len(result.results), 1)
+        self.assertEqual(result.results[0].target.path, self._test_exe_path)
 
     def testCwd2(self):
         self._setupTree1()
         result = self.cc.sync_complete(self.pc, 'no such thing', self._tmpd)
-        self.assertEquals(len(result.results), 0)
+        self.assertEqual(len(result.results), 0)
 
     def testCwd3(self):
         self._setupTree1()
         result = self.cc.sync_complete(self.pc, 'test', self._tmpd)
-        self.assertEquals(len(result.results), 2)
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, 'testdir'))
-        self.assertEquals(result.results[1].target.path, self._test_exe_path)
+        self.assertEqual(len(result.results), 2)
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, 'testdir'))
+        self.assertEqual(result.results[1].target.path, self._test_exe_path)
 
     def testCwd4(self):
         self._setupTree2()
         result = self.cc.sync_complete(self.pc, 'testdir2/', self._tmpd)
-        self.assertEquals(len(result.results), 3)
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'blah'))        
-        self.assertEquals(result.results[0].suffix, 'blah')
-        self.assertEquals(result.results[1].suffix, 'moo')
-        self.assertEquals(result.results[2].suffix, 'moodir/')
+        self.assertEqual(len(result.results), 3)
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'blah'))        
+        self.assertEqual(result.results[0].suffix, 'blah')
+        self.assertEqual(result.results[1].suffix, 'moo')
+        self.assertEqual(result.results[2].suffix, 'moodir/')
 
     def testCwd5(self):
         self._setupTree2()
         result = self.cc.sync_complete(self.pc, 'testdir2/m', self._tmpd)
-        self.assertEquals(len(result.results), 2)
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'moo'))           
-        self.assertEquals(result.results[0].suffix, 'oo')
-        self.assertEquals(result.results[1].suffix, 'oodir/')
+        self.assertEqual(len(result.results), 2)
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, 'testdir2', 'moo'))           
+        self.assertEqual(result.results[0].suffix, 'oo')
+        self.assertEqual(result.results[1].suffix, 'oodir/')
         
     def testCwd6(self):
         self._setupTree1()
         result = self.cc.sync_complete(self.pc, './testd', self._tmpd)
-        self.assertEquals(len(result.results), 1)
-        self.assertEquals(result.common_prefix, None)        
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
-        self.assertEquals(result.results[0].suffix, 'ir/')
+        self.assertEqual(len(result.results), 1)
+        self.assertEqual(result.common_prefix, None)        
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
+        self.assertEqual(result.results[0].suffix, 'ir/')
 
     def testCwd7(self):
         self._setupTree2()
         result = self.cc.sync_complete(self.pc, './f3', self._tmpd)
-        self.assertEquals(len(result.results), 1)
-        self.assertEquals(result.common_prefix, None) 
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.', 'f3test'))
-        self.assertEquals(result.results[0].suffix, 'test')
+        self.assertEqual(len(result.results), 1)
+        self.assertEqual(result.common_prefix, None) 
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.', 'f3test'))
+        self.assertEqual(result.results[0].suffix, 'test')
 
     def testCwd8(self):
         self._setupTree1()
         result = self.cc.sync_complete(self.vc, './test', self._tmpd)
-        self.assertEquals(len(result.results), 2)
-        self.assertEquals(result.common_prefix, None)      
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
-        self.assertEquals(result.results[0].suffix, 'dir/')
-        self.assertEquals(result.results[1].target.path, path_join(self._tmpd, '.', self._test_exe))
-        self.assertEquals(result.results[1].suffix, self._test_exe[4:])
+        self.assertEqual(len(result.results), 2)
+        self.assertEqual(result.common_prefix, None)      
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.', 'testdir'))
+        self.assertEqual(result.results[0].suffix, 'dir/')
+        self.assertEqual(result.results[1].target.path, path_join(self._tmpd, '.', self._test_exe))
+        self.assertEqual(result.results[1].suffix, self._test_exe[4:])
         
     def testCwd9(self):
         self._setupTree1()
@@ -155,15 +155,15 @@ class CompletionTests(unittest.TestCase):
         f.write('there')
         f.close()                
         result = self.cc.sync_complete(self.pc, '', self._tmpd)
-        self.assertEquals(len(result.results), 5)
-        self.assertEquals(result.common_prefix, None)
-        self.assertEquals(result.results[0].target.path, path_join(self._tmpd, '.bar'))
-        self.assertEquals(result.results[0].suffix, '.bar')
+        self.assertEqual(len(result.results), 5)
+        self.assertEqual(result.common_prefix, None)
+        self.assertEqual(result.results[0].target.path, path_join(self._tmpd, '.bar'))
+        self.assertEqual(result.results[0].suffix, '.bar')
         foo_index=2
         if is_windows():
             foo_index = 1
-        self.assertEquals(result.results[foo_index].target.path, path_join(self._tmpd, '.foo'))
-        self.assertEquals(result.results[foo_index].suffix, '.foo')
+        self.assertEqual(result.results[foo_index].target.path, path_join(self._tmpd, '.foo'))
+        self.assertEqual(result.results[foo_index].suffix, '.foo')
         
     def testSafechar1(self):
         self._setupTree1()
@@ -172,27 +172,27 @@ class CompletionTests(unittest.TestCase):
         f.write('hi')
         f.close()              
         result = self.cc.sync_complete(self.pc, 'ba', self._tmpd)
-        self.assertEquals(len(result.results), 1)
-        self.assertEquals(result.common_prefix, None)
-        self.assertEquals(result.results[0].target.path, bpath)
-        self.assertEquals(result.results[0].suffix, 'r_foo')
+        self.assertEqual(len(result.results), 1)
+        self.assertEqual(result.common_prefix, None)
+        self.assertEqual(result.results[0].target.path, bpath)
+        self.assertEqual(result.results[0].suffix, 'r_foo')
         
     def testSafechar2(self):
         self._setupTree1()
         bpath = path_join(self._tmpd, 'bar+')
         os.mkdir(bpath)    
         result = self.cc.sync_complete(self.pc, 'ba', self._tmpd)
-        self.assertEquals(len(result.results), 1)
-        self.assertEquals(result.common_prefix, None)
-        self.assertEquals(result.results[0].target.path, bpath)
-        self.assertEquals(result.results[0].suffix, 'r+/')
+        self.assertEqual(len(result.results), 1)
+        self.assertEqual(result.common_prefix, None)
+        self.assertEqual(result.results[0].target.path, bpath)
+        self.assertEqual(result.results[0].suffix, 'r+/')
         
     def testSpaces1(self):
         self._setupTree1()
         dpath = path_join(self._tmpd, 'dir with spaces')   
         result = self.cc.sync_complete(self.pc, 'di', self._tmpd)
-        self.assertEquals(len(result.results), 1)
-        self.assertEquals(result.common_prefix, None)
-        self.assertEquals(result.results[0].target.path, dpath)
-        self.assertEquals(result.results[0].suffix, r'r\ with\ spaces/')        
+        self.assertEqual(len(result.results), 1)
+        self.assertEqual(result.common_prefix, None)
+        self.assertEqual(result.results[0].target.path, dpath)
+        self.assertEqual(result.results[0].suffix, r'r\ with\ spaces/')        
 

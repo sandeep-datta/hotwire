@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os
-from cStringIO import StringIO
+from io import StringIO
 
 from hotwire.builtin import builtin_hotwire, InputStreamSchema
 

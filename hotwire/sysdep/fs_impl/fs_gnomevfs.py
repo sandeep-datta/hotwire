@@ -91,10 +91,10 @@ Important members include the "vfsstat" and "uri"."""
             if self.vfsstat.type == gnomevfs.FILE_TYPE_SYMBOLIC_LINK:
                 try:
                     self.target_vfsstat = gnomevfs.get_file_info(self.uri, gnomevfs.FILE_INFO_GET_MIME_TYPE | gnomevfs.FILE_INFO_FOLLOW_LINKS)
-                except Exception, e:
+                except Exception as e:
                     _logger.debug("Failed to get file info for target of '%s'", self.uri, exc_info=True)
                     self.target_vfsstat_error = str(e)
-        except Exception, e:
+        except Exception as e:
             _logger.debug("Failed to get file info for '%s'", self.uri, exc_info=True)
             self.stat_error = str(e)
             if rethrow:
@@ -107,7 +107,7 @@ Important members include the "vfsstat" and "uri"."""
             self._icon = self.fs.icon_lookup(self)
             if self._icon is None:
                 super(GnomeVfsFile, self)._do_get_icon()
-        except Exception, e:
+        except Exception as e:
             _logger.debug("Failed to get file icon for '%s'", self.uri, exc_info=True)
             self._icon = 'gtk-dialog-error'
 

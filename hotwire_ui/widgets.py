@@ -222,7 +222,7 @@ class CellRendererText(gtk.CellRendererText):
     """This class takes keyword arguments, in contrast to the GTK+ one."""
     def __init__(self, **kwargs):
         super(CellRendererText, self).__init__()
-        for k,v in kwargs.iteritems():
+        for k,v in kwargs.items():
             self.set_property(k.replace('_', '-'), v)
         
 class CellRendererLink(CellRendererText):

@@ -75,8 +75,8 @@ class FSearchBuiltin(FileOpBuiltin):
                     if match:
                         yield FileStringMatch(fobj.path, line[:-1], i, match.start(), match.end())
                 fp.close()
-            except OSError, e:
+            except OSError as e:
                 pass
-            except UnicodeDecodeError, e:
+            except UnicodeDecodeError as e:
                 pass
 BuiltinRegistry.getInstance().register_hotwire(FSearchBuiltin())

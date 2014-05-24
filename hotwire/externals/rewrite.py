@@ -32,7 +32,7 @@ def _do_match(t, pattern):
         return None
     
     result = {}
-    for i in (xrange(1, len(pattern))):
+    for i in (range(1, len(pattern))):
         if i >= len(t):
             return None
         if isinstance(pattern[i], tuple):
@@ -295,10 +295,10 @@ def _rewrite_tree(t, state, actions):
     # Generic rewriting of an AST, actions is a map of symbol/token type to function
     # to call to produce a modified version of the the subtree
     result = t
-    for i in xrange(1, len(t)):
+    for i in range(1, len(t)):
         subnode = t[i]
         subtype = subnode[0]
-        if actions.has_key(subtype):
+        if subtype in actions:
             filtered = actions[subtype](subnode, state)
             if filtered != subnode:
                 if result is t:
@@ -317,7 +317,7 @@ def _rewrite_expr_stmt(t, state):
     if len(t) == 2:
         # testlist
         subnode = t[1]
-        for i in xrange(1, len(subnode)):
+        for i in range(1, len(subnode)):
             subsubnode = subnode[i]
             if subsubnode[0] == symbol.test:
                 method_spec = _is_test_method_call(subsubnode)
@@ -325,7 +325,7 @@ def _rewrite_expr_stmt(t, state):
                     state.add_mutated(method_spec)
 
         if state.output_func_name != None:
-            args = list(filter(lambda x: type(x) != int and x[0] == symbol.test, subnode))
+            args = list([x for x in subnode if type(x) != int and x[0] == symbol.test])
             if state.output_func_self != None:
                 args.insert(0, _create_varref(state.output_func_self))
             return _create_funccall_expr_stmt(state.output_func_name, tuple(args))
@@ -345,11 +345,11 @@ def _rewrite_expr_stmt(t, state):
                 state.add_mutated(variable)
         else:
             # testlist ('=' (yield_expr|testlist))+
-            for i in xrange(1, len(t) - 1):
+            for i in range(1, len(t) - 1):
                 if (t[i + 1][0] == token.EQUAL):
                     subnode = t[i]
                     assert(subnode[0] == symbol.testlist)
-                    for j in xrange(1, len(subnode)):
+                    for j in range(1, len(subnode)):
                         subsubnode = subnode[j]
                         if subsubnode[0] == symbol.test:
                             variable = _is_test_slice(subsubnode)
@@ -364,7 +364,7 @@ def _rewrite_print_stmt(t, state):
     # print_stmt: 'print' ( [ test (',' test)* [','] ] |
     #                       '>>' test [ (',' test)+ [','] ] )
     if state.print_func_name !=None and t[2][0] == symbol.test:
-        return _create_funccall_expr_stmt(state.print_func_name, filter(lambda x: type(x) != int and x[0] == symbol.test, t))
+        return _create_funccall_expr_stmt(state.print_func_name, [x for x in t if type(x) != int and x[0] == symbol.test])
     else:
         return t
     
@@ -442,7 +442,7 @@ def rewrite_and_compile(code, output_func_name=None, output_func_self=None, prin
     """
     state = _RewriteState(output_func_name=output_func_name, output_func_self=output_func_self, print_func_name=print_func_name)
 
-    if (isinstance(code, unicode)):
+    if (isinstance(code, str)):
         code = code.encode("utf8")
         encoding = "utf8"
     
@@ -510,12 +510,12 @@ if __name__ == '__main__':
 
     def test_funccall(args):
         t = create_file_input(_create_funccall_expr_stmt('set_test_args',
-                                                         map(lambda c: create_constant_test(c), args)))
+                                                         [create_constant_test(c) for c in args]))
         test_args = [ 'UNSET' ]
         def set_test_args(*args): test_args[:] = args
         scope = { 'set_test_args': set_test_args }
         
-        exec parser.sequence2ast(t).compile() in scope
+        exec(parser.sequence2ast(t).compile(), scope)
         assert tuple(test_args) == args
 
     test_funccall(())
@@ -533,7 +533,7 @@ if __name__ == '__main__':
             test_args[:] = args
         scope = { 'reinteract_output': set_test_args} 
 
-        exec compiled in scope
+        exec(compiled, scope)
 
         if tuple(test_args) != tuple(expected):
             raise AssertionError("Got '%s', expected '%s'" % (test_args, expected))
@@ -554,7 +554,7 @@ if __name__ == '__main__':
         scope = { 'reinteract_output': set_test_args, 
                   'reinteract_output_self': test_self} 
 
-        exec compiled in scope
+        exec(compiled, scope)
 
         if 'args' not in test_self:
             raise AssertionError("Failed to set arguments")
@@ -576,7 +576,7 @@ if __name__ == '__main__':
         def set_test_args(*args): test_args[:] = args
         scope = { 'reinteract_print': set_test_args }
 
-        exec compiled in scope
+        exec(compiled, scope)
 
         if tuple(test_args) != tuple(expected):
             raise AssertionError("Got '%s', expected '%s'" % (test_args, expected))
@@ -630,13 +630,13 @@ if __name__ == '__main__':
         def set_test_args(*args): test_args[:] = args
         scope = { 'reinteract_output': set_test_args }
 
-        exec compiled in scope
+        exec(compiled, scope)
 
         if test_args[0] != expected:
             raise AssertionError("Got '%s', expected '%s'" % (test_args[0], expected))
 
-    test_encoding(u"u'\u00e4'".encode("utf8"), u'\u00e4')
-    test_encoding(u"u'\u00e4'", u'\u00e4')
-    test_encoding(u"u'\u00e4'".encode("iso-8859-1"), u'\u00e4', "iso-8859-1")
+    test_encoding("u'\u00e4'".encode("utf8"), '\u00e4')
+    test_encoding("u'\u00e4'", '\u00e4')
+    test_encoding("u'\u00e4'".encode("iso-8859-1"), '\u00e4', "iso-8859-1")
 
-    print "Passed"
+    print("Passed")

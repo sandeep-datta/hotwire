@@ -53,7 +53,7 @@ _pwuid_cache = {}
 def getpwuid_cached(uid):
     try:
         return _pwuid_cache[uid]
-    except KeyError, e:
+    except KeyError as e:
         _pwuid_cache[uid] = result = getpwuid(uid)
         return result
 
@@ -61,6 +61,6 @@ _grgid_cache = {}
 def getgrgid_cached(gid):
     try:
         return _grgid_cache[gid]
-    except KeyError, e:
+    except KeyError as e:
         _grgid_cache[gid] = result = getgrgid(gid)
         return result

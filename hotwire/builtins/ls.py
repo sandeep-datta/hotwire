@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os, sys, os.path, stat, logging, locale
-from itertools import imap
+
 
 from hotwire.builtin import builtin_hotwire, InputStreamSchema, MultiArgSpec
 from hotwire.fs import FilePath

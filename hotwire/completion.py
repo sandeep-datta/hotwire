@@ -65,10 +65,10 @@ class Completer(object):
         return None
 
 def _mkfile_completion(text, fpath, fileobj=None):
-    if not isinstance(text, unicode):
-        text = unicode(text, 'utf-8')
-    if not isinstance(fpath, unicode):
-        fpath = unicode(fpath, 'utf-8')             
+    if not isinstance(text, str):
+        text = str(text, 'utf-8')
+    if not isinstance(fpath, str):
+        fpath = str(fpath, 'utf-8')             
     fs = Filesystem.getInstance()
     fname = unix_basename(fpath)
     if text.endswith('/'):
@@ -91,7 +91,7 @@ class PathCompleter(Completer):
         fullpath = FilePath(expanded, cwd)
         try:
             isdir = stat.S_ISDIR(os.stat(fullpath).st_mode)
-        except OSError, e:
+        except OSError as e:
             isdir = False
         fs = Filesystem.getInstance()
         if isdir and fullpath.endswith('/'):
@@ -105,9 +105,9 @@ class PathCompleter(Completer):
                 if fname.startswith(src_prefix):
                     try:
                         yield _mkfile_completion(text, fpath)
-                    except OSError, e:
+                    except OSError as e:
                         pass
-        except OSError, e:
+        except OSError as e:
             pass
 
 class BuiltinCompleter(Completer):
@@ -184,7 +184,7 @@ class CompletionResults(object):
         min_item = completions[0]
         max_item = completions[-1]
         n = min(len(min_item.suffix), len(max_item.suffix))
-        for i in xrange(n):
+        for i in range(n):
             if min_item.suffix[i] != max_item.suffix[i]:
                 return min_item.suffix[:i]
         return min_item.suffix[:n]       

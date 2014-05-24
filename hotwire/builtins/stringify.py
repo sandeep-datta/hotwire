@@ -35,7 +35,7 @@ class StringifyBuiltin(Builtin):
         if len(args) != 0:
             raise ValueError(_("Too many arguments specified"))
         for arg in context.input:
-            if not isinstance(arg, basestring):
+            if not isinstance(arg, str):
                 yield str(arg)
             else:
                 yield arg

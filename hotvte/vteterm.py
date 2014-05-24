@@ -198,7 +198,7 @@ class VteTerminalWidget(gtk.VBox):
         if sys.version_info[0] == 2 and sys.version_info[1] < 6 and (not is_windows()):
             try:
                 import hotwire.externals.webbrowser as webbrowser
-            except ImportError, e:
+            except ImportError as e:
                 _logger.warn("Couldn't import hotwire.externals.webbrowser", exc_info=True)
                 import webbrowser
         else:

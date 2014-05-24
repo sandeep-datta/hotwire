@@ -41,7 +41,7 @@ class ListRenderer(TreeObjectsRenderer):
     def __render_tuple_slice(self, col, cell, model, iter, idx):
         tup = model.get_value(iter, 0)
         v = tup[idx]
-        valrepr = unicode(repr(v))
+        valrepr = str(repr(v))
         cell.set_property('text', valrepr)
         
     def get_objects(self):

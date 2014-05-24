@@ -41,7 +41,7 @@ class MkdirBuiltin(FileOpBuiltin):
             arg_path = FilePath(arg, context.cwd)
             try:
                 os.makedirs(arg_path)
-            except OSError, e:
+            except OSError as e:
                 pass
             self._status_notify(context, sources_total, i+1)
 

@@ -19,7 +19,7 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import threading, Queue, logging
+import threading, queue, logging
 
 from hotwire.gutil import call_timeout,remove_idle
 from hotwire.externals.singletonmixin import Singleton
@@ -72,9 +72,9 @@ class MiniThreadPool(Singleton):
             except:
                 logging.exception("Exception in thread pool worker")
 
-class IterableQueue(Queue.Queue):
+class IterableQueue(queue.Queue):
     def __init__(self):
-        Queue.Queue.__init__(self)
+        queue.Queue.__init__(self)
         self.__lock = threading.Lock()
         self.__handler_idle_id = 0
         self.__handler = None
@@ -115,7 +115,7 @@ class IterableQueue(Queue.Queue):
         self.__lock.release()
 
     def put(self, *args):
-        Queue.Queue.put(self, *args)
+        queue.Queue.put(self, *args)
         self.__add_idle()
         
     def iter_avail(self):
@@ -123,7 +123,7 @@ class IterableQueue(Queue.Queue):
             while True:
                 val = self.get(False)
                 yield val
-        except Queue.Empty, e:
+        except queue.Empty as e:
             pass
 
     def __iter__(self):

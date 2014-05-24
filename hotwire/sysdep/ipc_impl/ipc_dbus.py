@@ -60,7 +60,7 @@ class IpcDBus(object):
         try:
             _logger.debug("Requesting D-BUS name %s on session bus", BUS_NAME)
             dbusutil.take_name(BUS_NAME, bus=dbus.SessionBus())
-        except dbusutil.DBusNameExistsException, e:
+        except dbusutil.DBusNameExistsException as e:
             return True
         return False
 
@@ -73,7 +73,7 @@ class IpcDBus(object):
         startup_time = None
         try:
             startup_id_env = os.environ['DESKTOP_STARTUP_ID']
-        except KeyError, e:
+        except KeyError as e:
             startup_id_env = None
         if startup_id_env:
             idx = startup_id_env.find('_TIME')
@@ -88,7 +88,7 @@ class IpcDBus(object):
         _logger.debug("Sending RaiseNoTimestamp to existing instance")
         try:
             inst_iface.NewWindow(self.__parse_startup_id() or 0) 
-        except dbus.DBusException, e:
+        except dbus.DBusException as e:
             _logger.error("Caught exception attempting to send RaiseNoTimestamp", exc_info=True)
             
     def run_tty(self, cwd, *args):

@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os,sys,signal
-from itertools import imap
+
 
 import hotwire
 
@@ -48,7 +48,7 @@ class ProcessCompleter(Completer):
         proclist = ProcessManager.getInstance().get_cached_processes()         
         try:
             textint = int(text)
-        except ValueError, e:
+        except ValueError as e:
             textint = None   
         if textint is not None:
             for proc in proclist:
@@ -95,7 +95,7 @@ class KillBuiltin(Builtin):
                     raise ValueError("Invalid signal number: %d", optnum)
         if sigidx >= 0:
             del args[sigidx]
-        for arg in imap(int, args):
+        for arg in map(int, args):
             os.kill(arg, signum)
         if context.input is not None:
             for arg in context.input:

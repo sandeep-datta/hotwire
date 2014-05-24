@@ -22,9 +22,9 @@
 from hotwire.sysdep import is_jython
 
 if is_jython():
-    from mainloop_null import *
+    from .mainloop_null import *
 else:
-    from mainloop_g import *
+    from .mainloop_g import *
 
 def call_idle_once(func, *args, **kwargs):
     def func_false():

@@ -28,7 +28,7 @@ _module = None
 try:
     import hotwire.sysdep.term_impl.term_vte
     _module = hotwire.sysdep.term_impl.term_vte
-except ImportError, e:
+except ImportError as e:
     _logger.debug("Failed to import vte", exc_info=True)
 
 _instance = None

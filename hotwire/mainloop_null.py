@@ -21,7 +21,7 @@
 
 import os, sys, logging, weakref
 
-print >>sys.stderr, "** Warning: Running under null mainloop"
+print("** Warning: Running under null mainloop", file=sys.stderr)
 
 def _run_logging(f, logger, *args):
     try:    

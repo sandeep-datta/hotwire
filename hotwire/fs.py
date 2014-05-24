@@ -20,7 +20,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os, sys, fnmatch, stat, shutil
-import posixpath, locale, urllib, codecs
+import posixpath, locale, urllib.request, urllib.parse, urllib.error, codecs
 
 import hotwire
 from hotwire.async import MiniThreadPool
@@ -49,11 +49,11 @@ def path_fromurl(url):
     """Return a local pathname from a file:// URL."""
     if url.startswith('file://'):
         url = url[7:]
-    return urllib.unquote(url)
+    return urllib.parse.unquote(url)
 
 def path_tourl(path):
     """Return a file:// URL for a pathname."""
-    return 'file://' + urllib.quote(path)
+    return 'file://' + urllib.parse.quote(path)
 
 path_fastnormalize = lambda x: x
 path_normalize = os.path.normpath
@@ -117,19 +117,19 @@ def file_is_valid_utf8(path):
     buf = f.read(8192)
     # is there a faster way
     try:
-        unicode(buf, 'utf-8').encode('utf-8')
-    except UnicodeDecodeError, e:
+        str(buf, 'utf-8').encode('utf-8')
+    except UnicodeDecodeError as e:
         f.close()
         return False
     f.close()
     return True
 
-class FilePath(unicode):
+class FilePath(str):
     """Represents a path to a file; can be treated as a string.
        This class should have been built into Python."""
     def __new__(cls, value, dir=None):
-        if not isinstance(value, unicode):
-            value = unicode(value, 'utf-8')
+        if not isinstance(value, str):
+            value = str(value, 'utf-8')
         if not os.path.isabs(value) and dir:
             value = path_fastnormalize(posixpath.join(dir, value))
         inst = super(FilePath, cls).__new__(cls, value)
@@ -140,7 +140,7 @@ class FilePath(unicode):
     
 def iterd(dpath, fpath=False):
     """Generate full path names of files in directory named by dpath."""
-    dpath = unicode(dpath)
+    dpath = str(dpath)
     entries = os.listdir(dpath)
     if fpath:
         for fname in entries:

@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os, sys, logging, StringIO, traceback
+import os, sys, logging, io, traceback
 
 import cairo, gtk, gobject, pango
 
@@ -33,7 +33,7 @@ class HotwireAboutDialog(gtk.AboutDialog):
         dialog.set_property('website', 'http://hotwire-shell.org')
         dialog.set_property('version', hotwire.version.__version__)
         dialog.set_property('authors', ['Colin Walters <walters@verbum.org>'])
-        dialog.set_property('copyright', u'Copyright \u00A9 2007,2008 Colin Walters <walters@verbum.org>')
+        dialog.set_property('copyright', 'Copyright \u00A9 2007,2008 Colin Walters <walters@verbum.org>')
         dialog.set_property('logo-icon-name', 'hotwire')
         dialog.set_property('license', 
                             '''Hotwire is free software; you can redistribute it and/or modify

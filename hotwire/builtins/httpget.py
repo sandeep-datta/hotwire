@@ -19,9 +19,9 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os,sys,httplib
-from httplib import HTTPResponse
-from StringIO import StringIO
+import os,sys,http.client
+from http.client import HTTPResponse
+from io import StringIO
 
 from hotwire.fs import FilePath
 
@@ -45,7 +45,7 @@ class HttpGetBuiltin(Builtin):
             path = args[1]
         else:
             assert False         
-        conn = httplib.HTTPConnection(host)
+        conn = http.client.HTTPConnection(host)
         conn.request('GET', path)
         response = conn.getresponse() 
         return response

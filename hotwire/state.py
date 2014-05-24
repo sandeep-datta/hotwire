@@ -60,7 +60,7 @@ class History(Singleton):
             # Transition from pre-0.700
             cursor.execute('''ALTER TABLE Commands ADD lang_uuid TEXT''')
             cursor.execute('''UPDATE Commands SET lang_uuid = ? WHERE lang_uuid IS NULL''', ('62270c40-a94a-44dd-aaa0-689f882acf34',))
-        except sqlite3.OperationalError, e:
+        except sqlite3.OperationalError as e:
             pass
         # This was a pre-0.700 index.
         cursor.execute('''DROP INDEX IF EXISTS CommandsIndex''')
@@ -137,8 +137,8 @@ class History(Singleton):
             args.append('%' + searchterm.replace('%', '%%') + '%')            
         if countmin > 0:
             queryclauses.append("count > %d " % (countmin,))
-        queryclauses.extend(map(lambda x: x[0], filters))
-        args.extend(map(lambda x: x[1], filters))
+        queryclauses.extend([x[0] for x in filters])
+        args.extend([x[1] for x in filters])
         if queryclauses:
             queryclause = ' WHERE ' + ' AND '.join(queryclauses)
         else:

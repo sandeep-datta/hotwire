@@ -45,7 +45,7 @@ def execute(context, input):
         buf = self.PYFILTER_CONTENT % (args[0],)
         code = compile(buf, '<input>', 'exec')
         locals = {}
-        exec code in locals
+        exec(code, locals)
         execute = locals['execute']
         custom_out = execute(context, context.input)
         if custom_out is None:

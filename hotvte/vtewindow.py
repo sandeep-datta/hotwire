@@ -52,7 +52,7 @@ class TabbedVteWidget(VteTerminalWidget):
         return self.__title
 
 class VteWindow(gtk.Window):
-    ascii_nums = [long(x+ord('0')) for x in xrange(10)]    
+    ascii_nums = [int(x+ord('0')) for x in range(10)]    
     def __init__(self, factory=None, title=None, icon_name=None, **kwargs):
         super(VteWindow, self).__init__()
         
@@ -339,11 +339,11 @@ class VteWindowFactory(gobject.GObject):
     def create_window(self, is_initial=False, *args, **kwargs):
         _logger.debug("creating window")
         if is_initial:
-            for k,v in kwargs.iteritems():
-                if self.__sticky_keywords.has_key(k):
+            for k,v in kwargs.items():
+                if k in self.__sticky_keywords:
                     self.__sticky_keywords[k] = v
-        for k,v in self.__sticky_keywords.iteritems():
-            if not kwargs.has_key(k):
+        for k,v in self.__sticky_keywords.items():
+            if k not in kwargs:
                 kwargs[k] = v
         win = self.__klass(factory=self, is_initial=is_initial, **kwargs)
         win.connect('notify::is-active', self.__on_window_active)
@@ -379,7 +379,7 @@ class UiProxy(dbus.service.Object):
                 curwin = self.__winfactory.remote_new_tab(cmd, cwd)
             else:
                 raise NotImplementedError('can only create new tabs')
-            timestamp = long(timestamp)+1
+            timestamp = int(timestamp)+1
             if timestamp > 0:
                 _logger.debug("presenting with timestamp %r", timestamp)
                 curwin.present_with_time(timestamp)
@@ -398,7 +398,7 @@ class VteRemoteControl(object):
         startup_time = None
         try:
             startup_id_env = os.environ['DESKTOP_STARTUP_ID']
-        except KeyError, e:
+        except KeyError as e:
             startup_id_env = None
         if startup_id_env:
             idx = startup_id_env.find('_TIME')

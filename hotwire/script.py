@@ -26,7 +26,7 @@ from hotwire.fs import path_normalize
 
 _logger = logging.getLogger("hotwire.Script")
 
-(PIPE, REDIR_IN, REDIR_OUT, REDIR_OUT_APPEND) = xrange(4)
+(PIPE, REDIR_IN, REDIR_OUT, REDIR_OUT_APPEND) = range(4)
  
 def script(*args, **kwargs):
     from hotwire.command import Pipeline,HotwireContext

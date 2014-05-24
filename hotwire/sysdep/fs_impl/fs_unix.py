@@ -31,13 +31,13 @@ class UnixFilesystem(BaseFilesystem):
         self.fileklass = UnixFile         
         
     def _get_conf_dir_path(self):
-        return os.path.expanduser(u'~/.hotwire')
+        return os.path.expanduser('~/.hotwire')
 
     def _get_system_conf_dir_path(self):
-        return u'/etc/hotwire'
+        return '/etc/hotwire'
 
     def get_path_generator(self):
-        for d in os.environ['PATH'].split(u':'):
+        for d in os.environ['PATH'].split(':'):
             yield d
 
     def path_executable_match(self, input, file_path):
@@ -87,7 +87,7 @@ class UnixFile(File):
             return
         try:
             return getpwuid_cached(uid).pw_name
-        except KeyError, e:
+        except KeyError as e:
             return str(uid)
 
     def _get_group(self):
@@ -96,7 +96,7 @@ class UnixFile(File):
             return
         try:
             return getgrgid_cached(gid).gr_name
-        except KeyError, e:
+        except KeyError as e:
             return str(gid)         
 
 def getInstance():

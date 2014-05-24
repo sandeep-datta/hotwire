@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os, sys, logging, StringIO, traceback, inspect, locale
+import os, sys, logging, io, traceback, inspect, locale
 
 import cairo, gtk, gobject, pango
 
@@ -235,7 +235,7 @@ class InspectWindow(gtk.Window):
             else:
                 osrc_target = type(obj)
             srcpath = inspect.getsourcefile(osrc_target)                
-        except TypeError, e:
+        except TypeError as e:
             _logger.debug("failed to get sourcefile", exc_info=True)
             srcpath = None
         if srcpath:
